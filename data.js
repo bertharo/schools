@@ -178,10 +178,6 @@ const dataUtils = {
     }
 };
 
-// Export for use in other files
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { ousdData, dataUtils };
-}
 
 // Individual school data with essential OUSD schools
 const schoolData = {
@@ -355,6 +351,7 @@ const schoolData = {
         return Object.values(this.schools);
     }
 };
+
 
 // Export for use in other files
 if (typeof module !== 'undefined' && module.exports) {
