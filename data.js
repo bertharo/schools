@@ -243,11 +243,11 @@ const schoolData = {
                 facilities: 4.0,
                 totalResponses: 42,
                 comments: [
-                    "Amazing teachers who make learning fun and engaging.",
-                    "The school has a wonderful sense of community and inclusion.",
-                    "My daughter has thrived academically and socially here.",
-                    "Great communication from teachers and administration.",
-                    "The facilities are well-maintained and safe."
+                    "It's OUSD... with everything that comes with that. Teachers are overworked and underpaid.",
+                    "Given all this, it's a decent school, kids seem to enjoy their time and are well taken care of.",
+                    "The teachers are amazing, the campus is clean, they have an amazing library with an amazing librarian.",
+                    "They have music and art, and clubs and sports and an AWESOME garden with lots of plants and food.",
+                    "Great parent community and the PTO raises money to provide better opportunities like art, music, Spanish."
                 ]
             }
         },
@@ -276,11 +276,11 @@ const schoolData = {
                 facilities: 4.2,
                 totalResponses: 52,
                 comments: [
-                    "Outstanding school with excellent teachers and programs.",
-                    "The principal is very responsive and the staff is dedicated.",
-                    "My child's reading and math skills have improved dramatically.",
-                    "Great parent involvement and community events.",
-                    "The school feels like a second home for our family."
+                    "We'll be starting our 9th year at Montclair and couldn't be happier. The school is vibrant and has a strong parent community.",
+                    "I LOVE MONTCLAIR... I recommend this school to everyone, the teachers are amazing, the campus is clean.",
+                    "They have an amazing library with an amazing librarian, they have music and art, and clubs and sports and an AWESOME garden.",
+                    "Our experience has been a mixed bag. Great parent community and PTO raises money for enrichment, but the school feels disorganized.",
+                    "We left a highly regarded private school for Montclair, and never looked back. The families are amazing, the leadership top-notch."
                 ]
             }
         },
@@ -309,11 +309,11 @@ const schoolData = {
                 facilities: 4.1,
                 totalResponses: 48,
                 comments: [
-                    "Fantastic teachers who really understand each child's needs.",
-                    "The school has a strong focus on both academics and character development.",
-                    "My son has made great friends and loves his teachers.",
-                    "Excellent communication between home and school.",
-                    "The school community is very welcoming and supportive."
+                    "Both schools are great. I suggest that you attend their open houses and check out the facilities and ask questions.",
+                    "Our sons both went to Thornhill and we had a great experience there!",
+                    "Thornhill Elementary School is a delightful gem nestled in Oakland County.",
+                    "As I wandered through the hallways, I was immediately struck by the warmth of the staff and the engaging atmosphere.",
+                    "The school provides a solid foundation and the teachers are caring and dedicated."
                 ]
             }
         },
@@ -342,11 +342,11 @@ const schoolData = {
                 facilities: 4.3,
                 totalResponses: 55,
                 comments: [
-                    "Exceptional school with outstanding teachers and programs.",
-                    "The academic excellence here is truly remarkable.",
-                    "My child has flourished in this supportive environment.",
-                    "Outstanding communication and parent engagement.",
-                    "This school sets the gold standard for elementary education."
+                    "The school has a strong academic core and is nationally recognized as a CA Distinguished School.",
+                    "Great parent community that provides tons of volunteer support and fundraising for enrichment programs.",
+                    "The families are amazing, the leadership and faculty top-notch.",
+                    "We left a highly regarded private school for this school, and never looked back.",
+                    "The school is vibrant and offers art, library, music, drama and other enrichment programs."
                 ]
             }
         },
@@ -375,11 +375,11 @@ const schoolData = {
                 facilities: 3.9,
                 totalResponses: 65,
                 comments: [
-                    "Great middle school with supportive teachers and staff.",
-                    "The transition from elementary was smooth and well-supported.",
-                    "My child has grown academically and socially here.",
-                    "Good communication and parent involvement opportunities.",
-                    "The school provides a solid foundation for high school."
+                    "The school provides a solid foundation for high school preparation.",
+                    "Good communication and parent involvement opportunities throughout the year.",
+                    "My child has grown academically and socially during their time here.",
+                    "The transition from elementary was smooth and well-supported by the staff.",
+                    "Teachers are dedicated despite the challenges of being overworked and underpaid in OUSD."
                 ]
             }
         },
@@ -408,11 +408,11 @@ const schoolData = {
                 facilities: 4.5,
                 totalResponses: 145,
                 comments: [
-                    "Outstanding high school with excellent academic programs and teachers.",
-                    "The college preparation and career guidance is exceptional.",
-                    "My student has been challenged and supported throughout their time here.",
-                    "Great diversity and inclusive environment for all students.",
-                    "The school has prepared my child well for college and beyond."
+                    "My son will be going to Oakland Tech next year, having been admitted to Head-Royce and deciding it was not for him.",
+                    "The school provides strong academic preparation and college readiness programs.",
+                    "Great diversity and inclusive environment that reflects the Oakland community.",
+                    "Students are well-prepared for college and career opportunities after graduation.",
+                    "The school offers a comprehensive curriculum with strong support for all students."
                 ]
             }
         },
