@@ -1291,35 +1291,6 @@ body {
     }
 }
 
-/* Dark mode support for mobile */
-@media (prefers-color-scheme: dark) and (max-width: 768px) {
-    :root {
-        --gray-50: #1f2937;
-        --gray-100: #374151;
-        --gray-200: #4b5563;
-        --gray-300: #6b7280;
-        --gray-400: #9ca3af;
-        --gray-500: #d1d5db;
-        --gray-600: #e5e7eb;
-        --gray-700: #f3f4f6;
-        --gray-800: #f9fafb;
-        --gray-900: #ffffff;
-    }
-    
-    .header {
-        background: linear-gradient(135deg, var(--gray-800) 0%, var(--gray-900) 100%);
-    }
-    
-    .stat-card {
-        background: var(--gray-100);
-        border: 1px solid var(--gray-200);
-    }
-    
-    .school-card {
-        background: var(--gray-100);
-        border: 1px solid var(--gray-200);
-    }
-}
 
 /* School Performance Mobile Fixes */
 @media (max-width: 1024px) {
@@ -1472,4 +1443,67 @@ body {
 .school-stat {
     word-wrap: break-word;
     overflow-wrap: break-word;
+}
+
+/* Mobile Text Visibility Fixes */
+@media (max-width: 768px) {
+    /* Ensure text is always visible on mobile */
+    body {
+        color: var(--gray-900) !important;
+        background-color: white !important;
+    }
+    
+    .header-title,
+    .header-subtitle,
+    .section-title,
+    .stat-label,
+    .stat-value,
+    .school-name,
+    .school-address,
+    .metric-label,
+    .metric-value,
+    .nav-link,
+    label,
+    h1, h2, h3, h4, h5, h6,
+    p, span, div {
+        color: var(--gray-900) !important;
+    }
+    
+    /* Ensure cards have proper contrast */
+    .stat-card,
+    .school-card,
+    .school-type-card {
+        background: white !important;
+        color: var(--gray-900) !important;
+        border: 1px solid var(--gray-200) !important;
+    }
+    
+    /* Ensure form elements are visible */
+    .control-select,
+    .control-input {
+        background: white !important;
+        color: var(--gray-900) !important;
+        border: 1px solid var(--gray-300) !important;
+    }
+    
+    /* Override any dark mode styles on mobile */
+    * {
+        color: inherit !important;
+    }
+}
+
+/* Force light mode on mobile devices */
+@media (max-width: 768px) {
+    :root {
+        --gray-50: #f9fafb;
+        --gray-100: #f3f4f6;
+        --gray-200: #e5e7eb;
+        --gray-300: #d1d5db;
+        --gray-400: #9ca3af;
+        --gray-500: #6b7280;
+        --gray-600: #4b5563;
+        --gray-700: #374151;
+        --gray-800: #1f2937;
+        --gray-900: #111827;
+    }
 }

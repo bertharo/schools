@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Dropdown Test</title>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <h1>School Dropdown Test</h1>
+    
+    <div>
+        <label for="school-select">Select School</label>
+        <select id="school-select" class="control-select">
+            <option value="">Choose a school...</option>
+        </select>
+    </div>
+    
+    <div id="debug-info"></div>
+    
+    <script>
+        console.log('Testing school dropdown...');
+        
+        // Test if schoolData exists
+        if (typeof schoolData !== 'undefined') {
+            console.log('✅ schoolData loaded');
+            console.log('Number of schools:', schoolData.getAllSchools().length);
+            document.getElementById('debug-info').innerHTML += '<p>✅ schoolData loaded: ' + schoolData.getAllSchools().length + ' schools</p>';
+            
+            // Test populateSchoolDropdown
+            if (typeof OUSDDashboard !== 'undefined') {
+                const dashboard = new OUSDDashboard();
+                console.log('✅ Dashboard created');
+                document.getElementById('debug-info').innerHTML += '<p>✅ Dashboard created</p>';
+                
+                // Check dropdown options
+                const schoolSelect = document.getElementById('school-select');
+                const options = schoolSelect.querySelectorAll('option');
+                console.log('Number of options:', options.length);
+                document.getElementById('debug-info').innerHTML += '<p>Number of options: ' + options.length + '</p>';
+                
+                // List all options
+                options.forEach((option, index) => {
+                    console.log(`Option ${index}: ${option.value} - ${option.textContent}`);
+                    document.getElementById('debug-info').innerHTML += '<p>Option ' + index + ': ' + option.value + ' - ' + option.textContent + '</p>';
+                });
+            } else {
+                console.log('❌ OUSDDashboard not loaded');
+                document.getElementById('debug-info').innerHTML += '<p>❌ OUSDDashboard not loaded</p>';
+            }
+        } else {
+            console.log('❌ schoolData not loaded');
+            document.getElementById('debug-info').innerHTML += '<p>❌ schoolData not loaded</p>';
+        }
+    </script>
+</body>
+</html>
