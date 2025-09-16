@@ -360,6 +360,9 @@ class OUSDSchoolFinder {
             case 'neighborhood':
                 this.loadNeighborhoodInfo();
                 break;
+            case 'how-to-apply':
+                // Static content, already in HTML
+                break;
         }
     }
 

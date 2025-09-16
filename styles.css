@@ -893,6 +893,177 @@ p {
     }
 }
 
+/* How to Apply Tab */
+.how-to-apply-content {
+    padding: var(--space-6);
+}
+
+.how-to-apply-content h4 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-8);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.how-to-apply-content h5 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-6);
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.how-to-apply-content h6 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Enrollment Timeline */
+.enrollment-timeline {
+    margin-bottom: var(--space-8);
+}
+
+.timeline-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.timeline-step {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-200);
+}
+
+.step-date {
+    background: var(--secondary);
+    color: var(--text-inverse);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    min-width: 100px;
+    text-align: center;
+}
+
+.step-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-1);
+    font-size: 1rem;
+}
+
+.step-description {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+/* Enrollment Process */
+.enrollment-process {
+    margin-bottom: var(--space-8);
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-6);
+}
+
+.process-card {
+    background: var(--bg-secondary);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-200);
+    text-align: center;
+}
+
+.process-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-4);
+}
+
+.process-card h6 {
+    margin-bottom: var(--space-3);
+    color: var(--text-primary);
+}
+
+.process-card p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+/* Application Tips */
+.application-tips {
+    margin-bottom: var(--space-8);
+}
+
+.tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.tip-item {
+    padding: var(--space-4);
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-200);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.tip-item strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Enrollment Links */
+.enrollment-links {
+    margin-bottom: var(--space-6);
+}
+
+.link-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+/* Mobile responsiveness for How to Apply */
+@media (max-width: 768px) {
+    .timeline-step {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3);
+    }
+    
+    .step-date {
+        min-width: auto;
+        width: fit-content;
+    }
+    
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .link-buttons {
+        flex-direction: column;
+    }
+    
+    .enrollment-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 /* Footer */
 .footer {
     background: var(--bg-secondary);
