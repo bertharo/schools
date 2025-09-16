@@ -1152,6 +1152,306 @@ const schoolData = {
                     "My child has thrived academically and socially at Hillcrest."
                 ]
             }
+        },
+        'peralta': {
+            id: 'peralta',
+            name: 'Peralta Elementary School',
+            type: 'elementary',
+            address: '460 63rd Street, Oakland, CA 94609',
+            phone: '(510) 879-2200',
+            enrollment: 280,
+            budget: 2.1,
+            rankings: {
+                california: 1234,
+                national: 15678
+            },
+            enrollmentInfo: {
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
+                schoolWebsite: 'https://www.ousd.org/peralta',
+                contactEmail: 'office@peralta.ousd.org'
+            },
+            neighborhood: {
+                name: 'Temescal',
+                description: 'A vibrant, diverse neighborhood known for its community spirit, local businesses, and strong sense of place.',
+                demographics: {
+                    medianIncome: 90000,
+                    population: 14000,
+                    diversity: 'High - White (40%), Latino (25%), African American (20%), Asian (12%), Other (3%)'
+                },
+                amenities: {
+                    parks: ['Temescal Regional Recreation Area', 'Mosswood Park'],
+                    shopping: 'Temescal Alley, Telegraph Avenue',
+                    transportation: 'BART MacArthur Station, AC Transit lines'
+                },
+                safety: {
+                    crimeRate: 'Moderate',
+                    walkability: 'Excellent',
+                    familyFriendly: 'High'
+                }
+            },
+            trends: {
+                enrollment: [275, 280, 285, 280, 280],
+                testScores: [68, 70, 72, 74, 76],
+                budget: [1.7, 1.8, 1.9, 2.0, 2.1],
+                parentSatisfaction: [3.9, 4.0, 4.1, 4.2, 4.3]
+            },
+            parentSentiment: {
+                overall: 4.3,
+                academics: 4.2,
+                safety: 4.4,
+                communication: 4.1,
+                facilities: 4.2,
+                totalResponses: 38,
+                comments: [
+                    "Peralta has a wonderful community feel and dedicated teachers.",
+                    "Great diversity and inclusive environment for all students.",
+                    "Strong parent involvement and community support.",
+                    "My child loves going to school and has made great friends."
+                ]
+            }
+        },
+        'chabot': {
+            id: 'chabot',
+            name: 'Chabot Elementary School',
+            type: 'elementary',
+            address: '6686 Chabot Road, Oakland, CA 94618',
+            phone: '(510) 879-2300',
+            enrollment: 320,
+            budget: 2.4,
+            rankings: {
+                california: 456,
+                national: 6789
+            },
+            enrollmentInfo: {
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
+                schoolWebsite: 'https://www.ousd.org/chabot',
+                contactEmail: 'office@chabot.ousd.org'
+            },
+            neighborhood: {
+                name: 'Rockridge',
+                description: 'An upscale neighborhood known for its tree-lined streets, local shops, and strong community feel.',
+                demographics: {
+                    medianIncome: 140000,
+                    population: 12000,
+                    diversity: 'Moderate - White (75%), Asian (15%), Latino (6%), African American (3%), Other (1%)'
+                },
+                amenities: {
+                    parks: ['Rockridge-Temescal Greenbelt', 'Joaquin Miller Park'],
+                    shopping: 'College Avenue, Rockridge',
+                    transportation: 'BART Rockridge Station, AC Transit lines'
+                },
+                safety: {
+                    crimeRate: 'Very Low',
+                    walkability: 'Excellent',
+                    familyFriendly: 'Very High'
+                }
+            },
+            trends: {
+                enrollment: [315, 320, 325, 320, 320],
+                testScores: [75, 77, 79, 81, 83],
+                budget: [2.0, 2.1, 2.2, 2.3, 2.4],
+                parentSatisfaction: [4.2, 4.3, 4.4, 4.5, 4.6]
+            },
+            parentSentiment: {
+                overall: 4.6,
+                academics: 4.5,
+                safety: 4.7,
+                communication: 4.4,
+                facilities: 4.5,
+                totalResponses: 52,
+                comments: [
+                    "Chabot Elementary is an outstanding school with excellent teachers.",
+                    "The school community is incredibly supportive and engaged.",
+                    "Strong academic program with great extracurricular activities.",
+                    "My child has thrived both academically and socially at Chabot."
+                ]
+            }
+        },
+        'montera': {
+            id: 'montera',
+            name: 'Montera Middle School',
+            type: 'middle',
+            address: '5555 Ascot Drive, Oakland, CA 94611',
+            phone: '(510) 879-2400',
+            enrollment: 450,
+            budget: 3.8,
+            rankings: {
+                california: 345,
+                national: 4567
+            },
+            enrollmentInfo: {
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
+                schoolWebsite: 'https://www.ousd.org/montera',
+                contactEmail: 'office@montera.ousd.org'
+            },
+            neighborhood: {
+                name: 'Piedmont Avenue',
+                description: 'A vibrant, walkable neighborhood known for its eclectic mix of shops, restaurants, and community events.',
+                demographics: {
+                    medianIncome: 100000,
+                    population: 16000,
+                    diversity: 'High - White (50%), Asian (20%), Latino (15%), African American (10%), Other (5%)'
+                },
+                amenities: {
+                    parks: ['Piedmont Avenue', 'Mosswood Park', 'Temescal Regional Recreation Area'],
+                    shopping: 'Piedmont Avenue shopping district, Temescal Alley',
+                    transportation: 'BART MacArthur Station, AC Transit lines'
+                },
+                safety: {
+                    crimeRate: 'Moderate',
+                    walkability: 'Excellent',
+                    familyFriendly: 'High'
+                }
+            },
+            trends: {
+                enrollment: [445, 450, 455, 450, 450],
+                testScores: [72, 74, 76, 78, 80],
+                budget: [3.4, 3.5, 3.6, 3.7, 3.8],
+                parentSatisfaction: [4.0, 4.1, 4.2, 4.3, 4.4]
+            },
+            parentSentiment: {
+                overall: 4.4,
+                academics: 4.3,
+                safety: 4.5,
+                communication: 4.2,
+                facilities: 4.3,
+                totalResponses: 48,
+                comments: [
+                    "Montera Middle provides excellent preparation for high school.",
+                    "The teachers are dedicated and help students succeed.",
+                    "Good balance of academics and social development.",
+                    "The school community is welcoming and inclusive."
+                ]
+            }
+        },
+        'castlemont': {
+            id: 'castlemont',
+            name: 'Castlemont High School',
+            type: 'high',
+            address: '8601 MacArthur Boulevard, Oakland, CA 94605',
+            phone: '(510) 879-2500',
+            enrollment: 800,
+            budget: 6.8,
+            rankings: {
+                california: 789,
+                national: 9876
+            },
+            enrollmentInfo: {
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
+                schoolWebsite: 'https://www.ousd.org/castlemont',
+                contactEmail: 'office@castlemont.ousd.org'
+            },
+            neighborhood: {
+                name: 'East Oakland',
+                description: 'A diverse, working-class neighborhood with strong community ties and growing development.',
+                demographics: {
+                    medianIncome: 60000,
+                    population: 35000,
+                    diversity: 'High - Latino (45%), African American (30%), Asian (15%), White (8%), Other (2%)'
+                },
+                amenities: {
+                    parks: ['Mills College at Northeastern University', 'Dimond Park'],
+                    shopping: 'Fruitvale Village, International Boulevard',
+                    transportation: 'BART Fruitvale Station, AC Transit lines'
+                },
+                safety: {
+                    crimeRate: 'Moderate',
+                    walkability: 'Good',
+                    familyFriendly: 'High'
+                }
+            },
+            trends: {
+                enrollment: [790, 800, 810, 800, 800],
+                testScores: [65, 67, 69, 71, 73],
+                budget: [6.0, 6.2, 6.4, 6.6, 6.8],
+                parentSatisfaction: [3.7, 3.8, 3.9, 4.0, 4.1]
+            },
+            parentSentiment: {
+                overall: 4.1,
+                academics: 4.0,
+                safety: 4.2,
+                communication: 3.9,
+                facilities: 4.0,
+                totalResponses: 65,
+                comments: [
+                    "Castlemont High provides a solid education with dedicated teachers.",
+                    "The school offers good preparation for college and career paths.",
+                    "Diverse student body creates a rich learning environment.",
+                    "Good communication between school and families."
+                ]
+            }
+        },
+        'fruitvale': {
+            id: 'fruitvale',
+            name: 'Fruitvale Elementary School',
+            type: 'elementary',
+            address: '3200 25th Avenue, Oakland, CA 94601',
+            phone: '(510) 879-2600',
+            enrollment: 350,
+            budget: 2.6,
+            rankings: {
+                california: 1567,
+                national: 19876
+            },
+            enrollmentInfo: {
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
+                schoolWebsite: 'https://www.ousd.org/fruitvale',
+                contactEmail: 'office@fruitvale.ousd.org'
+            },
+            neighborhood: {
+                name: 'Fruitvale',
+                description: 'A vibrant, culturally rich neighborhood known for its Latino community, local businesses, and strong sense of community.',
+                demographics: {
+                    medianIncome: 70000,
+                    population: 25000,
+                    diversity: 'High - Latino (60%), Asian (20%), African American (15%), White (3%), Other (2%)'
+                },
+                amenities: {
+                    parks: ['Fruitvale Village', 'Dimond Park'],
+                    shopping: 'Fruitvale Village, International Boulevard',
+                    transportation: 'BART Fruitvale Station, AC Transit lines'
+                },
+                safety: {
+                    crimeRate: 'Moderate',
+                    walkability: 'Good',
+                    familyFriendly: 'High'
+                }
+            },
+            trends: {
+                enrollment: [345, 350, 355, 350, 350],
+                testScores: [64, 66, 68, 70, 72],
+                budget: [2.2, 2.3, 2.4, 2.5, 2.6],
+                parentSatisfaction: [3.8, 3.9, 4.0, 4.1, 4.2]
+            },
+            parentSentiment: {
+                overall: 4.2,
+                academics: 4.1,
+                safety: 4.3,
+                communication: 4.0,
+                facilities: 4.1,
+                totalResponses: 42,
+                comments: [
+                    "Fruitvale Elementary has a wonderful community feel.",
+                    "The teachers are caring and work hard to support each student.",
+                    "Great diversity and cultural richness in the school community.",
+                    "My child has grown both academically and socially here."
+                ]
+            }
         }
     },
     
