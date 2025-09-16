@@ -303,6 +303,67 @@ class OUSDCharts {
     getChart(canvasId) {
         return this.charts[canvasId];
     }
+    
+    // Display parent comments instead of chart
+    displayParentComments(canvasId, school) {
+        const ctx = document.getElementById(canvasId);
+        if (!ctx) return;
+        
+        // Destroy existing chart if it exists
+        if (this.charts[canvasId]) {
+            this.charts[canvasId].destroy();
+        }
+        
+        // Get the chart container
+        const chartContainer = ctx.closest('.chart-container');
+        if (!chartContainer) return;
+        
+        // Create comments HTML
+        const commentsHTML = `
+            <div class="parent-comments">
+                <h4>Parent Feedback</h4>
+                <div class="sentiment-stats">
+                    <div class="sentiment-stat">
+                        <span class="stat-label">Overall Satisfaction</span>
+                        <span class="stat-value">${school.parentSentiment.overall}/5</span>
+                    </div>
+                    <div class="sentiment-stat">
+                        <span class="stat-label">Academic Quality</span>
+                        <span class="stat-value">${school.parentSentiment.academics}/5</span>
+                    </div>
+                    <div class="sentiment-stat">
+                        <span class="stat-label">School Safety</span>
+                        <span class="stat-value">${school.parentSentiment.safety}/5</span>
+                    </div>
+                    <div class="sentiment-stat">
+                        <span class="stat-label">Communication</span>
+                        <span class="stat-value">${school.parentSentiment.communication}/5</span>
+                    </div>
+                    <div class="sentiment-stat">
+                        <span class="stat-label">Facilities</span>
+                        <span class="stat-value">${school.parentSentiment.facilities}/5</span>
+                    </div>
+                    <div class="sentiment-stat">
+                        <span class="stat-label">Total Responses</span>
+                        <span class="stat-value">${school.parentSentiment.totalResponses}</span>
+                    </div>
+                </div>
+                <div class="comments-section">
+                    <h5>Parent Comments</h5>
+                    <div class="comments-list">
+                        ${school.parentSentiment.comments.map(comment => 
+                            `<div class="comment-item">
+                                <div class="comment-text">"${comment}"</div>
+                            </div>`
+                        ).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Replace chart with comments
+        chartContainer.innerHTML = commentsHTML;
+    }
     // Create individual school chart
     createIndividualSchoolChart(canvasId, schoolId, metric) {
         const ctx = document.getElementById(canvasId);
@@ -337,10 +398,9 @@ class OUSDCharts {
                 color = this.colors.secondary;
                 break;
             case "parent-sentiment":
-                data = school.trends.parentSatisfaction;
-                label = "Parent Satisfaction (1-5)";
-                color = this.colors.quaternary;
-                break;
+                // For parent sentiment, show comments instead of chart
+                this.displayParentComments(canvasId, school);
+                return;
         }
 
         this.charts[canvasId] = new Chart(ctx, {
