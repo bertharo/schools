@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="OUSD Trends">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>OUSD Mobile Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .mobile-test-info {
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        .device-info {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 12px 0;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">OUSD Mobile Test</h1>
+            <p class="header-subtitle">Testing mobile responsiveness</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="mobile-test-info">
+                <h3>📱 Mobile Responsiveness Test</h3>
+                <p>This page tests the mobile responsiveness of the OUSD Dashboard. Try resizing your browser or viewing on different devices.</p>
+            </div>
+            
+            <div class="device-info" id="device-info">
+                <div>Screen Width: <span id="screen-width"></span>px</div>
+                <div>Screen Height: <span id="screen-height"></span>px</div>
+                <div>Device Pixel Ratio: <span id="pixel-ratio"></span></div>
+                <div>Orientation: <span id="orientation"></span></div>
+                <div>Touch Support: <span id="touch-support"></span></div>
+            </div>
+
+            <section class="section">
+                <h2 class="section-title">Sample Charts</h2>
+                <div class="chart-container">
+                    <canvas id="test-chart"></canvas>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Sample Controls</h2>
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="test-select">Test Dropdown</label>
+                        <select id="test-select" class="control-select">
+                            <option value="">Choose an option...</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Sample Cards</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">1,234</div>
+                        <div class="stat-label">Total Students</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">85%</div>
+                        <div class="stat-label">Graduation Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">$2.5M</div>
+                        <div class="stat-label">Budget</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Update device info
+        function updateDeviceInfo() {
+            document.getElementById('screen-width').textContent = window.innerWidth;
+            document.getElementById('screen-height').textContent = window.innerHeight;
+            document.getElementById('pixel-ratio').textContent = window.devicePixelRatio;
+            document.getElementById('orientation').textContent = window.innerWidth > window.innerHeight ? 'Landscape' : 'Portrait';
+            document.getElementById('touch-support').textContent = 'ontouchstart' in window ? 'Yes' : 'No';
+        }
+        
+        // Update on resize
+        window.addEventListener('resize', updateDeviceInfo);
+        updateDeviceInfo();
+        
+        // Create test chart
+        const ctx = document.getElementById('test-chart');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2020', '2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: 'Test Data',
+                    data: [10, 20, 30, 40, 50],
+                    borderColor: '#2563eb',
+                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Mobile Test Chart'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

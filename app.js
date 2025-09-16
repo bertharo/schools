@@ -392,3 +392,85 @@ document.addEventListener('DOMContentLoaded', () => {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { OUSDDashboard, dashboardUtils };
 }
+
+    // Mobile optimization methods
+    optimizeForMobile() {
+        // Reduce chart animation duration on mobile
+        if (window.innerWidth <= 768) {
+            Chart.defaults.animation.duration = 500;
+            Chart.defaults.animation.easing = 'easeOutQuart';
+        }
+        
+        // Optimize touch interactions
+        this.setupTouchOptimizations();
+        
+        // Lazy load charts on mobile
+        if (window.innerWidth <= 768) {
+            this.setupLazyLoading();
+        }
+    }
+    
+    setupTouchOptimizations() {
+        // Add touch-friendly event listeners
+        const touchElements = document.querySelectorAll('.school-card, .stat-card, .nav-link');
+        touchElements.forEach(element => {
+            element.addEventListener('touchstart', (e) => {
+                element.style.transform = 'scale(0.98)';
+                element.style.transition = 'transform 0.1s ease';
+            });
+            
+            element.addEventListener('touchend', (e) => {
+                element.style.transform = 'scale(1)';
+            });
+        });
+    }
+    
+    setupLazyLoading() {
+        // Only load charts when they come into view on mobile
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const chartContainer = entry.target;
+                    const chartId = chartContainer.querySelector('canvas')?.id;
+                    if (chartId && !this.charts[chartId]) {
+                        this.loadChartOnDemand(chartId);
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        // Observe all chart containers
+        document.querySelectorAll('.chart-container').forEach(container => {
+            observer.observe(container);
+        });
+    }
+    
+    loadChartOnDemand(chartId) {
+        // Load specific chart based on container
+        const container = document.getElementById(chartId)?.closest('.chart-container');
+        if (!container) return;
+        
+        const section = container.closest('.section');
+        if (!section) return;
+        
+        // Determine chart type and load accordingly
+        if (section.id === 'enrollment-section') {
+            this.updateEnrollmentChart();
+        } else if (section.id === 'test-scores-section') {
+            this.updateTestScoresChart();
+        } else if (section.id === 'budget-section') {
+            this.updateBudgetChart();
+        } else if (section.id === 'sentiment-section') {
+            this.updateSentimentChart();
+        }
+    }
+    
+    // Override init to include mobile optimization
+    init() {
+        this.setupEventListeners();
+        this.loadInitialData();
+        this.createInitialCharts();
+        this.updateDistrictStats();
+        this.populateTopSchools();
+        this.optimizeForMobile();
+    }

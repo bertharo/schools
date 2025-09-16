@@ -797,3 +797,304 @@ body {
 .text-gray-600 { color: var(--gray-600); }
 .text-gray-700 { color: var(--gray-700); }
 .text-gray-900 { color: var(--gray-900); }
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 var(--space-6);
+    }
+    
+    .header-title {
+        font-size: 2.25rem;
+    }
+    
+    .nav-list {
+        gap: var(--space-4);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+    
+    .schools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .chart-container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--space-4);
+    }
+    
+    .header {
+        padding: var(--space-8) 0;
+    }
+    
+    .header-title {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: var(--space-3);
+        align-items: flex-start;
+    }
+    
+    .nav-link {
+        padding: var(--space-3) var(--space-4);
+        font-size: 1rem;
+    }
+    
+    .controls {
+        flex-direction: column;
+        gap: var(--space-4);
+        align-items: stretch;
+    }
+    
+    .control-group {
+        min-width: 100%;
+    }
+    
+    .control-select {
+        width: 100%;
+        font-size: 1rem;
+        padding: var(--space-3);
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .stat-card {
+        padding: var(--space-6);
+    }
+    
+    .schools-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .school-metrics {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .sentiment-stats {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .schools-list {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+    
+    .breakdown-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .chart-container {
+        height: 300px;
+        padding: var(--space-4);
+        margin: var(--space-4) 0;
+    }
+    
+    .section {
+        padding: var(--space-6);
+        margin: var(--space-6) 0;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-4);
+    }
+    
+    .school-card {
+        padding: var(--space-4);
+    }
+    
+    .school-name {
+        font-size: 1.125rem;
+    }
+    
+    .school-address {
+        font-size: 0.875rem;
+    }
+    
+    .metric-value {
+        font-size: 1.5rem;
+    }
+    
+    .metric-label {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--space-3);
+    }
+    
+    .header {
+        padding: var(--space-6) 0;
+    }
+    
+    .header-title {
+        font-size: 1.75rem;
+        line-height: 1.1;
+    }
+    
+    .main-content {
+        padding: var(--space-8) 0;
+    }
+    
+    .section {
+        padding: var(--space-4);
+        margin: var(--space-4) 0;
+    }
+    
+    .section-title {
+        font-size: 1.25rem;
+        margin-bottom: var(--space-3);
+    }
+    
+    .chart-container {
+        height: 250px;
+        padding: var(--space-3);
+        margin: var(--space-3) 0;
+    }
+    
+    .stat-card {
+        padding: var(--space-4);
+    }
+    
+    .stat-value {
+        font-size: 1.75rem;
+    }
+    
+    .stat-label {
+        font-size: 0.875rem;
+    }
+    
+    .school-card {
+        padding: var(--space-3);
+    }
+    
+    .school-name {
+        font-size: 1rem;
+    }
+    
+    .school-address {
+        font-size: 0.8rem;
+    }
+    
+    .metric-value {
+        font-size: 1.25rem;
+    }
+    
+    .metric-label {
+        font-size: 0.8rem;
+    }
+    
+    .control-select {
+        font-size: 0.9rem;
+        padding: var(--space-2) var(--space-3);
+    }
+    
+    .nav-link {
+        padding: var(--space-2) var(--space-3);
+        font-size: 0.9rem;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    .nav-link {
+        padding: var(--space-4) var(--space-6);
+        min-height: 44px;
+    }
+    
+    .control-select {
+        padding: var(--space-4);
+        min-height: 44px;
+    }
+    
+    .school-card {
+        padding: var(--space-4);
+        min-height: 60px;
+    }
+    
+    .stat-card {
+        padding: var(--space-4);
+        min-height: 80px;
+    }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+    .header {
+        padding: var(--space-4) 0;
+    }
+    
+    .header-title {
+        font-size: 1.5rem;
+    }
+    
+    .main-content {
+        padding: var(--space-6) 0;
+    }
+    
+    .chart-container {
+        height: 200px;
+    }
+    
+    .section {
+        padding: var(--space-4);
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .chart-container {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Dark mode support for mobile */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+    :root {
+        --gray-50: #1f2937;
+        --gray-100: #374151;
+        --gray-200: #4b5563;
+        --gray-300: #6b7280;
+        --gray-400: #9ca3af;
+        --gray-500: #d1d5db;
+        --gray-600: #e5e7eb;
+        --gray-700: #f3f4f6;
+        --gray-800: #f9fafb;
+        --gray-900: #ffffff;
+    }
+    
+    .header {
+        background: linear-gradient(135deg, var(--gray-800) 0%, var(--gray-900) 100%);
+    }
+    
+    .stat-card {
+        background: var(--gray-100);
+        border: 1px solid var(--gray-200);
+    }
+    
+    .school-card {
+        background: var(--gray-100);
+        border: 1px solid var(--gray-200);
+    }
+}
