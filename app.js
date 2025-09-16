@@ -1,425 +1,388 @@
-// Enhanced OUSD Dashboard with School Filtering and Parent Sentiment
-class OUSDDashboard {
+// Parent-Focused OUSD School Finder
+class OUSDSchoolFinder {
     constructor() {
         this.currentFilters = {
-            enrollment: {
-                years: 10,
-                schoolType: 'all'
-            },
-            testScores: {
-                subject: 'math',
-                grade: 'all'
-            },
-            budget: {
-                category: 'total'
-            },
-            sentiment: {
-                schoolType: 'all',
-                metric: 'overall'
-            },
-            individualSchool: {
-                schoolId: '',
-                metric: 'enrollment'
-            }
+            schoolType: 'all',
+            minRating: 4.0,
+            sortBy: 'rating'
         };
+        this.currentView = 'grid';
+        this.selectedSchool = null;
         
         this.init();
-
     }
 
     init() {
         this.setupEventListeners();
         this.loadInitialData();
-        this.createInitialCharts();
-        this.updateDistrictStats();
-        this.populateTopSchools();
-        
-        // Ensure dropdown population happens after DOM is fully ready
-        setTimeout(() => {
-            this.populateSchoolDropdown();
-        }, 100);
+        this.renderSchools();
+        this.optimizeForMobile();
     }
 
     setupEventListeners() {
-        // Enrollment controls
-        const enrollmentYears = document.getElementById('enrollment-years');
+        // Filter controls
         const schoolTypeFilter = document.getElementById('school-type-filter');
-        
-        if (enrollmentYears) {
-            enrollmentYears.addEventListener('change', (e) => {
-                this.currentFilters.enrollment.years = parseInt(e.target.value);
-                this.updateEnrollmentChart();
-            });
-        }
+        const ratingFilter = document.getElementById('rating-filter');
+        const sortBy = document.getElementById('sort-by');
         
         if (schoolTypeFilter) {
             schoolTypeFilter.addEventListener('change', (e) => {
-                this.currentFilters.enrollment.schoolType = e.target.value;
-                this.updateEnrollmentChart();
+                this.currentFilters.schoolType = e.target.value;
+                this.renderSchools();
+            });
+        }
+        
+        if (ratingFilter) {
+            ratingFilter.addEventListener('change', (e) => {
+                this.currentFilters.minRating = parseFloat(e.target.value);
+                this.renderSchools();
+            });
+        }
+        
+        if (sortBy) {
+            sortBy.addEventListener('change', (e) => {
+                this.currentFilters.sortBy = e.target.value;
+                this.renderSchools();
             });
         }
 
-        // Test scores controls
-        const testSubject = document.getElementById('test-subject');
-        const testGrade = document.getElementById('test-grade');
-        
-        if (testSubject) {
-            testSubject.addEventListener('change', (e) => {
-                this.currentFilters.testScores.subject = e.target.value;
-                this.updateTestScoresChart();
+        // View toggle
+        const viewBtns = document.querySelectorAll('.view-btn');
+        viewBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                this.currentView = e.target.dataset.view;
+                this.updateViewToggle();
+                this.renderSchools();
             });
-        }
-        
-        if (testGrade) {
-            testGrade.addEventListener('change', (e) => {
-                this.currentFilters.testScores.grade = e.target.value;
-                this.updateTestScoresChart();
-            });
-        }
+        });
 
-        // Budget controls
-        const budgetCategory = document.getElementById('budget-category');
-        
-        if (budgetCategory) {
-            budgetCategory.addEventListener('change', (e) => {
-                this.currentFilters.budget.category = e.target.value;
-                this.updateBudgetChart();
-            });
-        }
-
-        // Individual school controls
-        const schoolSelect = document.getElementById('school-select');
-        const schoolMetric = document.getElementById('school-metric');
-        
-        if (schoolSelect) {
-            schoolSelect.addEventListener('change', (e) => {
-                this.currentFilters.individualSchool.schoolId = e.target.value;
-                this.updateIndividualSchoolView();
-            });
-        }
-        
-        if (schoolMetric) {
-            schoolMetric.addEventListener('change', (e) => {
-                this.currentFilters.individualSchool.metric = e.target.value;
-                this.updateIndividualSchoolChart();
-            });
-        }
-
-        // Sentiment controls
-        const sentimentSchoolType = document.getElementById('sentiment-school-type');
-        const sentimentMetric = document.getElementById('sentiment-metric');
-        
-        if (sentimentSchoolType) {
-            sentimentSchoolType.addEventListener('change', (e) => {
-                this.currentFilters.sentiment.schoolType = e.target.value;
-                this.updateSentimentChart();
-            });
-        }
-        
-        if (sentimentMetric) {
-            sentimentMetric.addEventListener('change', (e) => {
-                this.currentFilters.sentiment.metric = e.target.value;
-                this.updateSentimentChart();
-            });
-        }
-
-        // Smooth scrolling for navigation
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+        // Tab switching
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                this.switchTab(e.target.dataset.tab);
             });
         });
     }
 
     loadInitialData() {
-        console.log('OUSD Dashboard initialized with enhanced features');
+        console.log('OUSD School Finder initialized for parents');
     }
 
-    createInitialCharts() {
-        this.updateEnrollmentChart();
-        this.updateTestScoresChart();
-        this.updateBudgetChart();
-        this.createMiniCharts();
-        this.updateSentimentChart();
-    }
+    renderSchools() {
+        const schoolsGrid = document.getElementById('schools-grid');
+        if (!schoolsGrid) return;
 
-    updateEnrollmentChart() {
-        const { years, schoolType } = this.currentFilters.enrollment;
-        ousdCharts.createEnrollmentChart('enrollmentChart', schoolType, years);
-    }
-
-    updateTestScoresChart() {
-        const { subject, grade } = this.currentFilters.testScores;
-        ousdCharts.createTestScoresChart('testScoresChart', subject, grade);
-    }
-
-    updateBudgetChart() {
-        const { category } = this.currentFilters.budget;
-        ousdCharts.createBudgetChart('budgetChart', category);
-    }
-
-    updateSentimentChart() {
-        const { schoolType, metric } = this.currentFilters.sentiment;
-        ousdCharts.createSentimentChart('sentimentChart', schoolType, metric);
-    }
-
-    createMiniCharts() {
-        ousdCharts.createMiniChart('elementaryChart', 'elementary');
-        ousdCharts.createMiniChart('middleChart', 'middle');
-        ousdCharts.createMiniChart('highChart', 'high');
-    }
-
-    updateIndividualSchoolView() {
-        const schoolId = this.currentFilters.individualSchool.schoolId;
-        const schoolDetails = document.getElementById('school-details');
+        const schools = this.getFilteredSchools();
         
-        if (!schoolId) {
-            schoolDetails.style.display = 'none';
-            return;
-        }
-
-        const school = schoolData.getSchoolById(schoolId);
-        if (!school) return;
-
-        // Update school header
-        document.getElementById('school-name').textContent = school.name;
-        document.getElementById('school-address').textContent = school.address;
-        document.getElementById('school-phone').textContent = school.phone;
-
-        // Update school metrics
-        document.getElementById('school-enrollment').textContent = school.enrollment.toLocaleString();
-        document.getElementById('school-budget').textContent = `$${school.budget}M`;
-        
-        const budgetPerStudent = ((school.budget * 1000000) / school.enrollment).toLocaleString();
-        document.getElementById('school-budget-per-student').textContent = `$${budgetPerStudent}`;
-        
-        document.getElementById('school-satisfaction').textContent = `${school.parentSentiment.overall}/5`;
-        
-        // Update rankings
-        document.getElementById('school-ca-ranking').textContent = `#${school.rankings.california.toLocaleString()}`;
-        document.getElementById('school-national-ranking').textContent = `#${school.rankings.national.toLocaleString()}`;
-
-        // Show school details
-        schoolDetails.style.display = 'block';
-        schoolDetails.classList.add('fade-in');
-
-        // Update chart
-        this.updateIndividualSchoolChart();
-    }
-
-    updateIndividualSchoolChart() {
-        const { schoolId, metric } = this.currentFilters.individualSchool;
-        if (schoolId) {
-            ousdCharts.createIndividualSchoolChart('individualSchoolChart', schoolId, metric);
-        }
-    }
-
-    updateDistrictStats() {
-        const stats = ousdData.districtStats;
-        
-        // Update enrollment
-        const totalEnrollmentEl = document.getElementById('total-enrollment');
-        if (totalEnrollmentEl) {
-            totalEnrollmentEl.textContent = dataUtils.formatNumber(stats.totalEnrollment);
-        }
-
-        // Update budget
-        const totalBudgetEl = document.getElementById('total-budget');
-        if (totalBudgetEl) {
-            totalBudgetEl.textContent = dataUtils.formatCurrency(stats.totalBudget);
-        }
-
-        // Update parent satisfaction
-        const parentSatisfactionEl = document.getElementById('parent-satisfaction');
-        if (parentSatisfactionEl) {
-            parentSatisfactionEl.textContent = '4.2/5';
-        }
-
-        // Update school performance stats
-        this.updateSchoolPerformanceStats();
-    }
-
-    updateSchoolPerformanceStats() {
-        // Update elementary school stats
-        const elemEnrollmentEl = document.getElementById('elem-avg-enrollment');
-        const elemTestAvgEl = document.getElementById('elem-test-avg');
-        const elemSatisfactionEl = document.getElementById('elem-satisfaction');
-        
-        if (elemEnrollmentEl) {
-            const elemData = dataUtils.getSchoolPerformanceData('elementary');
-            elemEnrollmentEl.textContent = dataUtils.formatNumber(elemData.avgEnrollment);
-        }
-        
-        if (elemTestAvgEl) {
-            const elemData = dataUtils.getSchoolPerformanceData('elementary');
-            elemTestAvgEl.textContent = elemData.testScoreAvg + '%';
-        }
-
-        if (elemSatisfactionEl) {
-            elemSatisfactionEl.textContent = '4.3/5';
-        }
-
-        // Update middle school stats
-        const middleEnrollmentEl = document.getElementById('middle-avg-enrollment');
-        const middleTestAvgEl = document.getElementById('middle-test-avg');
-        const middleSatisfactionEl = document.getElementById('middle-satisfaction');
-        
-        if (middleEnrollmentEl) {
-            const middleData = dataUtils.getSchoolPerformanceData('middle');
-            middleEnrollmentEl.textContent = dataUtils.formatNumber(middleData.avgEnrollment);
-        }
-        
-        if (middleTestAvgEl) {
-            const middleData = dataUtils.getSchoolPerformanceData('middle');
-            middleTestAvgEl.textContent = middleData.testScoreAvg + '%';
-        }
-
-        if (middleSatisfactionEl) {
-            middleSatisfactionEl.textContent = '4.1/5';
-        }
-
-        // Update high school stats
-        const highEnrollmentEl = document.getElementById('high-avg-enrollment');
-        const highGraduationEl = document.getElementById('high-graduation-rate');
-        const highSatisfactionEl = document.getElementById('high-satisfaction');
-        
-        if (highEnrollmentEl) {
-            const highData = dataUtils.getSchoolPerformanceData('high');
-            highEnrollmentEl.textContent = dataUtils.formatNumber(highData.avgEnrollment);
-        }
-        
-        if (highGraduationEl) {
-            const highData = dataUtils.getSchoolPerformanceData('high');
-            highGraduationEl.textContent = highData.graduationRate + '%';
-        }
-
-        if (highSatisfactionEl) {
-            highSatisfactionEl.textContent = '3.7/5';
-        }
-    }
-
-    populateTopSchools() {
-        const topSchoolsList = document.getElementById('top-schools-list');
-        if (!topSchoolsList) return;
-
-        // Get all schools and filter by parent satisfaction >= 4.0
-        const allSchools = schoolData.getAllSchools();
-        const topSchools = allSchools
-            .filter(school => school.parentSentiment.overall >= 4.0)
-            .sort((a, b) => b.parentSentiment.overall - a.parentSentiment.overall)
-            .slice(0, 6);
-        
-        topSchoolsList.innerHTML = topSchools.map(school => `
-            <div class="school-item">
-                <h4>${school.name}</h4>
-                <div class="school-type">${school.type.charAt(0).toUpperCase() + school.type.slice(1)} School</div>
-                <div class="school-rating">
-                    <span class="rating-stars">${this.generateStars(school.parentSentiment.overall)}</span>
-                    <span class="rating-number">${school.parentSentiment.overall}/5</span>
+        if (schools.length === 0) {
+            schoolsGrid.innerHTML = `
+                <div class="no-schools">
+                    <h3>No schools found</h3>
+                    <p>Try adjusting your filters to see more schools.</p>
                 </div>
-                <div class="school-stats">
-                    <div>Enrollment: ${school.enrollment.toLocaleString()}</div>
-                    <div>Budget: $${school.budget}M</div>
-                </div>
-            </div>
-        `).join('');
-    }
-
-    generateStars(rating) {
-        const fullStars = Math.floor(rating);
-        const hasHalfStar = rating % 1 >= 0.5;
-        const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-        
-        return '★'.repeat(fullStars) + 
-               (hasHalfStar ? '☆' : '') + 
-               '☆'.repeat(emptyStars);
-    }
-
-    // Method to refresh all data
-    refreshData() {
-        console.log('Refreshing data...');
-        this.updateDistrictStats();
-        this.createInitialCharts();
-        this.populateTopSchools();
-        this.populateSchoolDropdown();
-    }
-
-    // Method to export data
-    exportData(format = 'csv') {
-        console.log(`Exporting data as ${format}...`);
-        // Implementation would go here
-    }
-
-    // Method to print dashboard
-    printDashboard() {
-        window.print();
-    }
-    // Populate school dropdown with all schools from data
-    populateSchoolDropdown() {
-        console.log('Populating school dropdown...');
-        const schoolSelect = document.getElementById('school-select');
-        if (!schoolSelect) {
-            console.error('School select element not found');
+            `;
             return;
         }
 
-        // Check if schoolData is available
-        if (typeof schoolData === 'undefined') {
-            console.error('schoolData is not available');
-            return;
-        }
-
-        // Clear existing options except the first one
-        schoolSelect.innerHTML = '<option value="">Choose a school...</option>';
-
-        // Get all schools and group by type
-        const allSchools = schoolData.getAllSchools();
-        console.log('Found schools:', allSchools.length);
+        schoolsGrid.innerHTML = schools.map(school => this.createSchoolCard(school)).join('');
         
-        const schoolsByType = {
-            elementary: allSchools.filter(school => school.type === 'elementary'),
-            middle: allSchools.filter(school => school.type === 'middle'),
-            high: allSchools.filter(school => school.type === 'high')
-        };
-
-        console.log('Schools by type:', schoolsByType);
-
-        // Create optgroups for each school type
-        Object.keys(schoolsByType).forEach(type => {
-            const optgroup = document.createElement('optgroup');
-            optgroup.label = type.charAt(0).toUpperCase() + type.slice(1) + ' Schools';
-            
-            schoolsByType[type].forEach(school => {
-                const option = document.createElement('option');
-                option.value = school.id;
-                option.textContent = school.name;
-                optgroup.appendChild(option);
+        // Add click listeners to school cards
+        const schoolCards = document.querySelectorAll('.school-card');
+        schoolCards.forEach(card => {
+            card.addEventListener('click', () => {
+                this.showSchoolDetails(card.dataset.schoolId);
             });
-            
-            schoolSelect.appendChild(optgroup);
+        });
+    }
+
+    getFilteredSchools() {
+        if (typeof schoolData === 'undefined') return [];
+        
+        let schools = schoolData.getAllSchools();
+        
+        // Filter by school type
+        if (this.currentFilters.schoolType !== 'all') {
+            schools = schools.filter(school => school.type === this.currentFilters.schoolType);
+        }
+        
+        // Filter by minimum rating
+        schools = schools.filter(school => school.parentSentiment.overall >= this.currentFilters.minRating);
+        
+        // Sort schools
+        schools.sort((a, b) => {
+            switch (this.currentFilters.sortBy) {
+                case 'rating':
+                    return b.parentSentiment.overall - a.parentSentiment.overall;
+                case 'enrollment':
+                    return b.enrollment - a.enrollment;
+                case 'budget':
+                    return b.budget - a.budget;
+                case 'ranking':
+                    return a.rankings.california - b.rankings.california;
+                default:
+                    return 0;
+            }
         });
         
-        console.log('Dropdown populated with', schoolSelect.options.length, 'options');
+        return schools;
+    }
+
+    createSchoolCard(school) {
+        const rating = school.parentSentiment.overall;
+        const budgetPerStudent = ((school.budget * 1000000) / school.enrollment).toLocaleString();
+        
+        // Create highlight tags
+        const highlights = [];
+        if (rating >= 4.5) highlights.push({ text: 'High Rating', class: 'rating-high' });
+        if (school.budget > 3) highlights.push({ text: 'Well-Funded', class: 'budget-high' });
+        if (school.rankings.california < 500) highlights.push({ text: 'Top State Ranking', class: 'rating-high' });
+        
+        return `
+            <div class="school-card" data-school-id="${school.id}">
+                <div class="school-header">
+                    <div>
+                        <div class="school-name">${school.name}</div>
+                        <div class="school-level">${school.type.charAt(0).toUpperCase() + school.type.slice(1)} School</div>
+                    </div>
+                    <div class="school-rating">
+                        ⭐ ${rating.toFixed(1)}
+                    </div>
+                </div>
+                
+                <div class="school-stats">
+                    <div class="school-stat">
+                        <div class="stat-label">Enrollment</div>
+                        <div class="stat-value">${school.enrollment.toLocaleString()}</div>
+                    </div>
+                    <div class="school-stat">
+                        <div class="stat-label">Budget per Student</div>
+                        <div class="stat-value">$${budgetPerStudent}</div>
+                    </div>
+                    <div class="school-stat">
+                        <div class="stat-label">CA Ranking</div>
+                        <div class="stat-value">#${school.rankings.california.toLocaleString()}</div>
+                    </div>
+                    <div class="school-stat">
+                        <div class="stat-label">National Ranking</div>
+                        <div class="stat-value">#${school.rankings.national.toLocaleString()}</div>
+                    </div>
+                </div>
+                
+                <div class="school-highlights">
+                    ${highlights.map(highlight => 
+                        `<span class="highlight-tag ${highlight.class}">${highlight.text}</span>`
+                    ).join('')}
+                </div>
+            </div>
+        `;
+    }
+
+    showSchoolDetails(schoolId) {
+        const school = schoolData.getSchoolById(schoolId);
+        if (!school) return;
+        
+        this.selectedSchool = school;
+        
+        // Update school details
+        document.getElementById('detailed-school-name').textContent = school.name;
+        document.getElementById('school-level-badge').textContent = school.type.charAt(0).toUpperCase() + school.type.slice(1);
+        document.getElementById('school-rating-badge').textContent = `⭐ ${school.parentSentiment.overall.toFixed(1)}`;
+        
+        document.getElementById('school-address').textContent = school.address;
+        document.getElementById('school-phone').textContent = school.phone;
+        document.getElementById('school-enrollment').textContent = school.enrollment.toLocaleString();
+        
+        const budgetPerStudent = ((school.budget * 1000000) / school.enrollment).toLocaleString();
+        document.getElementById('school-budget').textContent = `$${school.budget}M`;
+        document.getElementById('school-budget-per-student').textContent = `$${budgetPerStudent}`;
+        document.getElementById('school-satisfaction').textContent = `${school.parentSentiment.overall}/5`;
+        document.getElementById('school-ca-ranking').textContent = `#${school.rankings.california.toLocaleString()}`;
+        
+        // Update parent feedback
+        this.updateParentFeedback(school);
+        
+        // Show details section
+        document.getElementById('school-details-section').style.display = 'block';
+        
+        // Scroll to details
+        document.getElementById('school-details-section').scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+        
+        // Load initial tab
+        this.switchTab('performance');
+    }
+
+    updateParentFeedback(school) {
+        const sentiment = school.parentSentiment;
+        
+        // Update rating displays
+        this.updateRatingDisplay('overall', sentiment.overall);
+        this.updateRatingDisplay('academics', sentiment.academics);
+        this.updateRatingDisplay('safety', sentiment.safety);
+        this.updateRatingDisplay('communication', sentiment.communication);
+        this.updateRatingDisplay('facilities', sentiment.facilities);
+        
+        // Update comments
+        const commentsList = document.getElementById('parent-comments-list');
+        if (commentsList) {
+            commentsList.innerHTML = school.parentSentiment.comments.map(comment => 
+                `<div class="comment-item">
+                    <div class="comment-text">${comment}</div>
+                </div>`
+            ).join('');
+        }
+    }
+
+    updateRatingDisplay(id, rating) {
+        const starsEl = document.getElementById(`${id}-stars`);
+        const valueEl = document.getElementById(`${id}-value`);
+        
+        if (starsEl) {
+            starsEl.textContent = '★'.repeat(Math.floor(rating)) + '☆'.repeat(5 - Math.floor(rating));
+        }
+        
+        if (valueEl) {
+            valueEl.textContent = `${rating.toFixed(1)}/5`;
+        }
+    }
+
+    switchTab(tabName) {
+        // Update tab buttons
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+        
+        // Update tab panels
+        document.querySelectorAll('.tab-panel').forEach(panel => {
+            panel.classList.remove('active');
+        });
+        document.getElementById(`tab-${tabName}`).classList.add('active');
+        
+        // Load tab content
+        this.loadTabContent(tabName);
+    }
+
+    loadTabContent(tabName) {
+        if (!this.selectedSchool) return;
+        
+        switch (tabName) {
+            case 'performance':
+                this.loadPerformanceChart();
+                break;
+            case 'resources':
+                this.loadResourcesChart();
+                break;
+            case 'feedback':
+                // Already loaded in updateParentFeedback
+                break;
+            case 'neighborhood':
+                // Static content, already in HTML
+                break;
+        }
+    }
+
+    loadPerformanceChart() {
+        const ctx = document.getElementById('performanceChart');
+        if (!ctx || !this.selectedSchool) return;
+        
+        const school = this.selectedSchool;
+        const years = ['2019', '2020', '2021', '2022', '2023'];
+        
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: 'Test Scores',
+                    data: school.trends.testScores,
+                    borderColor: '#2563eb',
+                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Academic Performance Over Time'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    }
+
+    loadResourcesChart() {
+        const ctx = document.getElementById('resourcesChart');
+        if (!ctx || !this.selectedSchool) return;
+        
+        const school = this.selectedSchool;
+        const years = ['2019', '2020', '2021', '2022', '2023'];
+        
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: 'Budget (Millions)',
+                    data: school.trends.budget,
+                    backgroundColor: '#059669',
+                    borderColor: '#047857',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'School Budget Over Time'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    updateViewToggle() {
+        document.querySelectorAll('.view-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        document.querySelector(`[data-view="${this.currentView}"]`).classList.add('active');
+    }
+
+    optimizeForMobile() {
+        // Reduce chart animation duration on mobile
+        if (window.innerWidth <= 768) {
+            Chart.defaults.animation.duration = 500;
+            Chart.defaults.animation.easing = 'easeOutQuart';
+        }
     }
 }
 
-// Initialize dashboard when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    const dashboard = new OUSDDashboard();
-    
-    // Add smooth scroll behavior
-    document.documentElement.style.scrollBehavior = 'smooth';
-});
-
-// Export for use in other files
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { OUSDDashboard, dashboardUtils };
+// Global function for back button
+function hideSchoolDetails() {
+    document.getElementById('school-details-section').style.display = 'none';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const finder = new OUSDSchoolFinder();
+});

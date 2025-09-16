@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Test</title>
+</head>
+<body>
+    <h1>School Dropdown Test</h1>
+    <select id="school-select">
+        <option value="">Choose a school...</option>
+    </select>
+    <div id="debug-output"></div>
+    
+    <script src="data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const debugOutput = document.getElementById('debug-output');
+            
+            // Test if data is loaded
+            if (typeof schoolData !== 'undefined') {
+                debugOutput.innerHTML += `✅ schoolData loaded: ${Object.keys(schoolData.schools).length} schools<br>`;
+                
+                // Test getAllSchools function
+                const allSchools = schoolData.getAllSchools();
+                debugOutput.innerHTML += `✅ getAllSchools() works: ${allSchools.length} schools<br>`;
+                
+                // Test dropdown population
+                const schoolSelect = document.getElementById('school-select');
+                
+                // Clear existing options
+                schoolSelect.innerHTML = '<option value="">Choose a school...</option>';
+                
+                // Get all schools and group by type
+                const schoolsByType = {
+                    elementary: allSchools.filter(school => school.type === 'elementary'),
+                    middle: allSchools.filter(school => school.type === 'middle'),
+                    high: allSchools.filter(school => school.type === 'high')
+                };
+                
+                debugOutput.innerHTML += `Elementary: ${schoolsByType.elementary.length} schools<br>`;
+                debugOutput.innerHTML += `Middle: ${schoolsByType.middle.length} schools<br>`;
+                debugOutput.innerHTML += `High: ${schoolsByType.high.length} schools<br>`;
+                
+                // Create optgroups for each school type
+                Object.keys(schoolsByType).forEach(type => {
+                    const optgroup = document.createElement('optgroup');
+                    optgroup.label = type.charAt(0).toUpperCase() + type.slice(1) + ' Schools';
+                    
+                    schoolsByType[type].forEach(school => {
+                        const option = document.createElement('option');
+                        option.value = school.id;
+                        option.textContent = school.name;
+                        optgroup.appendChild(option);
+                    });
+                    
+                    schoolSelect.appendChild(optgroup);
+                });
+                
+                debugOutput.innerHTML += `✅ Dropdown populated with ${schoolSelect.options.length} options<br>`;
+                
+            } else {
+                debugOutput.innerHTML += `❌ schoolData not loaded<br>`;
+            }
+        });
+    </script>
+</body>
+</html>

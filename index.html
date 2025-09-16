@@ -6,10 +6,10 @@
     <meta name="theme-color" content="#2563eb">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="OUSD Trends">
+    <meta name="apple-mobile-web-app-title" content="OUSD School Finder">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <title>OUSD Trends Dashboard</title>
+    <title>OUSD School Finder - Find the Best Schools in Oakland</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,321 +19,217 @@
 <body>
     <header class="header">
         <div class="container">
-            <h1 class="header-title">OUSD Trends</h1>
-            <p class="header-subtitle">Educational data insights for Oakland Unified School District</p>
+            <h1 class="header-title">🏫 OUSD School Finder</h1>
+            <p class="header-subtitle">Find the best schools in Oakland for your family</p>
+            <div class="header-stats">
+                <div class="stat">7 Featured Schools</div>
+                <div class="stat">44,647 Students</div>
+                <div class="stat">$1.2B Budget</div>
+            </div>
         </div>
     </header>
 
-    <nav class="navigation">
-        <div class="container">
-            <ul class="nav-list">
-                <li><a href="#overview" class="nav-link">Overview</a></li>
-                <li><a href="#enrollment" class="nav-link">Enrollment</a></li>
-                <li><a href="#performance" class="nav-link">Performance</a></li>
-                <li><a href="#budget" class="nav-link">Budget</a></li>
-                <li><a href="#schools" class="nav-link">Schools</a></li>
-                <li><a href="#feedback" class="nav-link">Feedback</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <main class="main-content">
         <div class="container">
-            <!-- Overview Section -->
-            <section id="overview" class="overview-section">
-                <h2>District Overview</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <h3>Total Enrollment</h3>
-                        <div class="stat-number" id="total-enrollment">44,647</div>
-                        <div class="stat-change" id="enrollment-change">+2.1% from last year</div>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Schools</h3>
-                        <div class="stat-number">82</div>
-                        <div class="stat-change">Elementary, Middle & High</div>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Budget</h3>
-                        <div class="stat-number" id="total-budget">$1.2B</div>
-                        <div class="stat-change" id="budget-change">+5.3% from last year</div>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Satisfaction</h3>
-                        <div class="stat-number" id="parent-satisfaction">4.2/5</div>
-                        <div class="stat-change" id="satisfaction-change">+0.3 from last year</div>
-                    </div>
+            <!-- School Search & Filter -->
+            <section class="search-section">
+                <div class="search-header">
+                    <h2>Find Your Perfect School</h2>
+                    <p>Compare schools by ratings, parent feedback, resources, and neighborhood</p>
                 </div>
-            </section>
-
-            <!-- Enrollment Trends Section -->
-            <section id="enrollment" class="section">
-                <h2>Enrollment Trends</h2>
-                <div class="controls">
-                    <div class="control-group">
-                        <label for="enrollment-years">Time Period</label>
-                        <select id="enrollment-years" class="control-select">
-                            <option value="5">Last 5 Years</option>
-                            <option value="10" selected>Last 10 Years</option>
-                            <option value="15">Last 15 Years</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <label for="school-type-filter">School Type</label>
+                
+                <div class="search-controls">
+                    <div class="search-group">
+                        <label for="school-type-filter">School Level</label>
                         <select id="school-type-filter" class="control-select">
                             <option value="all">All Schools</option>
-                            <option value="elementary">Elementary</option>
-                            <option value="middle">Middle</option>
-                            <option value="high">High School</option>
+                            <option value="elementary">Elementary (K-5)</option>
+                            <option value="middle">Middle (6-8)</option>
+                            <option value="high">High School (9-12)</option>
                         </select>
                     </div>
-                </div>
-                <div class="chart-container">
-                    <canvas id="enrollmentChart"></canvas>
-                </div>
-            </section>
-
-            <!-- Performance Section -->
-            <section id="performance" class="section">
-                <h2>Academic Performance</h2>
-                <div class="controls">
-                    <div class="control-group">
-                        <label for="test-subject">Subject</label>
-                        <select id="test-subject" class="control-select">
-                            <option value="math">Mathematics</option>
-                            <option value="english">English Language Arts</option>
-                            <option value="science">Science</option>
+                    <div class="search-group">
+                        <label for="rating-filter">Minimum Rating</label>
+                        <select id="rating-filter" class="control-select">
+                            <option value="0">Any Rating</option>
+                            <option value="3.5">3.5+ Stars</option>
+                            <option value="4.0" selected>4.0+ Stars</option>
+                            <option value="4.5">4.5+ Stars</option>
                         </select>
                     </div>
-                    <div class="control-group">
-                        <label for="test-grade">Grade Level</label>
-                        <select id="test-grade" class="control-select">
-                            <option value="all">All Grades</option>
-                            <option value="3">Grade 3</option>
-                            <option value="4">Grade 4</option>
-                            <option value="5">Grade 5</option>
-                            <option value="6">Grade 6</option>
-                            <option value="7">Grade 7</option>
-                            <option value="8">Grade 8</option>
-                            <option value="11">Grade 11</option>
+                    <div class="search-group">
+                        <label for="sort-by">Sort By</label>
+                        <select id="sort-by" class="control-select">
+                            <option value="rating">Parent Rating</option>
+                            <option value="enrollment">School Size</option>
+                            <option value="budget">Resources per Student</option>
+                            <option value="ranking">State Ranking</option>
                         </select>
-                    </div>
-                </div>
-                <div class="chart-container">
-                    <canvas id="testScoresChart"></canvas>
-                </div>
-            </section>
-
-            <!-- Budget Analysis Section -->
-            <section id="budget" class="section">
-                <h2>Budget Analysis</h2>
-                <div class="controls">
-                    <div class="control-group">
-                        <label for="budget-category">Category</label>
-                        <select id="budget-category" class="control-select">
-                            <option value="total">Total Budget</option>
-                            <option value="instruction">Instruction</option>
-                            <option value="support">Support Services</option>
-                            <option value="administration">Administration</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="chart-container">
-                    <canvas id="budgetChart"></canvas>
-                </div>
-                <div class="budget-breakdown">
-                    <h3>Budget Distribution</h3>
-                    <div class="breakdown-grid">
-                        <div class="breakdown-item">
-                            <span class="breakdown-label">Instruction</span>
-                            <span class="breakdown-value">65%</span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span class="breakdown-label">Support Services</span>
-                            <span class="breakdown-value">25%</span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span class="breakdown-label">Administration</span>
-                            <span class="breakdown-value">10%</span>
-                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- School Performance Section -->
-            <section id="schools" class="section">
-                <h2>School Performance</h2>
-                <div class="schools-grid">
-                    <div class="school-type-card">
-                        <h3>Elementary Schools</h3>
-                        <div class="school-stats">
-                            <div class="school-stat">
-                                <span class="stat-label">Average Enrollment</span>
-                                <span class="stat-value" id="elem-avg-enrollment">425</span>
-                            </div>
-                            <div class="school-stat">
-                                <span class="stat-label">Test Score Average</span>
-                                <span class="stat-value" id="elem-test-avg">72%</span>
-                            </div>
-                            <div class="school-stat">
-                                <span class="stat-label">Parent Satisfaction</span>
-                                <span class="stat-value" id="elem-satisfaction">4.3/5</span>
-                            </div>
-                        </div>
-                        <canvas id="elementaryChart" class="mini-chart"></canvas>
-                    </div>
-                    <div class="school-type-card">
-                        <h3>Middle Schools</h3>
-                        <div class="school-stats">
-                            <div class="school-stat">
-                                <span class="stat-label">Average Enrollment</span>
-                                <span class="stat-value" id="middle-avg-enrollment">650</span>
-                            </div>
-                            <div class="school-stat">
-                                <span class="stat-label">Test Score Average</span>
-                                <span class="stat-value" id="middle-test-avg">68%</span>
-                            </div>
-                            <div class="school-stat">
-                                <span class="stat-label">Parent Satisfaction</span>
-                                <span class="stat-value" id="middle-satisfaction">4.1/5</span>
-                            </div>
-                        </div>
-                        <canvas id="middleChart" class="mini-chart"></canvas>
-                    </div>
-                    <div class="school-type-card">
-                        <h3>High Schools</h3>
-                        <div class="school-stats">
-                            <div class="school-stat">
-                                <span class="stat-label">Average Enrollment</span>
-                                <span class="stat-value" id="high-avg-enrollment">1,200</span>
-                            </div>
-                            <div class="school-stat">
-                                <span class="stat-label">Graduation Rate</span>
-                                <span class="stat-value" id="high-graduation-rate">78.5%</span>
-                            </div>
-                            <div class="school-stat">
-                                <span class="stat-label">Parent Satisfaction</span>
-                                <span class="stat-value" id="high-satisfaction">3.7/5</span>
-                            </div>
-                        </div>
-                        <canvas id="highChart" class="mini-chart"></canvas>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Individual School Analysis -->
-            <section class="section">
-                <h2>Individual School Analysis</h2>
-                <div class="controls">
-                    <div class="control-group">
-                        <label for="school-select">Select School</label>
-                        <select id="school-select" class="control-select">
-                            <option value="">Choose a school...</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <label for="school-metric">Metric</label>
-                        <select id="school-metric" class="control-select">
-                            <option value="enrollment">Enrollment Trends</option>
-                            <option value="budget">Budget Analysis</option>
-                            <option value="test-scores">Test Scores</option>
-                            <option value="parent-sentiment">Parent Sentiment</option>
-                        </select>
+            <!-- School Comparison Grid -->
+            <section class="schools-section">
+                <div class="schools-header">
+                    <h2>Oakland Schools</h2>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid">Grid</button>
+                        <button class="view-btn" data-view="list">List</button>
                     </div>
                 </div>
                 
-                <div id="school-details" class="school-details" style="display: none;">
-                    <div class="school-header">
-                        <h3 id="school-name"></h3>
+                <div id="schools-grid" class="schools-grid">
+                    <!-- Schools will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Detailed School View -->
+            <section id="school-details-section" class="school-details-section" style="display: none;">
+                <div class="school-details-header">
+                    <button class="back-btn" onclick="hideSchoolDetails()">← Back to Schools</button>
+                    <h2 id="detailed-school-name"></h2>
+                    <div class="school-badges">
+                        <span id="school-level-badge" class="badge"></span>
+                        <span id="school-rating-badge" class="badge rating"></span>
+                    </div>
+                </div>
+                
+                <div class="school-details-content">
+                    <div class="school-overview">
                         <div class="school-info">
-                            <span id="school-address"></span> | <span id="school-phone"></span>
+                            <div class="info-item">
+                                <span class="label">Address</span>
+                                <span id="school-address" class="value"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Phone</span>
+                                <span id="school-phone" class="value"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Enrollment</span>
+                                <span id="school-enrollment" class="value"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="school-metrics">
+                            <div class="metric-card">
+                                <div class="metric-icon">💰</div>
+                                <div class="metric-content">
+                                    <div class="metric-label">Annual Budget</div>
+                                    <div class="metric-value" id="school-budget"></div>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon">👥</div>
+                                <div class="metric-content">
+                                    <div class="metric-label">Per Student</div>
+                                    <div class="metric-value" id="school-budget-per-student"></div>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon">⭐</div>
+                                <div class="metric-content">
+                                    <div class="metric-label">Parent Rating</div>
+                                    <div class="metric-value" id="school-satisfaction"></div>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon">🏆</div>
+                                <div class="metric-content">
+                                    <div class="metric-label">CA Ranking</div>
+                                    <div class="metric-value" id="school-ca-ranking"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="school-metrics">
-                        <div class="metric-card">
-                            <h4>Enrollment</h4>
-                            <div class="metric-value" id="school-enrollment"></div>
-                        </div>
-                        <div class="metric-card">
-                            <h4>Annual Budget</h4>
-                            <div class="metric-value" id="school-budget"></div>
-                        </div>
-                        <div class="metric-card">
-                            <h4>Budget per Student</h4>
-                            <div class="metric-value" id="school-budget-per-student"></div>
-                        </div>
-                        <div class="metric-card">
-                            <h4>Parent Satisfaction</h4>
-                            <div class="metric-value" id="school-satisfaction"></div>
-                        </div>
-                        <div class="metric-card">
-                            <h4>California Ranking</h4>
-                            <div class="metric-value" id="school-ca-ranking"></div>
-                        </div>
-                        <div class="metric-card">
-                            <h4>National Ranking</h4>
-                            <div class="metric-value" id="school-national-ranking"></div>
-                        </div>
+                    <div class="school-tabs">
+                        <button class="tab-btn active" data-tab="performance">Academic Performance</button>
+                        <button class="tab-btn" data-tab="resources">Resources & Budget</button>
+                        <button class="tab-btn" data-tab="feedback">Parent Feedback</button>
+                        <button class="tab-btn" data-tab="neighborhood">Neighborhood</button>
                     </div>
                     
-                    <div class="chart-container">
-                        <canvas id="individualSchoolChart"></canvas>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Parent Feedback Section -->
-            <section id="feedback" class="section">
-                <h2>Parent Feedback</h2>
-                <div class="controls">
-                    <div class="control-group">
-                        <label for="sentiment-school-type">School Type</label>
-                        <select id="sentiment-school-type" class="control-select">
-                            <option value="all">All Schools</option>
-                            <option value="elementary">Elementary</option>
-                            <option value="middle">Middle</option>
-                            <option value="high">High School</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <label for="sentiment-metric">Category</label>
-                        <select id="sentiment-metric" class="control-select">
-                            <option value="overall">Overall Satisfaction</option>
-                            <option value="academics">Academic Quality</option>
-                            <option value="safety">School Safety</option>
-                            <option value="communication">Parent Communication</option>
-                            <option value="facilities">Facility Quality</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="sentiment-overview">
-                    <div class="sentiment-stats">
-                        <div class="sentiment-stat">
-                            <h4>Average Rating</h4>
-                            <div class="rating-value" id="avg-rating">4.2</div>
-                            <div class="rating-stars" id="rating-stars">★★★★☆</div>
+                    <div class="tab-content">
+                        <div id="tab-performance" class="tab-panel active">
+                            <div class="chart-container">
+                                <canvas id="performanceChart"></canvas>
+                            </div>
                         </div>
-                        <div class="sentiment-stat">
-                            <h4>Total Responses</h4>
-                            <div class="rating-value" id="total-responses">2,847</div>
+                        <div id="tab-resources" class="tab-panel">
+                            <div class="chart-container">
+                                <canvas id="resourcesChart"></canvas>
+                            </div>
                         </div>
-                        <div class="sentiment-stat">
-                            <h4>Response Rate</h4>
-                            <div class="rating-value" id="response-rate">68%</div>
+                        <div id="tab-feedback" class="tab-panel">
+                            <div class="parent-feedback">
+                                <div class="feedback-stats">
+                                    <div class="feedback-stat">
+                                        <span class="stat-label">Overall Satisfaction</span>
+                                        <div class="stat-rating">
+                                            <span class="rating-stars" id="overall-stars"></span>
+                                            <span class="rating-value" id="overall-value"></span>
+                                        </div>
+                                    </div>
+                                    <div class="feedback-stat">
+                                        <span class="stat-label">Academic Quality</span>
+                                        <div class="stat-rating">
+                                            <span class="rating-stars" id="academics-stars"></span>
+                                            <span class="rating-value" id="academics-value"></span>
+                                        </div>
+                                    </div>
+                                    <div class="feedback-stat">
+                                        <span class="stat-label">School Safety</span>
+                                        <div class="stat-rating">
+                                            <span class="rating-stars" id="safety-stars"></span>
+                                            <span class="rating-value" id="safety-value"></span>
+                                        </div>
+                                    </div>
+                                    <div class="feedback-stat">
+                                        <span class="stat-label">Communication</span>
+                                        <div class="stat-rating">
+                                            <span class="rating-stars" id="communication-stars"></span>
+                                            <span class="rating-value" id="communication-value"></span>
+                                        </div>
+                                    </div>
+                                    <div class="feedback-stat">
+                                        <span class="stat-label">Facilities</span>
+                                        <div class="stat-rating">
+                                            <span class="rating-stars" id="facilities-stars"></span>
+                                            <span class="rating-value" id="facilities-value"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="parent-comments">
+                                    <h4>What Parents Are Saying</h4>
+                                    <div class="comments-list" id="parent-comments-list">
+                                        <!-- Comments will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="chart-container">
-                    <canvas id="sentimentChart"></canvas>
-                </div>
-                
-                <div class="top-schools">
-                    <h3>Top Performing Schools</h3>
-                    <div id="top-schools-list" class="schools-list">
-                        <!-- Populated by JavaScript -->
+                        <div id="tab-neighborhood" class="tab-panel">
+                            <div class="neighborhood-info">
+                                <h4>Neighborhood Information</h4>
+                                <p>This school is located in a family-friendly neighborhood with good access to parks, libraries, and community resources. The area is well-connected with public transportation and offers a variety of housing options for families.</p>
+                                <div class="neighborhood-stats">
+                                    <div class="neighborhood-stat">
+                                        <span class="stat-label">Walk Score</span>
+                                        <span class="stat-value">85/100</span>
+                                    </div>
+                                    <div class="neighborhood-stat">
+                                        <span class="stat-label">Transit Score</span>
+                                        <span class="stat-value">78/100</span>
+                                    </div>
+                                    <div class="neighborhood-stat">
+                                        <span class="stat-label">Safety Rating</span>
+                                        <span class="stat-value">B+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -344,26 +240,25 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
+                    <h4>For Parents</h4>
+                    <p>Make informed decisions about your child's education. Compare schools, read parent reviews, and find the best fit for your family.</p>
+                </div>
+                <div class="footer-section">
                     <h4>Data Sources</h4>
-                    <ul>
-                        <li><a href="https://www.ousddata.org/" target="_blank">OUSD Data Portal</a></li>
-                        <li><a href="https://www.ed-data.org/" target="_blank">California Ed-Data</a></li>
-                        <li><a href="https://caaspp-elpac.ets.org/" target="_blank">CAASPP Test Data</a></li>
-                    </ul>
+                    <p>OUSD Data Portal<br>
+                    California Ed-Data<br>
+                    CAASPP Test Data<br>
+                    Parent Surveys</p>
                 </div>
                 <div class="footer-section">
-                    <h4>About</h4>
-                    <p>Educational data insights for Oakland Unified School District. Built with transparency and accessibility in mind.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Oakland Unified School District<br>
-                    1011 Union Street, Oakland, CA 94607<br>
+                    <h4>Contact OUSD</h4>
+                    <p>1011 Union Street<br>
+                    Oakland, CA 94607<br>
                     (510) 879-8000</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Oakland Unified School District. All rights reserved.</p>
+                <p>&copy; 2025 Oakland Unified School District. Helping families find the right school.</p>
             </div>
         </div>
     </footer>
