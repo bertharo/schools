@@ -704,6 +704,25 @@ const schoolData = {
                 california: 789,
                 national: 9876
             },
+            neighborhood: {
+                name: 'Westlake',
+                description: 'A diverse neighborhood in West Oakland with a mix of residential and commercial areas, known for its community spirit.',
+                demographics: {
+                    medianIncome: 75000,
+                    population: 18000,
+                    diversity: 'High - African American (40%), Latino (30%), White (20%), Asian (8%), Other (2%)'
+                },
+                amenities: {
+                    parks: ['Westlake Park', 'DeFremery Park', 'Willie Keyes Recreation Center'],
+                    shopping: 'West Oakland BART Station area, 7th Street',
+                    transportation: 'BART West Oakland Station, AC Transit lines'
+                },
+                safety: {
+                    crimeRate: 'Moderate',
+                    walkability: 'Good',
+                    familyFriendly: 'Moderate'
+                }
+            },
             trends: {
                 enrollment: [375, 380, 385, 380, 380],
                 testScores: [68, 70, 72, 74, 76],
@@ -789,6 +808,25 @@ const schoolData = {
                 california: 1345,
                 national: 16789
             },
+            neighborhood: {
+                name: 'Temescal',
+                description: 'A vibrant, up-and-coming neighborhood known for its diverse community, local businesses, and strong sense of community.',
+                demographics: {
+                    medianIncome: 85000,
+                    population: 12000,
+                    diversity: 'High - White (45%), Latino (25%), African American (15%), Asian (12%), Other (3%)'
+                },
+                amenities: {
+                    parks: ['Temescal Regional Recreation Area', 'Mosswood Park'],
+                    shopping: 'Temescal Alley, Telegraph Avenue',
+                    transportation: 'BART MacArthur Station, AC Transit lines'
+                },
+                safety: {
+                    crimeRate: 'Moderate',
+                    walkability: 'Excellent',
+                    familyFriendly: 'High'
+                }
+            },
             trends: {
                 enrollment: [245, 250, 255, 250, 250],
                 testScores: [66, 68, 70, 72, 74],
@@ -821,6 +859,25 @@ const schoolData = {
             rankings: {
                 california: 678,
                 national: 8765
+            },
+            neighborhood: {
+                name: 'Claremont',
+                description: 'A residential neighborhood in the Oakland Hills with tree-lined streets and a mix of single-family homes and apartments.',
+                demographics: {
+                    medianIncome: 110000,
+                    population: 15000,
+                    diversity: 'Moderate - White (60%), Asian (20%), Latino (12%), African American (5%), Other (3%)'
+                },
+                amenities: {
+                    parks: ['Claremont Canyon Regional Preserve', 'Joaquin Miller Park'],
+                    shopping: 'College Avenue, Rockridge',
+                    transportation: 'BART Rockridge Station, AC Transit lines'
+                },
+                safety: {
+                    crimeRate: 'Low',
+                    walkability: 'Good',
+                    familyFriendly: 'High'
+                }
             },
             trends: {
                 enrollment: [415, 420, 425, 420, 420],
@@ -916,6 +973,25 @@ const schoolData = {
                 california: 456,
                 national: 5678
             },
+            neighborhood: {
+                name: 'MacArthur Boulevard',
+                description: 'A diverse neighborhood along MacArthur Boulevard with a mix of residential and commercial areas, known for its community engagement.',
+                demographics: {
+                    medianIncome: 80000,
+                    population: 20000,
+                    diversity: 'High - African American (35%), Latino (30%), White (20%), Asian (12%), Other (3%)'
+                },
+                amenities: {
+                    parks: ['Mosswood Park', 'Temescal Regional Recreation Area'],
+                    shopping: 'MacArthur Boulevard, Telegraph Avenue',
+                    transportation: 'BART MacArthur Station, AC Transit lines'
+                },
+                safety: {
+                    crimeRate: 'Moderate',
+                    walkability: 'Good',
+                    familyFriendly: 'Moderate'
+                }
+            },
             trends: {
                 enrollment: [940, 950, 960, 950, 950],
                 testScores: [69, 71, 73, 75, 77],
@@ -948,6 +1024,25 @@ const schoolData = {
             rankings: {
                 california: 567,
                 national: 7890
+            },
+            neighborhood: {
+                name: 'Rockridge',
+                description: 'An upscale neighborhood known for its tree-lined streets, local shops, and strong community feel.',
+                demographics: {
+                    medianIncome: 130000,
+                    population: 10000,
+                    diversity: 'Moderate - White (70%), Asian (15%), Latino (8%), African American (4%), Other (3%)'
+                },
+                amenities: {
+                    parks: ['Rockridge-Temescal Greenbelt', 'Joaquin Miller Park'],
+                    shopping: 'College Avenue, Rockridge',
+                    transportation: 'BART Rockridge Station, AC Transit lines'
+                },
+                safety: {
+                    crimeRate: 'Low',
+                    walkability: 'Excellent',
+                    familyFriendly: 'Very High'
+                }
             },
             trends: {
                 enrollment: [285, 290, 295, 290, 290],
