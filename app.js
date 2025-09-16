@@ -202,6 +202,10 @@ class OUSDDashboard {
         document.getElementById('school-budget-per-student').textContent = `$${budgetPerStudent}`;
         
         document.getElementById('school-satisfaction').textContent = `${school.parentSentiment.overall}/5`;
+        
+        // Update rankings
+        document.getElementById('school-ca-ranking').textContent = `#${school.rankings.california.toLocaleString()}`;
+        document.getElementById('school-national-ranking').textContent = `#${school.rankings.national.toLocaleString()}`;
 
         // Show school details
         schoolDetails.style.display = 'block';
