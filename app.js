@@ -10,6 +10,7 @@ class OUSDSchoolFinder {
         this.selectedSchool = null;
         
         this.init();
+        this.setupMainNavigation();
     }
 
     init() {
@@ -61,6 +62,28 @@ class OUSDSchoolFinder {
         tabBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 this.switchTab(e.target.dataset.tab);
+            });
+        });
+    }
+
+    setupMainNavigation() {
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Remove active class from all nav buttons
+                document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                
+                // Hide all content sections
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Show selected section
+                const sectionId = e.target.dataset.section + '-section';
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
             });
         });
     }
@@ -359,9 +382,6 @@ class OUSDSchoolFinder {
                 break;
             case 'neighborhood':
                 this.loadNeighborhoodInfo();
-                break;
-            case 'how-to-apply':
-                // Static content, already in HTML
                 break;
         }
     }

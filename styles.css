@@ -893,9 +893,70 @@ p {
     }
 }
 
-/* How to Apply Tab */
+/* Main Navigation */
+.main-nav {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-8);
+    border-bottom: 1px solid var(--gray-200);
+    padding-bottom: var(--space-4);
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius);
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-size: 1rem;
+}
+
+.nav-btn:hover {
+    background: var(--gray-100);
+    color: var(--text-primary);
+}
+
+.nav-btn.active {
+    background: var(--secondary);
+    color: var(--text-inverse);
+}
+
+.nav-btn.active:hover {
+    background: var(--secondary-light);
+}
+
+/* Content Sections */
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* How to Apply Section */
 .how-to-apply-content {
     padding: var(--space-6);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.how-to-apply-content h2 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-8);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.how-to-apply-content h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-6);
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .how-to-apply-content h4 {
@@ -1039,6 +1100,17 @@ p {
 
 /* Mobile responsiveness for How to Apply */
 @media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        gap: var(--space-1);
+    }
+    
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+        padding: var(--space-4) var(--space-6);
+    }
+    
     .timeline-step {
         flex-direction: column;
         align-items: flex-start;
@@ -1061,6 +1133,14 @@ p {
     .enrollment-btn {
         width: 100%;
         text-align: center;
+    }
+    
+    .how-to-apply-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .how-to-apply-content h3 {
+        font-size: 1.25rem;
     }
 }
 
