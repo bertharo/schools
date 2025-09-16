@@ -192,6 +192,11 @@ const schoolData = {
             type: 'elementary',
             address: '1025 81st Avenue, Oakland, CA 94621',
             enrollment: 320,
+            budget: 2.5,
+            rankings: {
+                california: 1247,
+                national: 15432
+            },
             trends: {
                 enrollment: [310, 315, 320, 325, 320],
                 testScores: [68, 70, 72, 74, 76],
@@ -220,6 +225,10 @@ const schoolData = {
             address: '4215 La Cresta Avenue, Oakland, CA 94602',
             enrollment: 290,
             budget: 2.3,
+            rankings: {
+                california: 892,
+                national: 11234
+            },
             trends: {
                 enrollment: [285, 290, 295, 290, 290],
                 testScores: [68, 70, 72, 74, 76],
@@ -249,6 +258,10 @@ const schoolData = {
             address: '1025 81st Avenue, Oakland, CA 94621',
             enrollment: 380,
             budget: 2.9,
+            rankings: {
+                california: 456,
+                national: 6789
+            },
             trends: {
                 enrollment: [375, 380, 385, 380, 380],
                 testScores: [72, 74, 76, 78, 80],
@@ -278,6 +291,10 @@ const schoolData = {
             address: '1025 81st Avenue, Oakland, CA 94621',
             enrollment: 360,
             budget: 2.7,
+            rankings: {
+                california: 623,
+                national: 8456
+            },
             trends: {
                 enrollment: [355, 360, 365, 360, 360],
                 testScores: [71, 73, 75, 77, 79],
@@ -306,6 +323,11 @@ const schoolData = {
             type: 'elementary',
             address: '525 Midcrest Road, Oakland, CA 94610',
             enrollment: 420,
+            budget: 3.2,
+            rankings: {
+                california: 234,
+                national: 3456
+            },
             trends: {
                 enrollment: [415, 420, 425, 420, 420],
                 testScores: [75, 77, 79, 81, 83],
@@ -334,6 +356,11 @@ const schoolData = {
             type: 'middle',
             address: '3700 Coolidge Avenue, Oakland, CA 94602',
             enrollment: 680,
+            budget: 4.9,
+            rankings: {
+                california: 567,
+                national: 7890
+            },
             trends: {
                 enrollment: [675, 680, 685, 680, 680],
                 testScores: [65, 67, 69, 71, 73],
@@ -362,6 +389,11 @@ const schoolData = {
             type: 'high',
             address: '4351 Broadway, Oakland, CA 94611',
             enrollment: 1800,
+            budget: 13.2,
+            rankings: {
+                california: 89,
+                national: 1234
+            },
             trends: {
                 enrollment: [1795, 1800, 1805, 1800, 1800],
                 testScores: [75, 77, 79, 81, 83],
