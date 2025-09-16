@@ -33,7 +33,11 @@ class OUSDDashboard {
         this.createInitialCharts();
         this.updateDistrictStats();
         this.populateTopSchools();
-        this.populateSchoolDropdown();
+        
+        // Ensure dropdown population happens after DOM is fully ready
+        setTimeout(() => {
+            this.populateSchoolDropdown();
+        }, 100);
     }
 
     setupEventListeners() {
@@ -351,19 +355,33 @@ class OUSDDashboard {
     }
     // Populate school dropdown with all schools from data
     populateSchoolDropdown() {
+        console.log('Populating school dropdown...');
         const schoolSelect = document.getElementById('school-select');
-        if (!schoolSelect) return;
+        if (!schoolSelect) {
+            console.error('School select element not found');
+            return;
+        }
+
+        // Check if schoolData is available
+        if (typeof schoolData === 'undefined') {
+            console.error('schoolData is not available');
+            return;
+        }
 
         // Clear existing options except the first one
         schoolSelect.innerHTML = '<option value="">Choose a school...</option>';
 
         // Get all schools and group by type
         const allSchools = schoolData.getAllSchools();
+        console.log('Found schools:', allSchools.length);
+        
         const schoolsByType = {
             elementary: allSchools.filter(school => school.type === 'elementary'),
             middle: allSchools.filter(school => school.type === 'middle'),
             high: allSchools.filter(school => school.type === 'high')
         };
+
+        console.log('Schools by type:', schoolsByType);
 
         // Create optgroups for each school type
         Object.keys(schoolsByType).forEach(type => {
@@ -379,6 +397,8 @@ class OUSDDashboard {
             
             schoolSelect.appendChild(optgroup);
         });
+        
+        console.log('Dropdown populated with', schoolSelect.options.length, 'options');
     }
 }
 
