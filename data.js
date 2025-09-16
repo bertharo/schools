@@ -204,7 +204,13 @@ const schoolData = {
                 safety: 4.3,
                 communication: 4.0,
                 facilities: 3.9,
-                totalResponses: 45
+                totalResponses: 45,
+                comments: [
+                    "The teachers really care about our children and go above and beyond.",
+                    "Great community feel and strong academic programs.",
+                    "Communication could be better, but overall happy with the school.",
+                    "My child loves going to school every day!"
+                ]
             }
         },
         'glenview': {
@@ -226,7 +232,14 @@ const schoolData = {
                 safety: 4.4,
                 communication: 4.1,
                 facilities: 4.0,
-                totalResponses: 42
+                totalResponses: 42,
+                comments: [
+                    "Amazing teachers who make learning fun and engaging.",
+                    "The school has a wonderful sense of community and inclusion.",
+                    "My daughter has thrived academically and socially here.",
+                    "Great communication from teachers and administration.",
+                    "The facilities are well-maintained and safe."
+                ]
             }
         },
         'montclair': {
@@ -248,7 +261,14 @@ const schoolData = {
                 safety: 4.6,
                 communication: 4.3,
                 facilities: 4.2,
-                totalResponses: 52
+                totalResponses: 52,
+                comments: [
+                    "Outstanding school with excellent teachers and programs.",
+                    "The principal is very responsive and the staff is dedicated.",
+                    "My child's reading and math skills have improved dramatically.",
+                    "Great parent involvement and community events.",
+                    "The school feels like a second home for our family."
+                ]
             }
         },
         'thornhill': {
@@ -270,7 +290,14 @@ const schoolData = {
                 safety: 4.5,
                 communication: 4.2,
                 facilities: 4.1,
-                totalResponses: 48
+                totalResponses: 48,
+                comments: [
+                    "Fantastic teachers who really understand each child's needs.",
+                    "The school has a strong focus on both academics and character development.",
+                    "My son has made great friends and loves his teachers.",
+                    "Excellent communication between home and school.",
+                    "The school community is very welcoming and supportive."
+                ]
             }
         },
         'crocker-highlands': {
@@ -291,7 +318,14 @@ const schoolData = {
                 safety: 4.7,
                 communication: 4.4,
                 facilities: 4.3,
-                totalResponses: 55
+                totalResponses: 55,
+                comments: [
+                    "Exceptional school with outstanding teachers and programs.",
+                    "The academic excellence here is truly remarkable.",
+                    "My child has flourished in this supportive environment.",
+                    "Outstanding communication and parent engagement.",
+                    "This school sets the gold standard for elementary education."
+                ]
             }
         },
         'bret-harte': {
@@ -312,7 +346,14 @@ const schoolData = {
                 safety: 4.3,
                 communication: 4.0,
                 facilities: 3.9,
-                totalResponses: 65
+                totalResponses: 65,
+                comments: [
+                    "Great middle school with supportive teachers and staff.",
+                    "The transition from elementary was smooth and well-supported.",
+                    "My child has grown academically and socially here.",
+                    "Good communication and parent involvement opportunities.",
+                    "The school provides a solid foundation for high school."
+                ]
             }
         },
         'oakland-tech': {
@@ -333,9 +374,16 @@ const schoolData = {
                 safety: 4.9,
                 communication: 4.6,
                 facilities: 4.5,
-                totalResponses: 145
+                totalResponses: 145,
+                comments: [
+                    "Outstanding high school with excellent academic programs and teachers.",
+                    "The college preparation and career guidance is exceptional.",
+                    "My student has been challenged and supported throughout their time here.",
+                    "Great diversity and inclusive environment for all students.",
+                    "The school has prepared my child well for college and beyond."
+                ]
             }
-,
+        },
         'franklin': {
             id: 'franklin',
             name: 'Franklin Elementary School',
@@ -503,7 +551,7 @@ const schoolData = {
                 facilities: 4.4,
                 totalResponses: 44
             }
-        }        }
+        }
     },
     
     sentimentCategories: {
