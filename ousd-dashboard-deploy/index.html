@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oakland Unified School District - Trends Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.29.3/index.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">Oakland Unified School District</h1>
+            <p class="header-subtitle">Educational Trends & Data Dashboard</p>
+        </div>
+    </header>
+
+    <nav class="navigation">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#enrollment" class="nav-link">Enrollment Trends</a></li>
+                <li><a href="#test-scores" class="nav-link">Test Scores</a></li>
+                <li><a href="#budget" class="nav-link">Budget Analysis</a></li>
+                <li><a href="#schools" class="nav-link">School Performance</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Overview Section -->
+            <section class="overview-section">
+                <h2>District Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Enrollment</h3>
+                        <div class="stat-number" id="total-enrollment">44,647</div>
+                        <div class="stat-change" id="enrollment-change">+2.1% from last year</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Number of Schools</h3>
+                        <div class="stat-number">82</div>
+                        <div class="stat-change">Elementary, Middle & High Schools</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Budget (2024-25)</h3>
+                        <div class="stat-number" id="total-budget">$1.2B</div>
+                        <div class="stat-change" id="budget-change">+5.3% from last year</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Graduation Rate</h3>
+                        <div class="stat-number" id="graduation-rate">78.5%</div>
+                        <div class="stat-change" id="graduation-change">+3.2% from last year</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Enrollment Trends Section -->
+            <section id="enrollment" class="section">
+                <h2>Enrollment Trends by School Type</h2>
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="enrollment-years">Year Range:</label>
+                        <select id="enrollment-years" class="control-select">
+                            <option value="5">Last 5 Years</option>
+                            <option value="10" selected>Last 10 Years</option>
+                            <option value="15">Last 15 Years</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="school-type-filter">School Type:</label>
+                        <select id="school-type-filter" class="control-select">
+                            <option value="all">All Schools</option>
+                            <option value="elementary">Elementary</option>
+                            <option value="middle">Middle</option>
+                            <option value="high">High School</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="enrollmentChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Test Scores Section -->
+            <section id="test-scores" class="section">
+                <h2>Test Scores Performance</h2>
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="test-subject">Subject:</label>
+                        <select id="test-subject" class="control-select">
+                            <option value="math">Mathematics</option>
+                            <option value="english">English Language Arts</option>
+                            <option value="science">Science</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="test-grade">Grade Level:</label>
+                        <select id="test-grade" class="control-select">
+                            <option value="all">All Grades</option>
+                            <option value="3">Grade 3</option>
+                            <option value="4">Grade 4</option>
+                            <option value="5">Grade 5</option>
+                            <option value="6">Grade 6</option>
+                            <option value="7">Grade 7</option>
+                            <option value="8">Grade 8</option>
+                            <option value="11">Grade 11</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="testScoresChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Budget Analysis Section -->
+            <section id="budget" class="section">
+                <h2>Budget Trends & Analysis</h2>
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="budget-category">Budget Category:</label>
+                        <select id="budget-category" class="control-select">
+                            <option value="total">Total Budget</option>
+                            <option value="instruction">Instruction</option>
+                            <option value="support">Support Services</option>
+                            <option value="administration">Administration</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="budgetChart"></canvas>
+                </div>
+                <div class="budget-breakdown">
+                    <h3>Budget Breakdown (2024-25)</h3>
+                    <div class="breakdown-grid">
+                        <div class="breakdown-item">
+                            <span class="breakdown-label">Instruction</span>
+                            <span class="breakdown-value">65%</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label">Support Services</span>
+                            <span class="breakdown-value">25%</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label">Administration</span>
+                            <span class="breakdown-value">10%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- School Performance Section -->
+            <section id="schools" class="section">
+                <h2>School Performance by Type</h2>
+                <div class="schools-grid">
+                    <div class="school-type-card">
+                        <h3>Elementary Schools</h3>
+                        <div class="school-stats">
+                            <div class="school-stat">
+                                <span class="stat-label">Average Enrollment:</span>
+                                <span class="stat-value" id="elem-avg-enrollment">425</span>
+                            </div>
+                            <div class="school-stat">
+                                <span class="stat-label">Test Score Average:</span>
+                                <span class="stat-value" id="elem-test-avg">72%</span>
+                            </div>
+                        </div>
+                        <canvas id="elementaryChart" class="mini-chart"></canvas>
+                    </div>
+                    <div class="school-type-card">
+                        <h3>Middle Schools</h3>
+                        <div class="school-stats">
+                            <div class="school-stat">
+                                <span class="stat-label">Average Enrollment:</span>
+                                <span class="stat-value" id="middle-avg-enrollment">650</span>
+                            </div>
+                            <div class="school-stat">
+                                <span class="stat-label">Test Score Average:</span>
+                                <span class="stat-value" id="middle-test-avg">68%</span>
+                            </div>
+                        </div>
+                        <canvas id="middleChart" class="mini-chart"></canvas>
+                    </div>
+                    <div class="school-type-card">
+                        <h3>High Schools</h3>
+                        <div class="school-stats">
+                            <div class="school-stat">
+                                <span class="stat-label">Average Enrollment:</span>
+                                <span class="stat-value" id="high-avg-enrollment">1,200</span>
+                            </div>
+                            <div class="school-stat">
+                                <span class="stat-label">Graduation Rate:</span>
+                                <span class="stat-value" id="high-graduation-rate">78.5%</span>
+                            </div>
+                        </div>
+                        <canvas id="highChart" class="mini-chart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Data Sources</h4>
+                    <ul>
+                        <li><a href="https://www.ousddata.org/" target="_blank">OUSD Data Portal</a></li>
+                        <li><a href="https://www.ed-data.org/" target="_blank">California Ed-Data</a></li>
+                        <li><a href="https://caaspp-elpac.ets.org/" target="_blank">CAASPP Test Data</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p>This dashboard provides insights into Oakland Unified School District's educational trends, enrollment patterns, test scores, and budget allocation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Oakland Unified School District<br>
+                    1011 Union Street<br>
+                    Oakland, CA 94607<br>
+                    (510) 879-8000</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Oakland Unified School District. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="charts.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
