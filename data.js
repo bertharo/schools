@@ -191,7 +191,7 @@ const schoolData = {
             name: 'Acorn Woodland Elementary School',
             type: 'elementary',
             address: '1025 81st Avenue, Oakland, CA 94621',
-            phone: '(510) 879-8000',
+            phone: '(510) 879-1200',
             enrollment: 320,
             budget: 2.5,
             rankings: {
@@ -199,12 +199,12 @@ const schoolData = {
                 national: 15432
             },
             enrollmentInfo: {
-                openDate: '2024-01-15',
-                closeDate: '2024-03-15',
-                lotteryDate: '2024-03-20',
-                enrollmentUrl: 'https://www.ousd.org/enrollment',
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
                 schoolWebsite: 'https://www.ousd.org/acorn-woodland',
-                contactEmail: 'acorn-woodland@ousd.org'
+                contactEmail: 'office@acornwoodland.ousd.org'
             },
             neighborhood: {
                 name: 'East Oakland',
@@ -251,7 +251,7 @@ const schoolData = {
             name: 'Glenview Elementary School',
             type: 'elementary',
             address: '4215 La Cresta Avenue, Oakland, CA 94602',
-            phone: '(510) 879-8000',
+            phone: '(510) 879-1350',
             enrollment: 290,
             budget: 2.3,
             rankings: {
@@ -259,12 +259,12 @@ const schoolData = {
                 national: 11234
             },
             enrollmentInfo: {
-                openDate: '2024-01-15',
-                closeDate: '2024-03-15',
-                lotteryDate: '2024-03-20',
-                enrollmentUrl: 'https://www.ousd.org/enrollment',
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
                 schoolWebsite: 'https://www.ousd.org/glenview',
-                contactEmail: 'glenview@ousd.org'
+                contactEmail: 'office@glenview.ousd.org'
             },
             neighborhood: {
                 name: 'Glenview',
@@ -312,7 +312,7 @@ const schoolData = {
             name: 'Montclair Elementary School',
             type: 'elementary',
             address: '1757 Mountain Boulevard, Oakland, CA 94611',
-            phone: '(510) 879-8000',
+            phone: '(510) 879-1500',
             enrollment: 380,
             budget: 2.9,
             rankings: {
@@ -320,12 +320,12 @@ const schoolData = {
                 national: 6789
             },
             enrollmentInfo: {
-                openDate: '2024-01-15',
-                closeDate: '2024-03-15',
-                lotteryDate: '2024-03-20',
-                enrollmentUrl: 'https://www.ousd.org/enrollment',
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
                 schoolWebsite: 'https://www.ousd.org/montclair',
-                contactEmail: 'montclair@ousd.org'
+                contactEmail: 'office@montclair.ousd.org'
             },
             neighborhood: {
                 name: 'Montclair',
@@ -373,7 +373,7 @@ const schoolData = {
             name: 'Thornhill Elementary School',
             type: 'elementary',
             address: '5880 Thornhill Drive, Oakland, CA 94611',
-            phone: '(510) 879-8000',
+            phone: '(510) 879-1650',
             enrollment: 360,
             budget: 2.7,
             rankings: {
@@ -426,7 +426,7 @@ const schoolData = {
             name: 'Crocker Highlands Elementary School',
             type: 'elementary',
             address: '525 Midcrest Road, Oakland, CA 94610',
-            phone: '(510) 879-8000',
+            phone: '(510) 879-1800',
             enrollment: 420,
             budget: 3.2,
             rankings: {
@@ -479,7 +479,7 @@ const schoolData = {
             name: 'Bret Harte Middle School',
             type: 'middle',
             address: '3700 Coolidge Avenue, Oakland, CA 94602',
-            phone: '(510) 879-8000',
+            phone: '(510) 879-2000',
             enrollment: 680,
             budget: 4.9,
             rankings: {
@@ -532,7 +532,7 @@ const schoolData = {
             name: 'Oakland Technical High School',
             type: 'high',
             address: '4351 Broadway, Oakland, CA 94611',
-            phone: '(510) 879-8000',
+            phone: '(510) 879-3000',
             enrollment: 1800,
             budget: 13.2,
             rankings: {
@@ -540,12 +540,12 @@ const schoolData = {
                 national: 1234
             },
             enrollmentInfo: {
-                openDate: '2024-01-15',
-                closeDate: '2024-03-15',
-                lotteryDate: '2024-03-20',
-                enrollmentUrl: 'https://www.ousd.org/enrollment',
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
                 schoolWebsite: 'https://www.ousd.org/oakland-tech',
-                contactEmail: 'oakland-tech@ousd.org'
+                contactEmail: 'office@oaklandtech.ousd.org'
             },
             neighborhood: {
                 name: 'Piedmont Avenue',
@@ -593,7 +593,7 @@ const schoolData = {
             name: 'Franklin Elementary School',
             type: 'elementary',
             address: '915 Foothill Boulevard, Oakland, CA 94606',
-            phone: '(510) 879-8000',
+            phone: '(510) 879-2100',
             enrollment: 280,
             budget: 2.2,
             rankings: {
@@ -645,7 +645,7 @@ const schoolData = {
             name: 'Lincoln Elementary School',
             type: 'elementary',
             address: '225 11th Street, Oakland, CA 94607',
-            phone: '(510) 879-8000',
+            phone: '(510) 879-2100',
             enrollment: 320,
             budget: 2.4,
             rankings: {
@@ -697,7 +697,7 @@ const schoolData = {
             name: 'Westlake Middle School',
             type: 'middle',
             address: '2629 Harrison Street, Oakland, CA 94612',
-            phone: '(510) 879-8000',
+            phone: '(510) 879-2100',
             enrollment: 380,
             budget: 3.1,
             rankings: {
@@ -730,7 +730,7 @@ const schoolData = {
             name: 'Skyline High School',
             type: 'high',
             address: '12250 Skyline Boulevard, Oakland, CA 94619',
-            phone: '(510) 879-8000',
+            phone: '(510) 879-2100',
             enrollment: 1100,
             budget: 8.6,
             rankings: {
@@ -782,7 +782,7 @@ const schoolData = {
             name: 'Emerson Elementary School',
             type: 'elementary',
             address: '4800 Lawton Avenue, Oakland, CA 94609',
-            phone: '(510) 879-8000',
+            phone: '(510) 879-2100',
             enrollment: 250,
             budget: 2.0,
             rankings: {
@@ -815,7 +815,7 @@ const schoolData = {
             name: 'Claremont Middle School',
             type: 'middle',
             address: '5750 College Avenue, Oakland, CA 94618',
-            phone: '(510) 879-8000',
+            phone: '(510) 879-2100',
             enrollment: 420,
             budget: 3.4,
             rankings: {
@@ -848,7 +848,7 @@ const schoolData = {
             name: 'Edna Brewer Middle School',
             type: 'middle',
             address: '3748 13th Avenue, Oakland, CA 94610',
-            phone: '(510) 879-8000',
+            phone: '(510) 879-2100',
             enrollment: 520,
             budget: 4.2,
             rankings: {
@@ -856,12 +856,12 @@ const schoolData = {
                 national: 5678
             },
             enrollmentInfo: {
-                openDate: '2024-01-15',
-                closeDate: '2024-03-15',
-                lotteryDate: '2024-03-20',
-                enrollmentUrl: 'https://www.ousd.org/enrollment',
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
                 schoolWebsite: 'https://www.ousd.org/edna-brewer',
-                contactEmail: 'edna-brewer@ousd.org'
+                contactEmail: 'office@ednabrewer.ousd.org'
             },
             neighborhood: {
                 name: 'Piedmont Avenue',
@@ -909,7 +909,7 @@ const schoolData = {
             name: 'Oakland High School',
             type: 'high',
             address: '1023 MacArthur Boulevard, Oakland, CA 94610',
-            phone: '(510) 879-8000',
+            phone: '(510) 879-2100',
             enrollment: 950,
             budget: 7.5,
             rankings: {
@@ -942,7 +942,7 @@ const schoolData = {
             name: 'Hillcrest Elementary School',
             type: 'elementary',
             address: '30 Marguerite Drive, Oakland, CA 94618',
-            phone: '(510) 879-8000',
+            phone: '(510) 879-2100',
             enrollment: 290,
             budget: 2.3,
             rankings: {
