@@ -34,8 +34,6 @@ class OUSDDashboard {
         this.updateDistrictStats();
         this.populateTopSchools();
         this.populateSchoolDropdown();
-        // Fallback to ensure dropdown is populated
-        setTimeout(() => this.ensureDropdownPopulated(), 1000);
     }
 
     setupEventListeners() {
@@ -339,8 +337,6 @@ class OUSDDashboard {
         this.createInitialCharts();
         this.populateTopSchools();
         this.populateSchoolDropdown();
-        // Fallback to ensure dropdown is populated
-        setTimeout(() => this.ensureDropdownPopulated(), 1000);
     }
 
     // Method to export data
@@ -398,14 +394,3 @@ document.addEventListener('DOMContentLoaded', () => {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { OUSDDashboard, dashboardUtils };
 }
-
-    // Fallback method to ensure dropdown is populated
-    ensureDropdownPopulated() {
-        const schoolSelect = document.getElementById('school-select');
-        if (!schoolSelect || schoolSelect.options.length <= 1) {
-            console.log('Dropdown not populated, trying again...');
-            this.populateSchoolDropdown();
-        // Fallback to ensure dropdown is populated
-        setTimeout(() => this.ensureDropdownPopulated(), 1000);
-        }
-    }
