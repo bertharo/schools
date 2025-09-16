@@ -347,79 +347,6 @@ class OUSDDashboard {
     printDashboard() {
         window.print();
     }
-}
-
-// Utility functions
-const dashboardUtils = {
-    // Animate numbers when they change
-    animateNumber: (element, start, end, duration = 1000) => {
-        const startTime = performance.now();
-        const animate = (currentTime) => {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const current = start + (end - start) * progress;
-            element.textContent = Math.floor(current).toLocaleString();
-            
-            if (progress < 1) {
-                requestAnimationFrame(animate);
-            }
-        };
-        requestAnimationFrame(animate);
-    },
-
-    // Show loading state
-    showLoading: (elementId) => {
-        const element = document.getElementById(elementId);
-        if (element) {
-            element.innerHTML = '<div class="loading">Loading data...</div>';
-        }
-    },
-
-    // Hide loading state
-    hideLoading: (elementId) => {
-        const element = document.getElementById(elementId);
-        if (element) {
-            element.innerHTML = '';
-        }
-    },
-
-    // Show error message
-    showError: (message) => {
-        console.error('Dashboard Error:', message);
-    }
-};
-
-// Initialize dashboard when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    window.ousdDashboard = new OUSDDashboard();
-    
-    console.log('OUSD Trends Dashboard loaded successfully!');
-    
-    // Add keyboard shortcuts
-    document.addEventListener('keydown', (e) => {
-        if (e.ctrlKey || e.metaKey) {
-            switch(e.key) {
-                case 'r':
-                    e.preventDefault();
-                    window.ousdDashboard.refreshData();
-                    break;
-                case 'p':
-                    e.preventDefault();
-                    window.ousdDashboard.printDashboard();
-                    break;
-            }
-        }
-    });
-
-    // Add smooth scroll behavior
-    document.documentElement.style.scrollBehavior = 'smooth';
-});
-
-// Export for use in other files
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { OUSDDashboard, dashboardUtils };
-}
-
     // Populate school dropdown with all schools from data
     populateSchoolDropdown() {
         const schoolSelect = document.getElementById('school-select');
@@ -451,3 +378,17 @@ if (typeof module !== 'undefined' && module.exports) {
             schoolSelect.appendChild(optgroup);
         });
     }
+}
+
+// Initialize dashboard when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const dashboard = new OUSDDashboard();
+    
+    // Add smooth scroll behavior
+    document.documentElement.style.scrollBehavior = 'smooth';
+});
+
+// Export for use in other files
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { OUSDDashboard, dashboardUtils };
+}
