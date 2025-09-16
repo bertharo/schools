@@ -191,6 +191,7 @@ const schoolData = {
             name: 'Acorn Woodland Elementary School',
             type: 'elementary',
             address: '1025 81st Avenue, Oakland, CA 94621',
+            phone: '(510) 879-8000',
             enrollment: 320,
             budget: 2.5,
             rankings: {
@@ -223,6 +224,7 @@ const schoolData = {
             name: 'Glenview Elementary School',
             type: 'elementary',
             address: '4215 La Cresta Avenue, Oakland, CA 94602',
+            phone: '(510) 879-8000',
             enrollment: 290,
             budget: 2.3,
             rankings: {
@@ -256,6 +258,7 @@ const schoolData = {
             name: 'Montclair Elementary School',
             type: 'elementary',
             address: '1025 81st Avenue, Oakland, CA 94621',
+            phone: '(510) 879-8000',
             enrollment: 380,
             budget: 2.9,
             rankings: {
@@ -289,6 +292,7 @@ const schoolData = {
             name: 'Thornhill Elementary School',
             type: 'elementary',
             address: '1025 81st Avenue, Oakland, CA 94621',
+            phone: '(510) 879-8000',
             enrollment: 360,
             budget: 2.7,
             rankings: {
@@ -322,6 +326,7 @@ const schoolData = {
             name: 'Crocker Highlands Elementary School',
             type: 'elementary',
             address: '525 Midcrest Road, Oakland, CA 94610',
+            phone: '(510) 879-8000',
             enrollment: 420,
             budget: 3.2,
             rankings: {
@@ -355,6 +360,7 @@ const schoolData = {
             name: 'Bret Harte Middle School',
             type: 'middle',
             address: '3700 Coolidge Avenue, Oakland, CA 94602',
+            phone: '(510) 879-8000',
             enrollment: 680,
             budget: 4.9,
             rankings: {
@@ -388,6 +394,7 @@ const schoolData = {
             name: 'Oakland Technical High School',
             type: 'high',
             address: '4351 Broadway, Oakland, CA 94611',
+            phone: '(510) 879-8000',
             enrollment: 1800,
             budget: 13.2,
             rankings: {
@@ -421,7 +428,13 @@ const schoolData = {
             name: 'Franklin Elementary School',
             type: 'elementary',
             address: '915 Foothill Boulevard, Oakland, CA 94606',
+            phone: '(510) 879-8000',
             enrollment: 280,
+            budget: 2.2,
+            rankings: {
+                california: 1456,
+                national: 18765
+            },
             trends: {
                 enrollment: [275, 280, 285, 280, 280],
                 testScores: [62, 64, 66, 68, 70],
@@ -434,7 +447,13 @@ const schoolData = {
                 safety: 4.1,
                 communication: 3.8,
                 facilities: 3.9,
-                totalResponses: 42
+                totalResponses: 42,
+                comments: [
+                    "Franklin Elementary provides a solid foundation for young learners.",
+                    "The teachers are dedicated and work hard to support each student's growth.",
+                    "Good communication between school and families throughout the year.",
+                    "The school community is welcoming and supportive of all students."
+                ]
             }
         },
         'lincoln': {
@@ -442,7 +461,13 @@ const schoolData = {
             name: 'Lincoln Elementary School',
             type: 'elementary',
             address: '225 11th Street, Oakland, CA 94607',
+            phone: '(510) 879-8000',
             enrollment: 320,
+            budget: 2.4,
+            rankings: {
+                california: 1123,
+                national: 14567
+            },
             trends: {
                 enrollment: [315, 320, 325, 320, 320],
                 testScores: [70, 72, 74, 76, 78],
@@ -455,7 +480,13 @@ const schoolData = {
                 safety: 4.3,
                 communication: 4.0,
                 facilities: 4.1,
-                totalResponses: 48
+                totalResponses: 48,
+                comments: [
+                    "Lincoln Elementary has a strong academic program and caring teachers.",
+                    "The school community is diverse and inclusive, which we really appreciate.",
+                    "Good communication from teachers and administration about student progress.",
+                    "My child has grown both academically and socially during their time here."
+                ]
             }
         },
         'westlake': {
@@ -463,7 +494,13 @@ const schoolData = {
             name: 'Westlake Middle School',
             type: 'middle',
             address: '2629 Harrison Street, Oakland, CA 94612',
+            phone: '(510) 879-8000',
             enrollment: 380,
+            budget: 3.1,
+            rankings: {
+                california: 789,
+                national: 9876
+            },
             trends: {
                 enrollment: [375, 380, 385, 380, 380],
                 testScores: [68, 70, 72, 74, 76],
@@ -476,7 +513,13 @@ const schoolData = {
                 safety: 4.4,
                 communication: 4.1,
                 facilities: 4.2,
-                totalResponses: 35
+                totalResponses: 35,
+                comments: [
+                    "Westlake Middle provides excellent preparation for high school.",
+                    "The teachers are supportive and help students navigate the middle school years.",
+                    "Good balance of academics and extracurricular activities.",
+                    "The school community is welcoming and inclusive."
+                ]
             }
         },
         'skyline': {
@@ -484,7 +527,13 @@ const schoolData = {
             name: 'Skyline High School',
             type: 'high',
             address: '12250 Skyline Boulevard, Oakland, CA 94619',
+            phone: '(510) 879-8000',
             enrollment: 1100,
+            budget: 8.6,
+            rankings: {
+                california: 234,
+                national: 3456
+            },
             trends: {
                 enrollment: [1080, 1090, 1100, 1110, 1100],
                 testScores: [75, 77, 79, 81, 83],
@@ -497,7 +546,13 @@ const schoolData = {
                 safety: 4.4,
                 communication: 4.5,
                 facilities: 4.3,
-                totalResponses: 72
+                totalResponses: 72,
+                comments: [
+                    "Skyline High offers excellent academic programs and college preparation.",
+                    "The school has a strong sense of community and school spirit.",
+                    "Teachers are dedicated and provide great support for students.",
+                    "Good variety of extracurricular activities and clubs."
+                ]
             }
         },
         'emerson': {
@@ -505,7 +560,13 @@ const schoolData = {
             name: 'Emerson Elementary School',
             type: 'elementary',
             address: '4800 Lawton Avenue, Oakland, CA 94609',
+            phone: '(510) 879-8000',
             enrollment: 250,
+            budget: 2.0,
+            rankings: {
+                california: 1345,
+                national: 16789
+            },
             trends: {
                 enrollment: [245, 250, 255, 250, 250],
                 testScores: [66, 68, 70, 72, 74],
@@ -518,7 +579,13 @@ const schoolData = {
                 safety: 4.2,
                 communication: 3.9,
                 facilities: 4.0,
-                totalResponses: 39
+                totalResponses: 39,
+                comments: [
+                    "Emerson Elementary provides a nurturing environment for young learners.",
+                    "The teachers are caring and work hard to support each student.",
+                    "Good communication between school and families.",
+                    "The school community is welcoming and supportive."
+                ]
             }
         },
         'claremont': {
@@ -526,7 +593,13 @@ const schoolData = {
             name: 'Claremont Middle School',
             type: 'middle',
             address: '5750 College Avenue, Oakland, CA 94618',
+            phone: '(510) 879-8000',
             enrollment: 420,
+            budget: 3.4,
+            rankings: {
+                california: 678,
+                national: 8765
+            },
             trends: {
                 enrollment: [415, 420, 425, 420, 420],
                 testScores: [71, 73, 75, 77, 79],
@@ -539,7 +612,13 @@ const schoolData = {
                 safety: 4.5,
                 communication: 4.2,
                 facilities: 4.3,
-                totalResponses: 41
+                totalResponses: 41,
+                comments: [
+                    "Claremont Middle provides excellent academic preparation for high school.",
+                    "The teachers are supportive and help students succeed.",
+                    "Good balance of academics and social development.",
+                    "The school community is welcoming and inclusive."
+                ]
             }
         },
         'oakland-high': {
@@ -547,7 +626,13 @@ const schoolData = {
             name: 'Oakland High School',
             type: 'high',
             address: '1023 MacArthur Boulevard, Oakland, CA 94610',
+            phone: '(510) 879-8000',
             enrollment: 950,
+            budget: 7.5,
+            rankings: {
+                california: 456,
+                national: 5678
+            },
             trends: {
                 enrollment: [940, 950, 960, 950, 950],
                 testScores: [69, 71, 73, 75, 77],
@@ -560,7 +645,13 @@ const schoolData = {
                 safety: 4.3,
                 communication: 4.0,
                 facilities: 4.1,
-                totalResponses: 58
+                totalResponses: 58,
+                comments: [
+                    "Oakland High provides a solid education with dedicated teachers.",
+                    "The school offers good preparation for college and career paths.",
+                    "Diverse student body creates a rich learning environment.",
+                    "Good communication between school and families."
+                ]
             }
         },
         'hillcrest': {
@@ -568,7 +659,13 @@ const schoolData = {
             name: 'Hillcrest Elementary School',
             type: 'elementary',
             address: '30 Marguerite Drive, Oakland, CA 94618',
+            phone: '(510) 879-8000',
             enrollment: 290,
+            budget: 2.3,
+            rankings: {
+                california: 567,
+                national: 7890
+            },
             trends: {
                 enrollment: [285, 290, 295, 290, 290],
                 testScores: [73, 75, 77, 79, 81],
@@ -581,7 +678,13 @@ const schoolData = {
                 safety: 4.6,
                 communication: 4.3,
                 facilities: 4.4,
-                totalResponses: 44
+                totalResponses: 44,
+                comments: [
+                    "Hillcrest Elementary is an excellent school with dedicated teachers.",
+                    "The school community is welcoming and supportive of all students.",
+                    "Strong academic program with good communication to families.",
+                    "My child has thrived academically and socially at Hillcrest."
+                ]
             }
         }
     },
