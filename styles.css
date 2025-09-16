@@ -270,18 +270,98 @@ body {
 }
 
 .mini-chart {
-    height: 200px;
+    height: 120px;
     margin-top: var(--space-4);
+    flex-shrink: 0;
+    position: relative;
+    contain: layout style paint;
 }
 
+.mini-chart canvas {
+    max-height: 120px !important;
+}
 /* School Cards - Clean Design */
 .schools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
     margin-top: var(--space-8);
+    max-width: 100%;
+    overflow: hidden;
 }
 
+.school-type-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    contain: layout style paint;
+    will-change: transform;
+}
+
+.school-type-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.school-type-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--gray-300);
+}
+
+.school-type-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.025em;
+    flex-shrink: 0;
+}
+
+.school-stats {
+    margin-bottom: var(--space-4);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.school-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.school-stat:last-child {
+    border-bottom: none;
+}
+
+.school-stat .stat-label {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    font-weight: 500;
+}
+
+.school-stat .stat-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
 .school-type-card {
     background: white;
     border: 1px solid var(--gray-200);
@@ -727,36 +807,87 @@ body {
         grid-template-columns: 1fr;
     }
     
-    .schools-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .school-metrics {
-        grid-template-columns: 1fr;
-    }
-    
-    .sentiment-stats {
-        grid-template-columns: 1fr;
-    }
-    
-    .schools-list {
-        grid-template-columns: 1fr;
-    }
-    
-    .breakdown-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .chart-container {
-        height: 300px;
-        padding: var(--space-4);
-    }
-    
-    .section {
-        padding: var(--space-6);
-    }
+.schools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+    max-width: 100%;
+    overflow: hidden;
 }
 
+.school-type-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    contain: layout style paint;
+    will-change: transform;
+}
+
+.school-type-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.school-type-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--gray-300);
+}
+
+.school-type-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.025em;
+    flex-shrink: 0;
+}
+
+.school-stats {
+    margin-bottom: var(--space-4);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.school-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.school-stat:last-child {
+    border-bottom: none;
+}
+
+.school-stat .stat-label {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    font-weight: 500;
+}
+
+.school-stat .stat-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
 @media (max-width: 480px) {
     .header {
         padding: var(--space-6) 0;
@@ -817,15 +948,87 @@ body {
         gap: var(--space-4);
     }
     
-    .schools-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .chart-container {
-        height: 350px;
-    }
+.schools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+    max-width: 100%;
+    overflow: hidden;
 }
 
+.school-type-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    contain: layout style paint;
+    will-change: transform;
+}
+
+.school-type-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.school-type-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--gray-300);
+}
+
+.school-type-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.025em;
+    flex-shrink: 0;
+}
+
+.school-stats {
+    margin-bottom: var(--space-4);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.school-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.school-stat:last-child {
+    border-bottom: none;
+}
+
+.school-stat .stat-label {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    font-weight: 500;
+}
+
+.school-stat .stat-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
 @media (max-width: 768px) {
     .container {
         padding: 0 var(--space-4);
@@ -876,68 +1079,87 @@ body {
         padding: var(--space-6);
     }
     
-    .schools-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-4);
-    }
-    
-    .school-metrics {
-        grid-template-columns: 1fr;
-        gap: var(--space-4);
-    }
-    
-    .sentiment-stats {
-        grid-template-columns: 1fr;
-        gap: var(--space-4);
-    }
-    
-    .schools-list {
-        grid-template-columns: 1fr;
-        gap: var(--space-3);
-    }
-    
-    .breakdown-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-4);
-    }
-    
-    .chart-container {
-        height: 300px;
-        padding: var(--space-4);
-        margin: var(--space-4) 0;
-    }
-    
-    .section {
-        padding: var(--space-6);
-        margin: var(--space-6) 0;
-    }
-    
-    .section-title {
-        font-size: 1.5rem;
-        margin-bottom: var(--space-4);
-    }
-    
-    .school-card {
-        padding: var(--space-4);
-    }
-    
-    .school-name {
-        font-size: 1.125rem;
-    }
-    
-    .school-address {
-        font-size: 0.875rem;
-    }
-    
-    .metric-value {
-        font-size: 1.5rem;
-    }
-    
-    .metric-label {
-        font-size: 0.875rem;
-    }
+.schools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+    max-width: 100%;
+    overflow: hidden;
 }
 
+.school-type-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    contain: layout style paint;
+    will-change: transform;
+}
+
+.school-type-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.school-type-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--gray-300);
+}
+
+.school-type-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.025em;
+    flex-shrink: 0;
+}
+
+.school-stats {
+    margin-bottom: var(--space-4);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.school-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.school-stat:last-child {
+    border-bottom: none;
+}
+
+.school-stat .stat-label {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    font-weight: 500;
+}
+
+.school-stat .stat-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
 @media (max-width: 480px) {
     .container {
         padding: 0 var(--space-3);
@@ -1097,4 +1319,157 @@ body {
         background: var(--gray-100);
         border: 1px solid var(--gray-200);
     }
+}
+
+/* School Performance Mobile Fixes */
+@media (max-width: 1024px) {
+    .schools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+    
+    .school-type-card {
+        min-height: 280px;
+        max-height: 350px;
+    }
+    
+    .mini-chart {
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .schools-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .school-type-card {
+        min-height: 250px;
+        max-height: 300px;
+        padding: var(--space-4);
+        transition: none;
+    }
+    
+    .school-type-card:hover {
+        transform: none;
+    }
+    
+    .school-type-card h3 {
+        font-size: 1.125rem;
+        margin-bottom: var(--space-3);
+    }
+    
+    .school-stats {
+        margin-bottom: var(--space-3);
+    }
+    
+    .mini-chart {
+        height: 80px;
+        margin-top: var(--space-3);
+    }
+}
+
+@media (max-width: 480px) {
+    .school-type-card {
+        min-height: 200px;
+        max-height: 250px;
+        padding: var(--space-3);
+    }
+    
+    .school-type-card h3 {
+        font-size: 1rem;
+        margin-bottom: var(--space-2);
+    }
+    
+    .school-stat {
+        padding: var(--space-1) 0;
+    }
+    
+    .school-stat .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .school-stat .stat-value {
+        font-size: 1rem;
+    }
+    
+    .mini-chart {
+        height: 60px;
+        margin-top: var(--space-2);
+    }
+}
+
+/* High DPI optimization for mini charts */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .mini-chart canvas {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Performance and Layout Stability Fixes */
+.schools-grid {
+    contain: layout style;
+    will-change: auto;
+}
+
+.school-type-card {
+    contain: layout style paint;
+    will-change: transform;
+}
+
+/* Prevent layout shifts */
+.mini-chart {
+    min-height: 120px;
+    contain: layout style paint;
+}
+
+/* Reduce repaints on mobile */
+@media (max-width: 768px) {
+    .school-type-card {
+        will-change: auto;
+    }
+    
+    .mini-chart {
+        will-change: auto;
+    }
+}
+
+/* Optimize for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .school-type-card {
+        transition: none;
+    }
+    
+    .school-type-card:hover {
+        transform: none;
+    }
+    
+    .mini-chart {
+        animation: none;
+    }
+}
+
+/* Prevent horizontal overflow */
+.schools-grid {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.school-type-card {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Ensure proper text wrapping */
+.school-type-card h3 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.school-stat {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }

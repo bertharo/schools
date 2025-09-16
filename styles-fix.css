@@ -1,0 +1,197 @@
+/* Fixed School Performance Section Styles */
+
+/* School Cards - Fixed Grid Layout */
+.schools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.school-type-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.school-type-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.school-type-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--gray-300);
+}
+
+.school-type-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.025em;
+    flex-shrink: 0;
+}
+
+.school-stats {
+    margin-bottom: var(--space-4);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.school-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.school-stat:last-child {
+    border-bottom: none;
+}
+
+.school-stat .stat-label {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    font-weight: 500;
+}
+
+.school-stat .stat-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+/* Optimized Mini Chart */
+.mini-chart {
+    height: 120px;
+    margin-top: var(--space-4);
+    flex-shrink: 0;
+    position: relative;
+}
+
+.mini-chart canvas {
+    max-height: 120px !important;
+}
+
+/* Mobile Responsive Fixes */
+@media (max-width: 1024px) {
+    .schools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+    
+    .school-type-card {
+        min-height: 280px;
+        max-height: 350px;
+    }
+    
+    .mini-chart {
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .schools-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .school-type-card {
+        min-height: 250px;
+        max-height: 300px;
+        padding: var(--space-4);
+    }
+    
+    .school-type-card h3 {
+        font-size: 1.125rem;
+        margin-bottom: var(--space-3);
+    }
+    
+    .school-stats {
+        margin-bottom: var(--space-3);
+    }
+    
+    .mini-chart {
+        height: 80px;
+        margin-top: var(--space-3);
+    }
+}
+
+@media (max-width: 480px) {
+    .school-type-card {
+        min-height: 200px;
+        max-height: 250px;
+        padding: var(--space-3);
+    }
+    
+    .school-type-card h3 {
+        font-size: 1rem;
+        margin-bottom: var(--space-2);
+    }
+    
+    .school-stat {
+        padding: var(--space-1) 0;
+    }
+    
+    .school-stat .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .school-stat .stat-value {
+        font-size: 1rem;
+    }
+    
+    .mini-chart {
+        height: 60px;
+        margin-top: var(--space-2);
+    }
+}
+
+/* Performance Optimizations */
+.school-type-card {
+    contain: layout style paint;
+    will-change: transform;
+}
+
+.mini-chart {
+    contain: layout style paint;
+}
+
+/* Reduce animations on mobile for better performance */
+@media (max-width: 768px) {
+    .school-type-card {
+        transition: none;
+    }
+    
+    .school-type-card:hover {
+        transform: none;
+    }
+}
+
+/* High DPI optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .mini-chart canvas {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}

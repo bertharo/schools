@@ -540,3 +540,93 @@ const ousdCharts = new OUSDCharts();
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = OUSDCharts;
 }
+
+    // Optimized mini chart creation with performance improvements
+    createMiniChartOptimized(canvasId, schoolType) {
+        const ctx = document.getElementById(canvasId);
+        if (!ctx) return;
+
+        // Destroy existing chart if it exists
+        if (this.charts[canvasId]) {
+            this.charts[canvasId].destroy();
+        }
+
+        // Get school data efficiently
+        const schools = schoolData.getSchoolsByType(schoolType);
+        if (!schools || schools.length === 0) return;
+
+        // Calculate average performance data
+        const years = ['2020', '2021', '2022', '2023', '2024'];
+        const data = years.map(year => {
+            const yearData = schools.map(school => {
+                const yearIndex = years.indexOf(year);
+                return school.trends.testScores[yearIndex] || 0;
+            });
+            return yearData.reduce((sum, val) => sum + val, 0) / yearData.length;
+        });
+
+        // Create optimized chart with minimal options
+        this.charts[canvasId] = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: 'Performance',
+                    data: data,
+                    borderColor: this.colors.quaternary,
+                    backgroundColor: 'transparent',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0.4,
+                    pointRadius: 0,
+                    pointHoverRadius: 4,
+                    pointBackgroundColor: this.colors.quaternary,
+                    pointBorderColor: this.colors.quaternary
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    duration: 300,
+                    easing: 'easeOutQuart'
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        display: false,
+                        grid: {
+                            display: false
+                        }
+                    },
+                    x: {
+                        display: false,
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                elements: {
+                    point: {
+                        radius: 0,
+                        hoverRadius: 4
+                    },
+                    line: {
+                        borderWidth: 2
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index'
+                }
+            }
+        });
+    }

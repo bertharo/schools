@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUSD Performance Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .performance-info {
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        .test-results {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 12px 0;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">OUSD Performance Test</h1>
+            <p class="header-subtitle">Testing school performance section fixes</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="performance-info">
+                <h3>🔧 Performance Test</h3>
+                <p>This page tests the school performance section layout and performance improvements.</p>
+            </div>
+            
+            <div class="test-results" id="test-results">
+                <div>Layout Test: <span id="layout-test">Running...</span></div>
+                <div>Performance Test: <span id="perf-test">Running...</span></div>
+                <div>Mobile Test: <span id="mobile-test">Running...</span></div>
+            </div>
+
+            <!-- School Performance Section Test -->
+            <section id="schools" class="section">
+                <h2>School Performance</h2>
+                <div class="schools-grid">
+                    <div class="school-type-card">
+                        <h3>Elementary Schools</h3>
+                        <div class="school-stats">
+                            <div class="school-stat">
+                                <span class="stat-label">Average Enrollment</span>
+                                <span class="stat-value">425</span>
+                            </div>
+                            <div class="school-stat">
+                                <span class="stat-label">Test Score Average</span>
+                                <span class="stat-value">72%</span>
+                            </div>
+                            <div class="school-stat">
+                                <span class="stat-label">Parent Satisfaction</span>
+                                <span class="stat-value">4.3/5</span>
+                            </div>
+                        </div>
+                        <div class="mini-chart">
+                            <canvas id="elementaryChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="school-type-card">
+                        <h3>Middle Schools</h3>
+                        <div class="school-stats">
+                            <div class="school-stat">
+                                <span class="stat-label">Average Enrollment</span>
+                                <span class="stat-value">650</span>
+                            </div>
+                            <div class="school-stat">
+                                <span class="stat-label">Test Score Average</span>
+                                <span class="stat-value">68%</span>
+                            </div>
+                            <div class="school-stat">
+                                <span class="stat-label">Parent Satisfaction</span>
+                                <span class="stat-value">4.1/5</span>
+                            </div>
+                        </div>
+                        <div class="mini-chart">
+                            <canvas id="middleChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="school-type-card">
+                        <h3>High Schools</h3>
+                        <div class="school-stats">
+                            <div class="school-stat">
+                                <span class="stat-label">Average Enrollment</span>
+                                <span class="stat-value">1,200</span>
+                            </div>
+                            <div class="school-stat">
+                                <span class="stat-label">Graduation Rate</span>
+                                <span class="stat-value">78.5%</span>
+                            </div>
+                            <div class="school-stat">
+                                <span class="stat-label">Parent Satisfaction</span>
+                                <span class="stat-value">3.7/5</span>
+                            </div>
+                        </div>
+                        <div class="mini-chart">
+                            <canvas id="highChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Performance test
+        function runPerformanceTest() {
+            const startTime = performance.now();
+            
+            // Test layout stability
+            const schoolsGrid = document.querySelector('.schools-grid');
+            const schoolCards = document.querySelectorAll('.school-type-card');
+            
+            let layoutTest = 'PASS';
+            if (!schoolsGrid || schoolCards.length !== 3) {
+                layoutTest = 'FAIL';
+            }
+            
+            // Test grid layout
+            const computedStyle = window.getComputedStyle(schoolsGrid);
+            const gridColumns = computedStyle.gridTemplateColumns;
+            if (gridColumns.includes('auto-fit')) {
+                layoutTest = 'FAIL - Using auto-fit';
+            }
+            
+            // Test performance
+            const endTime = performance.now();
+            const renderTime = endTime - startTime;
+            
+            let perfTest = 'PASS';
+            if (renderTime > 100) {
+                perfTest = 'SLOW';
+            }
+            
+            // Test mobile responsiveness
+            let mobileTest = 'PASS';
+            if (window.innerWidth <= 768) {
+                const mobileGrid = window.getComputedStyle(schoolsGrid).gridTemplateColumns;
+                if (mobileGrid === 'repeat(3, 1fr)') {
+                    mobileTest = 'FAIL - Not responsive';
+                }
+            }
+            
+            // Update results
+            document.getElementById('layout-test').textContent = layoutTest;
+            document.getElementById('perf-test').textContent = `${perfTest} (${renderTime.toFixed(2)}ms)`;
+            document.getElementById('mobile-test').textContent = mobileTest;
+        }
+        
+        // Run test after page load
+        window.addEventListener('load', () => {
+            setTimeout(runPerformanceTest, 100);
+        });
+        
+        // Run test on resize
+        window.addEventListener('resize', runPerformanceTest);
+    </script>
+</body>
+</html>

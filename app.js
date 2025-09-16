@@ -167,9 +167,9 @@ class OUSDDashboard {
     }
 
     createMiniCharts() {
-        ousdCharts.createMiniChart('elementaryChart', 'elementary');
-        ousdCharts.createMiniChart('middleChart', 'middle');
-        ousdCharts.createMiniChart('highChart', 'high');
+        ousdCharts.createMiniChartOptimized('elementaryChart', 'elementary');
+        ousdCharts.createMiniChartOptimized('middleChart', 'middle');
+        ousdCharts.createMiniChartOptimized('highChart', 'high');
     }
 
     updateIndividualSchoolView() {
@@ -473,4 +473,83 @@ if (typeof module !== 'undefined' && module.exports) {
         this.updateDistrictStats();
         this.populateTopSchools();
         this.optimizeForMobile();
+    }
+
+    // Performance optimization for school performance section
+    optimizeSchoolPerformanceSection() {
+        // Debounce chart updates
+        this.debounceChartUpdate = this.debounce(this.updateAllCharts.bind(this), 300);
+        
+        // Use requestAnimationFrame for smooth updates
+        this.rafId = null;
+        
+        // Add intersection observer for lazy loading
+        this.setupSchoolPerformanceObserver();
+    }
+    
+    debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+    
+    setupSchoolPerformanceObserver() {
+        const schoolSection = document.getElementById('schools');
+        if (!schoolSection) return;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Only create mini charts when section is visible
+                    this.createMiniChartsIfNeeded();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        observer.observe(schoolSection);
+    }
+    
+    createMiniChartsIfNeeded() {
+        // Check if charts already exist
+        const elementaryChart = document.getElementById('elementaryChart');
+        const middleChart = document.getElementById('middleChart');
+        const highChart = document.getElementById('highChart');
+        
+        if (elementaryChart && !this.charts.elementaryChart) {
+            ousdCharts.createMiniChartOptimized('elementaryChart', 'elementary');
+        }
+        if (middleChart && !this.charts.middleChart) {
+            ousdCharts.createMiniChartOptimized('middleChart', 'middle');
+        }
+        if (highChart && !this.charts.highChart) {
+            ousdCharts.createMiniChartOptimized('highChart', 'high');
+        }
+    }
+    
+    // Override the original createMiniCharts to use lazy loading
+    createMiniCharts() {
+        // Don't create charts immediately - let intersection observer handle it
+        this.createMiniChartsIfNeeded();
+    }
+    
+    // Override updateAllCharts to use debouncing
+    updateAllCharts() {
+        if (this.rafId) {
+            cancelAnimationFrame(this.rafId);
+        }
+        
+        this.rafId = requestAnimationFrame(() => {
+            this.updateEnrollmentChart();
+            this.updateTestScoresChart();
+            this.updateBudgetChart();
+            this.updateSentimentChart();
+            this.updateIndividualSchoolChart();
+        });
     }
