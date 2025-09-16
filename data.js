@@ -277,10 +277,10 @@ const schoolData = {
                 totalResponses: 52,
                 comments: [
                     "We'll be starting our 9th year at Montclair and couldn't be happier. The school is vibrant and has a strong parent community.",
-                    "I LOVE MONTCLAIR... I recommend this school to everyone, the teachers are amazing, the campus is clean.",
-                    "They have an amazing library with an amazing librarian, they have music and art, and clubs and sports and an AWESOME garden.",
-                    "Our experience has been a mixed bag. Great parent community and PTO raises money for enrichment, but the school feels disorganized.",
-                    "We left a highly regarded private school for Montclair, and never looked back. The families are amazing, the leadership top-notch."
+                    "We left a highly regarded private school for Montclair, and never looked back. The families are amazing, the leadership top-notch.",
+                    "Our 5-year-old absolutely loves going to school and adores his teacher. This has been a huge relief for us.",
+                    "The PTA covers a lot of what used to be covered by the district—yard duty supervision, drama, art, computers, music, teaching assistants, and more.",
+                    "Our experience has been a mixed bag. Great parent community and PTO raises money for enrichment, but the school feels disorganized."
                 ]
             }
         },
@@ -311,9 +311,9 @@ const schoolData = {
                 comments: [
                     "Both schools are great. I suggest that you attend their open houses and check out the facilities and ask questions.",
                     "Our sons both went to Thornhill and we had a great experience there!",
-                    "Thornhill Elementary School is a delightful gem nestled in Oakland County.",
-                    "As I wandered through the hallways, I was immediately struck by the warmth of the staff and the engaging atmosphere.",
-                    "The school provides a solid foundation and the teachers are caring and dedicated."
+                    "Parents appreciate the strong sense of community and the school's commitment to fostering a welcoming environment.",
+                    "Similar to Montclair, Thornhill benefits from active parent involvement, which enhances the school's programs and resources.",
+                    "The aftercare is provided by Adventure Time, offering a consistent and reliable option for families."
                 ]
             }
         },
