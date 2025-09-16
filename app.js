@@ -2,7 +2,7 @@
 class OUSDSchoolFinder {
     constructor() {
         this.currentFilters = {
-            schoolType: 'all',
+                schoolType: 'all',
             minRating: 4.0,
             sortBy: 'rating'
         };
@@ -181,7 +181,7 @@ class OUSDSchoolFinder {
     showSchoolDetails(schoolId) {
         const school = schoolData.getSchoolById(schoolId);
         if (!school) return;
-        
+
         this.selectedSchool = school;
         
         // Update school details
@@ -280,7 +280,7 @@ class OUSDSchoolFinder {
                 // Already loaded in updateParentFeedback
                 break;
             case 'neighborhood':
-                // Static content, already in HTML
+                this.loadNeighborhoodInfo();
                 break;
         }
     }
@@ -360,6 +360,97 @@ class OUSDSchoolFinder {
         });
     }
 
+    loadNeighborhoodInfo() {
+        if (!this.selectedSchool || !this.selectedSchool.neighborhood) return;
+        
+        const neighborhood = this.selectedSchool.neighborhood;
+        
+        // Update neighborhood description
+        const descriptionEl = document.querySelector('#tab-neighborhood .neighborhood-info p');
+        if (descriptionEl) {
+            descriptionEl.textContent = neighborhood.description;
+        }
+        
+        // Update neighborhood stats
+        const statsContainer = document.querySelector('.neighborhood-stats');
+        if (statsContainer) {
+            statsContainer.innerHTML = `
+                <div class="neighborhood-stat">
+                    <div class="stat-label">Median Income</div>
+                    <div class="stat-value">$${neighborhood.demographics.medianIncome.toLocaleString()}</div>
+                </div>
+                <div class="neighborhood-stat">
+                    <div class="stat-label">Population</div>
+                    <div class="stat-value">${neighborhood.demographics.population.toLocaleString()}</div>
+                </div>
+                <div class="neighborhood-stat">
+                    <div class="stat-label">Diversity</div>
+                    <div class="stat-value">${neighborhood.demographics.diversity}</div>
+                </div>
+                <div class="neighborhood-stat">
+                    <div class="stat-label">Crime Rate</div>
+                    <div class="stat-value">${neighborhood.safety.crimeRate}</div>
+                </div>
+                <div class="neighborhood-stat">
+                    <div class="stat-label">Walkability</div>
+                    <div class="stat-value">${neighborhood.safety.walkability}</div>
+                </div>
+                <div class="neighborhood-stat">
+                    <div class="stat-label">Family Friendly</div>
+                    <div class="stat-value">${neighborhood.safety.familyFriendly}</div>
+                </div>
+            `;
+        }
+        
+        // Add amenities section if it doesn't exist
+        let amenitiesSection = document.querySelector('#tab-neighborhood .amenities-section');
+        if (!amenitiesSection) {
+            amenitiesSection = document.createElement('div');
+            amenitiesSection.className = 'amenities-section';
+            amenitiesSection.innerHTML = `
+                <h4>Local Amenities</h4>
+                <div class="amenities-grid">
+                    <div class="amenity-category">
+                        <h5>Parks & Recreation</h5>
+                        <ul>
+                            ${neighborhood.amenities.parks.map(park => `<li>${park}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="amenity-category">
+                        <h5>Shopping & Dining</h5>
+                        <p>${neighborhood.amenities.shopping}</p>
+                    </div>
+                    <div class="amenity-category">
+                        <h5>Transportation</h5>
+                        <p>${neighborhood.amenities.transportation}</p>
+                    </div>
+                </div>
+            `;
+            document.querySelector('#tab-neighborhood .neighborhood-info').appendChild(amenitiesSection);
+        } else {
+            // Update existing amenities
+            amenitiesSection.innerHTML = `
+                <h4>Local Amenities</h4>
+                <div class="amenities-grid">
+                    <div class="amenity-category">
+                        <h5>Parks & Recreation</h5>
+                        <ul>
+                            ${neighborhood.amenities.parks.map(park => `<li>${park}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="amenity-category">
+                        <h5>Shopping & Dining</h5>
+                        <p>${neighborhood.amenities.shopping}</p>
+                    </div>
+                    <div class="amenity-category">
+                        <h5>Transportation</h5>
+                        <p>${neighborhood.amenities.transportation}</p>
+                    </div>
+                </div>
+            `;
+        }
+    }
+        
     updateViewToggle() {
         document.querySelectorAll('.view-btn').forEach(btn => {
             btn.classList.remove('active');

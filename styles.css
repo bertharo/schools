@@ -684,6 +684,7 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: var(--space-4);
+    margin-bottom: var(--space-8);
 }
 
 .neighborhood-stat {
@@ -709,6 +710,68 @@ p {
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--secondary);
+}
+
+/* Amenities Section */
+.amenities-section {
+    margin-top: var(--space-8);
+}
+
+.amenities-section h4 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-6);
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-6);
+}
+
+.amenity-category {
+    background: var(--bg-secondary);
+    padding: var(--space-6);
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-200);
+}
+
+.amenity-category h5 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.amenity-category p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.875rem;
+}
+
+.amenity-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.amenity-category li {
+    color: var(--text-secondary);
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--gray-200);
+    font-size: 0.875rem;
+}
+
+.amenity-category li:last-child {
+    border-bottom: none;
+}
+
+.amenity-category li::before {
+    content: "•";
+    color: var(--secondary);
+    font-weight: bold;
+    margin-right: var(--space-2);
 }
 
 /* Footer */

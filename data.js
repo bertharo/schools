@@ -198,6 +198,25 @@ const schoolData = {
                 california: 1247,
                 national: 15432
             },
+            neighborhood: {
+                name: 'East Oakland',
+                description: 'A diverse, working-class neighborhood with strong community ties and growing development.',
+                demographics: {
+                    medianIncome: 65000,
+                    population: 45000,
+                    diversity: 'High - Latino (45%), African American (25%), Asian (15%), White (10%), Other (5%)'
+                },
+                amenities: {
+                    parks: ['Mills College at Northeastern University', 'Dimond Park'],
+                    shopping: 'Fruitvale Village, International Boulevard',
+                    transportation: 'BART Fruitvale Station, AC Transit lines'
+                },
+                safety: {
+                    crimeRate: 'Moderate',
+                    walkability: 'Good',
+                    familyFriendly: 'High'
+                }
+            },
             trends: {
                 enrollment: [310, 315, 320, 325, 320],
                 testScores: [68, 70, 72, 74, 76],
@@ -231,6 +250,25 @@ const schoolData = {
                 california: 892,
                 national: 11234
             },
+            neighborhood: {
+                name: 'Glenview',
+                description: 'A charming residential neighborhood in the Oakland Hills with tree-lined streets and family-friendly atmosphere.',
+                demographics: {
+                    medianIncome: 125000,
+                    population: 8500,
+                    diversity: 'Moderate - White (60%), Asian (20%), Latino (10%), African American (5%), Other (5%)'
+                },
+                amenities: {
+                    parks: ['Glenview Park', 'Joaquin Miller Park', 'Redwood Regional Park'],
+                    shopping: 'Piedmont Avenue, Montclair Village',
+                    transportation: 'AC Transit lines, Easy freeway access'
+                },
+                safety: {
+                    crimeRate: 'Low',
+                    walkability: 'Excellent',
+                    familyFriendly: 'Very High'
+                }
+            },
             trends: {
                 enrollment: [285, 290, 295, 290, 290],
                 testScores: [68, 70, 72, 74, 76],
@@ -257,13 +295,32 @@ const schoolData = {
             id: 'montclair',
             name: 'Montclair Elementary School',
             type: 'elementary',
-            address: '1025 81st Avenue, Oakland, CA 94621',
+            address: '1757 Mountain Boulevard, Oakland, CA 94611',
             phone: '(510) 879-8000',
             enrollment: 380,
             budget: 2.9,
             rankings: {
                 california: 456,
                 national: 6789
+            },
+            neighborhood: {
+                name: 'Montclair',
+                description: 'An upscale neighborhood in the Oakland Hills known for its village atmosphere, excellent schools, and strong community.',
+                demographics: {
+                    medianIncome: 150000,
+                    population: 12000,
+                    diversity: 'Moderate - White (65%), Asian (20%), Latino (8%), African American (4%), Other (3%)'
+                },
+                amenities: {
+                    parks: ['Montclair Park', 'Joaquin Miller Park', 'Redwood Regional Park'],
+                    shopping: 'Montclair Village, Piedmont Avenue',
+                    transportation: 'AC Transit lines, BART Rockridge Station nearby'
+                },
+                safety: {
+                    crimeRate: 'Very Low',
+                    walkability: 'Excellent',
+                    familyFriendly: 'Very High'
+                }
             },
             trends: {
                 enrollment: [375, 380, 385, 380, 380],
@@ -291,13 +348,32 @@ const schoolData = {
             id: 'thornhill',
             name: 'Thornhill Elementary School',
             type: 'elementary',
-            address: '1025 81st Avenue, Oakland, CA 94621',
+            address: '5880 Thornhill Drive, Oakland, CA 94611',
             phone: '(510) 879-8000',
             enrollment: 360,
             budget: 2.7,
             rankings: {
                 california: 623,
                 national: 8456
+            },
+            neighborhood: {
+                name: 'Thornhill',
+                description: 'A quiet residential neighborhood in the Oakland Hills with beautiful views and family-oriented community.',
+                demographics: {
+                    medianIncome: 140000,
+                    population: 6800,
+                    diversity: 'Moderate - White (70%), Asian (15%), Latino (8%), African American (4%), Other (3%)'
+                },
+                amenities: {
+                    parks: ['Thornhill Park', 'Joaquin Miller Park', 'Redwood Regional Park'],
+                    shopping: 'Montclair Village, Piedmont Avenue',
+                    transportation: 'AC Transit lines, Easy freeway access'
+                },
+                safety: {
+                    crimeRate: 'Very Low',
+                    walkability: 'Good',
+                    familyFriendly: 'Very High'
+                }
             },
             trends: {
                 enrollment: [355, 360, 365, 360, 360],
@@ -333,6 +409,25 @@ const schoolData = {
                 california: 234,
                 national: 3456
             },
+            neighborhood: {
+                name: 'Crocker Highlands',
+                description: 'An affluent neighborhood in the Oakland Hills known for its historic homes, excellent schools, and strong community involvement.',
+                demographics: {
+                    medianIncome: 180000,
+                    population: 5200,
+                    diversity: 'Moderate - White (75%), Asian (15%), Latino (5%), African American (3%), Other (2%)'
+                },
+                amenities: {
+                    parks: ['Crocker Highlands Park', 'Joaquin Miller Park', 'Redwood Regional Park'],
+                    shopping: 'Piedmont Avenue, Montclair Village',
+                    transportation: 'AC Transit lines, BART Rockridge Station nearby'
+                },
+                safety: {
+                    crimeRate: 'Very Low',
+                    walkability: 'Excellent',
+                    familyFriendly: 'Very High'
+                }
+            },
             trends: {
                 enrollment: [415, 420, 425, 420, 420],
                 testScores: [75, 77, 79, 81, 83],
@@ -366,6 +461,25 @@ const schoolData = {
             rankings: {
                 california: 567,
                 national: 7890
+            },
+            neighborhood: {
+                name: 'Glenview',
+                description: 'A residential neighborhood in the Oakland Hills with a mix of single-family homes and apartments, known for its community feel.',
+                demographics: {
+                    medianIncome: 110000,
+                    population: 12000,
+                    diversity: 'Moderate - White (55%), Asian (25%), Latino (12%), African American (5%), Other (3%)'
+                },
+                amenities: {
+                    parks: ['Glenview Park', 'Joaquin Miller Park', 'Redwood Regional Park'],
+                    shopping: 'Piedmont Avenue, Montclair Village',
+                    transportation: 'AC Transit lines, Easy freeway access'
+                },
+                safety: {
+                    crimeRate: 'Low',
+                    walkability: 'Good',
+                    familyFriendly: 'High'
+                }
             },
             trends: {
                 enrollment: [675, 680, 685, 680, 680],
@@ -401,6 +515,25 @@ const schoolData = {
                 california: 89,
                 national: 1234
             },
+            neighborhood: {
+                name: 'Piedmont Avenue',
+                description: 'A vibrant, walkable neighborhood known for its eclectic mix of shops, restaurants, and community events.',
+                demographics: {
+                    medianIncome: 95000,
+                    population: 15000,
+                    diversity: 'High - White (45%), Asian (20%), Latino (20%), African American (10%), Other (5%)'
+                },
+                amenities: {
+                    parks: ['Piedmont Avenue', 'Mosswood Park', 'Temescal Regional Recreation Area'],
+                    shopping: 'Piedmont Avenue shopping district, Temescal Alley',
+                    transportation: 'BART MacArthur Station, AC Transit lines'
+                },
+                safety: {
+                    crimeRate: 'Moderate',
+                    walkability: 'Excellent',
+                    familyFriendly: 'High'
+                }
+            },
             trends: {
                 enrollment: [1795, 1800, 1805, 1800, 1800],
                 testScores: [75, 77, 79, 81, 83],
@@ -435,6 +568,25 @@ const schoolData = {
                 california: 1456,
                 national: 18765
             },
+            neighborhood: {
+                name: 'East Oakland',
+                description: 'A diverse, working-class neighborhood with strong community ties and growing development.',
+                demographics: {
+                    medianIncome: 55000,
+                    population: 38000,
+                    diversity: 'High - Latino (50%), African American (30%), Asian (12%), White (5%), Other (3%)'
+                },
+                amenities: {
+                    parks: ['Foothill Square', 'Dimond Park'],
+                    shopping: 'Foothill Square, International Boulevard',
+                    transportation: 'BART Fruitvale Station, AC Transit lines'
+                },
+                safety: {
+                    crimeRate: 'Moderate',
+                    walkability: 'Good',
+                    familyFriendly: 'High'
+                }
+            },
             trends: {
                 enrollment: [275, 280, 285, 280, 280],
                 testScores: [62, 64, 66, 68, 70],
@@ -467,6 +619,25 @@ const schoolData = {
             rankings: {
                 california: 1123,
                 national: 14567
+            },
+            neighborhood: {
+                name: 'West Oakland',
+                description: 'A historically significant neighborhood with a rich cultural heritage and ongoing revitalization efforts.',
+                demographics: {
+                    medianIncome: 70000,
+                    population: 25000,
+                    diversity: 'High - African American (45%), Latino (25%), White (20%), Asian (8%), Other (2%)'
+                },
+                amenities: {
+                    parks: ['DeFremery Park', 'Prescott Park', 'Willie Keyes Recreation Center'],
+                    shopping: 'West Oakland BART Station area, 7th Street',
+                    transportation: 'BART West Oakland Station, AC Transit lines'
+                },
+                safety: {
+                    crimeRate: 'Moderate',
+                    walkability: 'Good',
+                    familyFriendly: 'Moderate'
+                }
             },
             trends: {
                 enrollment: [315, 320, 325, 320, 320],
@@ -533,6 +704,25 @@ const schoolData = {
             rankings: {
                 california: 234,
                 national: 3456
+            },
+            neighborhood: {
+                name: 'Skyline',
+                description: 'A residential neighborhood in the Oakland Hills with beautiful views of the Bay Area and access to regional parks.',
+                demographics: {
+                    medianIncome: 120000,
+                    population: 18000,
+                    diversity: 'Moderate - White (60%), Asian (20%), Latino (12%), African American (5%), Other (3%)'
+                },
+                amenities: {
+                    parks: ['Redwood Regional Park', 'Joaquin Miller Park', 'Skyline Gate Staging Area'],
+                    shopping: 'Montclair Village, Piedmont Avenue',
+                    transportation: 'AC Transit lines, Easy freeway access'
+                },
+                safety: {
+                    crimeRate: 'Low',
+                    walkability: 'Moderate',
+                    familyFriendly: 'High'
+                }
             },
             trends: {
                 enrollment: [1080, 1090, 1100, 1110, 1100],
