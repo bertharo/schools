@@ -306,7 +306,12 @@ class OUSDDashboard {
         const topSchoolsList = document.getElementById('top-schools-list');
         if (!topSchoolsList) return;
 
-        const topSchools = schoolData.getSchoolsByParentSatisfaction(4.0).slice(0, 6);
+        // Get all schools and filter by parent satisfaction >= 4.0
+        const allSchools = schoolData.getAllSchools();
+        const topSchools = allSchools
+            .filter(school => school.parentSentiment.overall >= 4.0)
+            .sort((a, b) => b.parentSentiment.overall - a.parentSentiment.overall)
+            .slice(0, 6);
         
         topSchoolsList.innerHTML = topSchools.map(school => `
             <div class="school-item">
