@@ -380,6 +380,14 @@ const schoolData = {
                 california: 623,
                 national: 8456
             },
+            enrollmentInfo: {
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
+                schoolWebsite: 'https://www.ousd.org/thornhill',
+                contactEmail: 'office@thornhill.ousd.org'
+            },
             neighborhood: {
                 name: 'Thornhill',
                 description: 'A quiet residential neighborhood in the Oakland Hills with beautiful views and family-oriented community.',
@@ -433,6 +441,14 @@ const schoolData = {
                 california: 234,
                 national: 3456
             },
+            enrollmentInfo: {
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
+                schoolWebsite: 'https://www.ousd.org/crocker-highlands',
+                contactEmail: 'office@crockerhighlands.ousd.org'
+            },
             neighborhood: {
                 name: 'Crocker Highlands',
                 description: 'An affluent neighborhood in the Oakland Hills known for its historic homes, excellent schools, and strong community involvement.',
@@ -485,6 +501,14 @@ const schoolData = {
             rankings: {
                 california: 567,
                 national: 7890
+            },
+            enrollmentInfo: {
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
+                schoolWebsite: 'https://www.ousd.org/bret-harte',
+                contactEmail: 'office@bretharte.ousd.org'
             },
             neighborhood: {
                 name: 'Glenview',
@@ -600,6 +624,14 @@ const schoolData = {
                 california: 1456,
                 national: 18765
             },
+            enrollmentInfo: {
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
+                schoolWebsite: 'https://www.ousd.org/franklin',
+                contactEmail: 'office@franklin.ousd.org'
+            },
             neighborhood: {
                 name: 'East Oakland',
                 description: 'A diverse, working-class neighborhood with strong community ties and growing development.',
@@ -651,6 +683,14 @@ const schoolData = {
             rankings: {
                 california: 1123,
                 national: 14567
+            },
+            enrollmentInfo: {
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
+                schoolWebsite: 'https://www.ousd.org/lincoln',
+                contactEmail: 'office@lincoln.ousd.org'
             },
             neighborhood: {
                 name: 'West Oakland',
@@ -704,6 +744,14 @@ const schoolData = {
                 california: 789,
                 national: 9876
             },
+            enrollmentInfo: {
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
+                schoolWebsite: 'https://www.ousd.org/westlake',
+                contactEmail: 'office@westlake.ousd.org'
+            },
             neighborhood: {
                 name: 'Westlake',
                 description: 'A diverse neighborhood in West Oakland with a mix of residential and commercial areas, known for its community spirit.',
@@ -755,6 +803,14 @@ const schoolData = {
             rankings: {
                 california: 234,
                 national: 3456
+            },
+            enrollmentInfo: {
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
+                schoolWebsite: 'https://www.ousd.org/skyline',
+                contactEmail: 'office@skyline.ousd.org'
             },
             neighborhood: {
                 name: 'Skyline',
@@ -808,6 +864,14 @@ const schoolData = {
                 california: 1345,
                 national: 16789
             },
+            enrollmentInfo: {
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
+                schoolWebsite: 'https://www.ousd.org/emerson',
+                contactEmail: 'office@emerson.ousd.org'
+            },
             neighborhood: {
                 name: 'Temescal',
                 description: 'A vibrant, up-and-coming neighborhood known for its diverse community, local businesses, and strong sense of community.',
@@ -859,6 +923,14 @@ const schoolData = {
             rankings: {
                 california: 678,
                 national: 8765
+            },
+            enrollmentInfo: {
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
+                schoolWebsite: 'https://www.ousd.org/claremont',
+                contactEmail: 'office@claremont.ousd.org'
             },
             neighborhood: {
                 name: 'Claremont',
@@ -973,6 +1045,14 @@ const schoolData = {
                 california: 456,
                 national: 5678
             },
+            enrollmentInfo: {
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
+                schoolWebsite: 'https://www.ousd.org/oakland-high',
+                contactEmail: 'office@oaklandhigh.ousd.org'
+            },
             neighborhood: {
                 name: 'MacArthur Boulevard',
                 description: 'A diverse neighborhood along MacArthur Boulevard with a mix of residential and commercial areas, known for its community engagement.',
@@ -1024,6 +1104,14 @@ const schoolData = {
             rankings: {
                 california: 567,
                 national: 7890
+            },
+            enrollmentInfo: {
+                openDate: '2024-12-03',
+                closeDate: '2025-02-08',
+                lotteryDate: '2025-02-15',
+                enrollmentUrl: 'https://www.ousd.org/enroll',
+                schoolWebsite: 'https://www.ousd.org/hillcrest',
+                contactEmail: 'office@hillcrest.ousd.org'
             },
             neighborhood: {
                 name: 'Rockridge',
