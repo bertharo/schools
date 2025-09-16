@@ -811,6 +811,59 @@ const schoolData = {
                 ]
             }
         },
+        'edna-brewer': {
+            id: 'edna-brewer',
+            name: 'Edna Brewer Middle School',
+            type: 'middle',
+            address: '3748 13th Avenue, Oakland, CA 94610',
+            phone: '(510) 879-8000',
+            enrollment: 520,
+            budget: 4.2,
+            rankings: {
+                california: 445,
+                national: 5678
+            },
+            neighborhood: {
+                name: 'Piedmont Avenue',
+                description: 'A vibrant, walkable neighborhood known for its eclectic mix of shops, restaurants, and community events.',
+                demographics: {
+                    medianIncome: 95000,
+                    population: 15000,
+                    diversity: 'High - White (45%), Asian (20%), Latino (20%), African American (10%), Other (5%)'
+                },
+                amenities: {
+                    parks: ['Piedmont Avenue', 'Mosswood Park', 'Temescal Regional Recreation Area'],
+                    shopping: 'Piedmont Avenue shopping district, Temescal Alley',
+                    transportation: 'BART MacArthur Station, AC Transit lines'
+                },
+                safety: {
+                    crimeRate: 'Moderate',
+                    walkability: 'Excellent',
+                    familyFriendly: 'High'
+                }
+            },
+            trends: {
+                enrollment: [515, 520, 525, 520, 520],
+                testScores: [73, 75, 77, 79, 81],
+                budget: [3.8, 3.9, 4.0, 4.1, 4.2],
+                parentSatisfaction: [4.1, 4.2, 4.3, 4.4, 4.5]
+            },
+            parentSentiment: {
+                overall: 4.5,
+                academics: 4.4,
+                safety: 4.6,
+                communication: 4.3,
+                facilities: 4.4,
+                totalResponses: 48,
+                comments: [
+                    "Edna Brewer has been an excellent middle school experience for our child. The teachers are dedicated and caring.",
+                    "The school offers a great balance of academics and extracurricular activities.",
+                    "Strong community feel with active parent involvement and support.",
+                    "The transition from elementary was smooth and well-supported by the staff.",
+                    "Great diversity and inclusive environment that prepares students well for high school."
+                ]
+            }
+        },
         'oakland-high': {
             id: 'oakland-high',
             name: 'Oakland High School',
