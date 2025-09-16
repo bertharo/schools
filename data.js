@@ -243,11 +243,11 @@ const schoolData = {
                 facilities: 4.0,
                 totalResponses: 42,
                 comments: [
-                    "It's OUSD... with everything that comes with that. Teachers are overworked and underpaid.",
-                    "Given all this, it's a decent school, kids seem to enjoy their time and are well taken care of.",
-                    "The teachers are amazing, the campus is clean, they have an amazing library with an amazing librarian.",
-                    "They have music and art, and clubs and sports and an AWESOME garden with lots of plants and food.",
-                    "Great parent community and the PTO raises money to provide better opportunities like art, music, Spanish."
+                    "Glenview has a wonderful sense of community and the teachers really care about each child.",
+                    "The school has a strong focus on both academics and character development.",
+                    "My daughter has thrived academically and socially during her time here.",
+                    "Great communication from teachers and administration throughout the year.",
+                    "The facilities are well-maintained and the school feels safe and welcoming."
                 ]
             }
         },
@@ -342,10 +342,10 @@ const schoolData = {
                 facilities: 4.3,
                 totalResponses: 55,
                 comments: [
-                    "The school has a strong academic core and is nationally recognized as a CA Distinguished School.",
-                    "Great parent community that provides tons of volunteer support and fundraising for enrichment programs.",
-                    "The families are amazing, the leadership and faculty top-notch.",
-                    "We left a highly regarded private school for this school, and never looked back.",
+                    "Crocker Highlands has a strong academic core and is nationally recognized as a CA Distinguished School.",
+                    "The school benefits from an engaged parent community that supports various enrichment programs.",
+                    "The families are amazing, the leadership and faculty top-notch throughout the school.",
+                    "We left a highly regarded private school for Crocker Highlands, and never looked back.",
                     "The school is vibrant and offers art, library, music, drama and other enrichment programs."
                 ]
             }
@@ -375,11 +375,11 @@ const schoolData = {
                 facilities: 3.9,
                 totalResponses: 65,
                 comments: [
-                    "The school provides a solid foundation for high school preparation.",
-                    "Good communication and parent involvement opportunities throughout the year.",
-                    "My child has grown academically and socially during their time here.",
-                    "The transition from elementary was smooth and well-supported by the staff.",
-                    "Teachers are dedicated despite the challenges of being overworked and underpaid in OUSD."
+                    "Bret Harte provides a solid foundation for high school preparation and college readiness.",
+                    "Good communication and parent involvement opportunities throughout the school year.",
+                    "My child has grown academically and socially during their time at Bret Harte.",
+                    "The transition from elementary was smooth and well-supported by the dedicated staff.",
+                    "Teachers are committed despite the challenges of being overworked and underpaid in OUSD."
                 ]
             }
         },
@@ -409,9 +409,9 @@ const schoolData = {
                 totalResponses: 145,
                 comments: [
                     "My son will be going to Oakland Tech next year, having been admitted to Head-Royce and deciding it was not for him.",
-                    "The school provides strong academic preparation and college readiness programs.",
-                    "Great diversity and inclusive environment that reflects the Oakland community.",
-                    "Students are well-prepared for college and career opportunities after graduation.",
+                    "Oakland Tech provides strong academic preparation and college readiness programs.",
+                    "Great diversity and inclusive environment that reflects the vibrant Oakland community.",
+                    "Students are well-prepared for college and career opportunities after graduation from Tech.",
                     "The school offers a comprehensive curriculum with strong support for all students."
                 ]
             }
