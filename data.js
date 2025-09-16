@@ -213,6 +213,7 @@ const schoolData = {
             type: 'elementary',
             address: '4215 La Cresta Avenue, Oakland, CA 94602',
             enrollment: 290,
+            budget: 2.3,
             trends: {
                 enrollment: [285, 290, 295, 290, 290],
                 testScores: [68, 70, 72, 74, 76],
@@ -234,6 +235,7 @@ const schoolData = {
             type: 'elementary',
             address: '1025 81st Avenue, Oakland, CA 94621',
             enrollment: 380,
+            budget: 2.9,
             trends: {
                 enrollment: [375, 380, 385, 380, 380],
                 testScores: [72, 74, 76, 78, 80],
@@ -255,6 +257,7 @@ const schoolData = {
             type: 'elementary',
             address: '1025 81st Avenue, Oakland, CA 94621',
             enrollment: 360,
+            budget: 2.7,
             trends: {
                 enrollment: [355, 360, 365, 360, 360],
                 testScores: [71, 73, 75, 77, 79],
