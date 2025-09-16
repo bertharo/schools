@@ -527,4 +527,9 @@ const schoolData = {
 // Export for use in other files
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { ousdData, schoolData, dataUtils };
+} else {
+    // Make data globally available in browser
+    window.ousdData = ousdData;
+    window.schoolData = schoolData;
+    window.dataUtils = dataUtils;
 }
