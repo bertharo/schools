@@ -199,6 +199,9 @@ class OUSDSchoolFinder {
         document.getElementById('school-satisfaction').textContent = `${school.parentSentiment.overall}/5`;
         document.getElementById('school-ca-ranking').textContent = `#${school.rankings.california.toLocaleString()}`;
         
+        // Update enrollment information
+        this.updateEnrollmentInfo(school);
+        
         // Update parent feedback
         this.updateParentFeedback(school);
         
@@ -234,6 +237,81 @@ class OUSDSchoolFinder {
                 </div>`
             ).join('');
         }
+    }
+
+    updateEnrollmentInfo(school) {
+        if (!school.enrollmentInfo) return;
+        
+        const enrollmentInfo = school.enrollmentInfo;
+        
+        // Format dates
+        const formatDate = (dateString) => {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+        };
+        
+        // Create or update enrollment section
+        let enrollmentSection = document.querySelector('#school-details-section .enrollment-section');
+        if (!enrollmentSection) {
+            enrollmentSection = document.createElement('div');
+            enrollmentSection.className = 'enrollment-section';
+            enrollmentSection.innerHTML = `
+                <h4>Enrollment Information</h4>
+                <div class="enrollment-details">
+                    <div class="enrollment-dates">
+                        <div class="enrollment-date">
+                            <span class="date-label">Application Opens:</span>
+                            <span class="date-value" id="enrollment-open-date"></span>
+                        </div>
+                        <div class="enrollment-date">
+                            <span class="date-label">Application Closes:</span>
+                            <span class="date-value" id="enrollment-close-date"></span>
+                        </div>
+                        <div class="enrollment-date">
+                            <span class="date-label">Lottery Date:</span>
+                            <span class="date-value" id="enrollment-lottery-date"></span>
+                        </div>
+                    </div>
+                    <div class="enrollment-links">
+                        <a href="${enrollmentInfo.enrollmentUrl}" target="_blank" class="enrollment-btn primary">
+                            Apply for Enrollment
+                        </a>
+                        <a href="${enrollmentInfo.schoolWebsite}" target="_blank" class="enrollment-btn secondary">
+                            School Website
+                        </a>
+                        <a href="mailto:${enrollmentInfo.contactEmail}" class="enrollment-btn secondary">
+                            Contact School
+                        </a>
+                    </div>
+                </div>
+            `;
+            
+            // Insert after school overview
+            const schoolOverview = document.querySelector('#school-details-section .school-overview');
+            if (schoolOverview) {
+                schoolOverview.insertAdjacentElement('afterend', enrollmentSection);
+            }
+        } else {
+            // Update existing enrollment section
+            document.getElementById('enrollment-open-date').textContent = formatDate(enrollmentInfo.openDate);
+            document.getElementById('enrollment-close-date').textContent = formatDate(enrollmentInfo.closeDate);
+            document.getElementById('enrollment-lottery-date').textContent = formatDate(enrollmentInfo.lotteryDate);
+            
+            // Update links
+            const links = enrollmentSection.querySelectorAll('.enrollment-btn');
+            links[0].href = enrollmentInfo.enrollmentUrl;
+            links[1].href = enrollmentInfo.schoolWebsite;
+            links[2].href = `mailto:${enrollmentInfo.contactEmail}`;
+        }
+        
+        // Update dates
+        document.getElementById('enrollment-open-date').textContent = formatDate(enrollmentInfo.openDate);
+        document.getElementById('enrollment-close-date').textContent = formatDate(enrollmentInfo.closeDate);
+        document.getElementById('enrollment-lottery-date').textContent = formatDate(enrollmentInfo.lotteryDate);
     }
 
     updateRatingDisplay(id, rating) {

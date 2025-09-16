@@ -643,9 +643,9 @@ p {
     background: var(--bg-primary);
     border: 1px solid var(--gray-200);
     border-radius: var(--radius);
-    padding: var(--space-4);
-}
-
+        padding: var(--space-4);
+    }
+    
 .comment-text {
     color: var(--text-secondary);
     font-style: italic;
@@ -740,7 +740,7 @@ p {
 .amenity-category h5 {
     color: var(--text-primary);
     margin-bottom: var(--space-4);
-    font-size: 1rem;
+        font-size: 1rem;
     font-weight: 600;
 }
 
@@ -772,6 +772,125 @@ p {
     color: var(--secondary);
     font-weight: bold;
     margin-right: var(--space-2);
+}
+
+/* Enrollment Section */
+.enrollment-section {
+    background: var(--bg-secondary);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin: var(--space-8) 0;
+}
+
+.enrollment-section h4 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-6);
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.enrollment-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: start;
+}
+
+.enrollment-dates {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.enrollment-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3) var(--space-4);
+    background: var(--bg-primary);
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-200);
+}
+
+.date-label {
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+}
+
+.date-value {
+    font-weight: 600;
+    color: var(--secondary);
+    font-size: 0.875rem;
+}
+
+.enrollment-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.enrollment-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.enrollment-btn.primary {
+    background: var(--secondary);
+    color: var(--text-inverse);
+    border: 1px solid var(--secondary);
+}
+
+.enrollment-btn.primary:hover {
+    background: var(--secondary-light);
+    border-color: var(--secondary-light);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+.enrollment-btn.secondary {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--gray-300);
+}
+
+.enrollment-btn.secondary:hover {
+    background: var(--gray-100);
+    border-color: var(--gray-400);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Mobile responsiveness for enrollment section */
+@media (max-width: 768px) {
+    .enrollment-details {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .enrollment-date {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+    }
+    
+    .enrollment-links {
+        gap: var(--space-2);
+    }
+    
+    .enrollment-btn {
+        padding: var(--space-4) var(--space-6);
+        font-size: 0.875rem;
+    }
 }
 
 /* Footer */
@@ -854,8 +973,8 @@ p {
     
     .school-overview {
         grid-template-columns: 1fr;
-    }
-    
+}
+
     .school-metrics {
         grid-template-columns: 1fr;
     }

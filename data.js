@@ -198,6 +198,14 @@ const schoolData = {
                 california: 1247,
                 national: 15432
             },
+            enrollmentInfo: {
+                openDate: '2024-01-15',
+                closeDate: '2024-03-15',
+                lotteryDate: '2024-03-20',
+                enrollmentUrl: 'https://www.ousd.org/enrollment',
+                schoolWebsite: 'https://www.ousd.org/acorn-woodland',
+                contactEmail: 'acorn-woodland@ousd.org'
+            },
             neighborhood: {
                 name: 'East Oakland',
                 description: 'A diverse, working-class neighborhood with strong community ties and growing development.',
@@ -249,6 +257,14 @@ const schoolData = {
             rankings: {
                 california: 892,
                 national: 11234
+            },
+            enrollmentInfo: {
+                openDate: '2024-01-15',
+                closeDate: '2024-03-15',
+                lotteryDate: '2024-03-20',
+                enrollmentUrl: 'https://www.ousd.org/enrollment',
+                schoolWebsite: 'https://www.ousd.org/glenview',
+                contactEmail: 'glenview@ousd.org'
             },
             neighborhood: {
                 name: 'Glenview',
@@ -302,6 +318,14 @@ const schoolData = {
             rankings: {
                 california: 456,
                 national: 6789
+            },
+            enrollmentInfo: {
+                openDate: '2024-01-15',
+                closeDate: '2024-03-15',
+                lotteryDate: '2024-03-20',
+                enrollmentUrl: 'https://www.ousd.org/enrollment',
+                schoolWebsite: 'https://www.ousd.org/montclair',
+                contactEmail: 'montclair@ousd.org'
             },
             neighborhood: {
                 name: 'Montclair',
@@ -514,6 +538,14 @@ const schoolData = {
             rankings: {
                 california: 89,
                 national: 1234
+            },
+            enrollmentInfo: {
+                openDate: '2024-01-15',
+                closeDate: '2024-03-15',
+                lotteryDate: '2024-03-20',
+                enrollmentUrl: 'https://www.ousd.org/enrollment',
+                schoolWebsite: 'https://www.ousd.org/oakland-tech',
+                contactEmail: 'oakland-tech@ousd.org'
             },
             neighborhood: {
                 name: 'Piedmont Avenue',
@@ -822,6 +854,14 @@ const schoolData = {
             rankings: {
                 california: 445,
                 national: 5678
+            },
+            enrollmentInfo: {
+                openDate: '2024-01-15',
+                closeDate: '2024-03-15',
+                lotteryDate: '2024-03-20',
+                enrollmentUrl: 'https://www.ousd.org/enrollment',
+                schoolWebsite: 'https://www.ousd.org/edna-brewer',
+                contactEmail: 'edna-brewer@ousd.org'
             },
             neighborhood: {
                 name: 'Piedmont Avenue',
