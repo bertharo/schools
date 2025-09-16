@@ -24,6 +24,7 @@ class OUSDDashboard {
         };
         
         this.init();
+        this.populateSchoolDropdown();
     }
 
     init() {
@@ -418,3 +419,35 @@ document.addEventListener('DOMContentLoaded', () => {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { OUSDDashboard, dashboardUtils };
 }
+
+    // Populate school dropdown with all schools from data
+    populateSchoolDropdown() {
+        const schoolSelect = document.getElementById('school-select');
+        if (!schoolSelect) return;
+
+        // Clear existing options except the first one
+        schoolSelect.innerHTML = '<option value="">Choose a school...</option>';
+
+        // Get all schools and group by type
+        const allSchools = schoolData.getAllSchools();
+        const schoolsByType = {
+            elementary: allSchools.filter(school => school.type === 'elementary'),
+            middle: allSchools.filter(school => school.type === 'middle'),
+            high: allSchools.filter(school => school.type === 'high')
+        };
+
+        // Create optgroups for each school type
+        Object.keys(schoolsByType).forEach(type => {
+            const optgroup = document.createElement('optgroup');
+            optgroup.label = type.charAt(0).toUpperCase() + type.slice(1) + ' Schools';
+            
+            schoolsByType[type].forEach(school => {
+                const option = document.createElement('option');
+                option.value = school.id;
+                option.textContent = school.name;
+                optgroup.appendChild(option);
+            });
+            
+            schoolSelect.appendChild(optgroup);
+        });
+    }
