@@ -19,9 +19,9 @@
 <body>
     <header class="header">
         <div class="container">
-            <h1 class="header-title">🏫 OUSD School Finder</h1>
-            <p class="header-subtitle">Find the best schools in Oakland for your family</p>
-            <div class="header-stats">
+            <h1 class="header-title" id="header-title">🏫 OUSD School Finder</h1>
+            <p class="header-subtitle" id="header-subtitle">Find the best schools in Oakland for your family</p>
+            <div class="header-stats" id="header-stats">
                 <div class="stat">22 Featured Schools</div>
                 <div class="stat">44,647 Students</div>
                 <div class="stat">$1.2B Budget</div>
@@ -47,6 +47,13 @@
                 </div>
                 
                 <div class="search-controls">
+                    <div class="search-group">
+                        <label for="city-filter">City</label>
+                        <select id="city-filter" class="control-select">
+                            <option value="oakland">Oakland (OUSD)</option>
+                            <option value="pleasant-hill">Pleasant Hill (MDUSD)</option>
+                        </select>
+                    </div>
                     <div class="search-group">
                         <label for="school-type-filter">School Level</label>
                         <select id="school-type-filter" class="control-select">
@@ -246,7 +253,7 @@
             <!-- How to Apply Section -->
             <section id="how-to-apply-section" class="content-section">
                 <div class="how-to-apply-content">
-                    <h2>How to Apply to OUSD Schools</h2>
+                    <h2 id="how-to-apply-title">How to Apply to OUSD Schools</h2>
                     
                     <div class="enrollment-timeline">
                         <h3>📅 2024-2025 Enrollment Timeline</h3>
@@ -365,6 +372,7 @@
     </footer>
 
     <script src="data.js"></script>
+    <script src="pleasant-hill-data.js"></script>
     <script src="charts.js"></script>
     <script src="app.js"></script>
 </body>

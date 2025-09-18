@@ -2,12 +2,14 @@
 class OUSDSchoolFinder {
     constructor() {
         this.currentFilters = {
+            city: 'oakland',
                 schoolType: 'all',
             minRating: 4.0,
             sortBy: 'rating'
         };
         this.currentView = 'grid';
         this.selectedSchool = null;
+        this.currentCity = 'oakland';
         
         this.init();
         this.setupMainNavigation();
@@ -22,9 +24,20 @@ class OUSDSchoolFinder {
 
     setupEventListeners() {
         // Filter controls
+        const cityFilter = document.getElementById('city-filter');
         const schoolTypeFilter = document.getElementById('school-type-filter');
         const ratingFilter = document.getElementById('rating-filter');
         const sortBy = document.getElementById('sort-by');
+        
+        if (cityFilter) {
+            cityFilter.addEventListener('change', (e) => {
+                this.currentFilters.city = e.target.value;
+                this.currentCity = e.target.value;
+                this.updateHeaderForCity();
+                this.updateHowToApplyContent();
+                this.renderSchools();
+            });
+        }
         
         if (schoolTypeFilter) {
             schoolTypeFilter.addEventListener('change', (e) => {
@@ -89,7 +102,60 @@ class OUSDSchoolFinder {
     }
 
     loadInitialData() {
-        console.log('OUSD School Finder initialized for parents');
+        console.log('Multi-City School Finder initialized for parents');
+        this.updateHeaderForCity();
+    }
+
+    getCurrentData() {
+        if (this.currentCity === 'pleasant-hill') {
+            return {
+                district: pleasantHillData,
+                schools: pleasantHillSchools,
+                utils: pleasantHillDataUtils
+            };
+        } else {
+            return {
+                district: ousdData,
+                schools: schoolData,
+                utils: dataUtils
+            };
+        }
+    }
+
+    updateHeaderForCity() {
+        const data = this.getCurrentData();
+        const headerTitle = document.getElementById('header-title');
+        const headerSubtitle = document.getElementById('header-subtitle');
+        const headerStats = document.getElementById('header-stats');
+        
+        if (this.currentCity === 'pleasant-hill') {
+            headerTitle.textContent = '🏫 Pleasant Hill School Finder';
+            headerSubtitle.textContent = 'Find the best schools in Pleasant Hill for your family';
+            headerStats.innerHTML = `
+                <div class="stat">7 Featured Schools</div>
+                <div class="stat">32,000 Students</div>
+                <div class="stat">$450M Budget</div>
+            `;
+        } else {
+            headerTitle.textContent = '🏫 OUSD School Finder';
+            headerSubtitle.textContent = 'Find the best schools in Oakland for your family';
+            headerStats.innerHTML = `
+                <div class="stat">22 Featured Schools</div>
+                <div class="stat">44,647 Students</div>
+                <div class="stat">$1.2B Budget</div>
+            `;
+        }
+    }
+
+    updateHowToApplyContent() {
+        const title = document.getElementById('how-to-apply-title');
+        if (!title) return;
+
+        if (this.currentCity === 'pleasant-hill') {
+            title.textContent = 'How to Apply to MDUSD Schools';
+        } else {
+            title.textContent = 'How to Apply to OUSD Schools';
+        }
     }
 
     renderSchools() {
@@ -120,9 +186,10 @@ class OUSDSchoolFinder {
     }
 
     getFilteredSchools() {
-        if (typeof schoolData === 'undefined') return [];
+        const data = this.getCurrentData();
+        if (typeof data.utils === 'undefined') return [];
         
-        let schools = schoolData.getAllSchools();
+        let schools = data.utils.getAllSchools();
         
         // Filter by school type
         if (this.currentFilters.schoolType !== 'all') {
@@ -202,7 +269,8 @@ class OUSDSchoolFinder {
     }
 
     showSchoolDetails(schoolId) {
-        const school = schoolData.getSchoolById(schoolId);
+        const data = this.getCurrentData();
+        const school = data.utils.getSchoolById(schoolId);
         if (!school) return;
 
         this.selectedSchool = school;
