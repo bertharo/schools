@@ -117,7 +117,7 @@ class OUSDSchoolFinder {
             return {
                 district: ousdData,
                 schools: schoolData,
-                utils: dataUtils
+                utils: schoolData  // schoolData has the methods, not dataUtils
             };
         }
     }
