@@ -18,7 +18,12 @@ class OUSDSchoolFinder {
     init() {
         this.setupEventListeners();
         this.loadInitialData();
-        this.renderSchools();
+        
+        // Wait for data to be available
+        setTimeout(() => {
+            this.renderSchools();
+        }, 100);
+        
         this.optimizeForMobile();
     }
 
@@ -236,10 +241,15 @@ class OUSDSchoolFinder {
     }
 
     renderSchools() {
+        console.log('renderSchools called');
         const schoolsGrid = document.getElementById('schools-grid');
-        if (!schoolsGrid) return;
+        if (!schoolsGrid) {
+            console.log('schools-grid element not found');
+            return;
+        }
 
         const schools = this.getFilteredSchools();
+        console.log('Schools to render:', schools.length);
         
         if (schools.length === 0) {
             schoolsGrid.innerHTML = `
