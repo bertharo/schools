@@ -66,7 +66,12 @@ const piedmontSchools = {
         },
         rankings: {
             california: 9.8,
-            national: 9.4
+            national: 9.4,
+            usNews: {
+                california: 4,
+                national: 205,
+                metro: 4
+            }
         },
         neighborhood: {
             name: "Piedmont",
@@ -260,7 +265,12 @@ const piedmontSchools = {
         },
         rankings: {
             california: 9.7,
-            national: 9.3
+            national: 9.3,
+            usNews: {
+                california: 4,
+                national: 205,
+                metro: 4
+            }
         },
         neighborhood: {
             name: "Piedmont",

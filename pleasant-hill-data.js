@@ -596,7 +596,12 @@ const pleasantHillSchools = {
         },
         rankings: {
             california: 8.3,
-            national: 7.9
+            national: 7.9,
+            usNews: {
+                california: 65,
+                national: 1200,
+                metro: 25
+            }
         },
         neighborhood: {
             name: "College Park",

@@ -286,7 +286,7 @@ class OUSDSchoolFinder {
                 case 'budget':
                     return b.budget - a.budget;
                 case 'ranking':
-                    return a.rankings.california - b.rankings.california;
+                    return (a.rankings.usNews ? a.rankings.usNews.california : a.rankings.california) - (b.rankings.usNews ? b.rankings.usNews.california : b.rankings.california);
                 default:
                     return 0;
             }
@@ -303,7 +303,7 @@ class OUSDSchoolFinder {
         const highlights = [];
         if (rating >= 4.5) highlights.push({ text: 'High Rating', class: 'rating-high' });
         if (school.budget > 3) highlights.push({ text: 'Well-Funded', class: 'budget-high' });
-        if (school.rankings.california < 500) highlights.push({ text: 'Top State Ranking', class: 'rating-high' });
+        if ((school.rankings.usNews ? school.rankings.usNews.california : school.rankings.california) < 500) highlights.push({ text: 'Top State Ranking', class: 'rating-high' });
         
         return `
             <div class="school-card" data-school-id="${school.id}">
@@ -327,12 +327,12 @@ class OUSDSchoolFinder {
                         <div class="stat-value">$${budgetPerStudent}</div>
                     </div>
                     <div class="school-stat">
-                        <div class="stat-label">CA Ranking</div>
-                        <div class="stat-value">#${school.rankings.california.toLocaleString()}</div>
+                        <div class="stat-label">CA Ranking (US News)</div>
+                        <div class="stat-value">#${(school.rankings.usNews ? school.rankings.usNews.california : school.rankings.california).toLocaleString()}</div>
                     </div>
                     <div class="school-stat">
-                        <div class="stat-label">National Ranking</div>
-                        <div class="stat-value">#${school.rankings.national.toLocaleString()}</div>
+                        <div class="stat-label">National Ranking (US News)</div>
+                        <div class="stat-value">#${(school.rankings.usNews ? school.rankings.usNews.national : school.rankings.national).toLocaleString()}</div>
                     </div>
                 </div>
                 
@@ -365,7 +365,7 @@ class OUSDSchoolFinder {
         document.getElementById('school-budget').textContent = `$${school.budget}M`;
         document.getElementById('school-budget-per-student').textContent = `$${budgetPerStudent}`;
         document.getElementById('school-satisfaction').textContent = `${school.parentSentiment.overall}/5`;
-        document.getElementById('school-ca-ranking').textContent = `#${school.rankings.california.toLocaleString()}`;
+        document.getElementById('school-ca-ranking').textContent = `#${(school.rankings.usNews ? school.rankings.usNews.california : school.rankings.california).toLocaleString()}`;
         
         // Update enrollment information
         this.updateEnrollmentInfo(school);

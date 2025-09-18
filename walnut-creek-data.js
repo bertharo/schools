@@ -211,7 +211,12 @@ const walnutCreekSchools = {
         },
         rankings: {
             california: 9.1,
-            national: 8.7
+            national: 8.7,
+            usNews: {
+                california: 45,
+                national: 950,
+                metro: 15
+            }
         },
         neighborhood: {
             name: "Walnut Creek",

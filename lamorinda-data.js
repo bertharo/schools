@@ -308,7 +308,12 @@ const lamorindaSchools = {
         },
         rankings: {
             california: 9.8,
-            national: 9.4
+            national: 9.4,
+            usNews: {
+                california: 11,
+                national: 370,
+                metro: 11
+            }
         },
         neighborhood: {
             name: "Orinda",

@@ -66,7 +66,12 @@ const berkeleySchools = {
         },
         rankings: {
             california: 8.8,
-            national: 8.4
+            national: 8.4,
+            usNews: {
+                california: 45,
+                national: 1250,
+                metro: 12
+            }
         },
         neighborhood: {
             name: "South Berkeley",
@@ -260,7 +265,12 @@ const berkeleySchools = {
         },
         rankings: {
             california: 9.2,
-            national: 8.8
+            national: 8.8,
+            usNews: {
+                california: 25,
+                national: 850,
+                metro: 8
+            }
         },
         neighborhood: {
             name: "Downtown Berkeley",

@@ -194,10 +194,15 @@ const schoolData = {
             phone: '(510) 879-1200',
             enrollment: 320,
             budget: 2.5,
-            rankings: {
+        rankings: {
+            california: 1247,
+            national: 15432,
+            usNews: {
                 california: 1247,
-                national: 15432
-            },
+                national: 15432,
+                metro: 45
+            }
+        },
             enrollmentInfo: {
                 openDate: '2024-12-03',
                 closeDate: '2025-02-08',
@@ -561,7 +566,12 @@ const schoolData = {
             budget: 13.2,
             rankings: {
                 california: 89,
-                national: 1234
+                national: 1234,
+                usNews: {
+                    california: 38,
+                    national: 1250,
+                    metro: 9
+                }
             },
             enrollmentInfo: {
                 openDate: '2024-12-03',
