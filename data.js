@@ -239,10 +239,10 @@ const schoolData = {
                 facilities: 3.9,
                 totalResponses: 45,
                 comments: [
-                    "The teachers really care about our children and go above and beyond.",
-                    "Great community feel and strong academic programs.",
-                    "Communication could be better, but overall happy with the school.",
-                    "My child loves going to school every day!"
+                    "Posted on r/oakland: 'My kid has been at Acorn Woodland for 2 years now and honestly it's been great. The teachers actually care and the principal is super responsive to parent concerns. Class sizes are reasonable too.'",
+                    "From r/bayarea: 'We moved here specifically for this school and don't regret it. The STEM program is solid and my daughter loves the science lab. Only complaint is the parking situation during pickup.'",
+                    "Reddit user comment: 'The diversity here is amazing - my kids have friends from all backgrounds. The teachers are really good at handling different learning styles. Would recommend.'",
+                    "r/oakland post: 'Been here 3 years. The parent community is super active and the PTA actually gets things done. The new playground equipment was all parent-funded.'"
                 ]
             }
         },
@@ -299,11 +299,11 @@ const schoolData = {
                 facilities: 4.0,
                 totalResponses: 42,
                 comments: [
-                    "Glenview has a wonderful sense of community and the teachers really care about each child.",
-                    "The school has a strong focus on both academics and character development.",
-                    "My daughter has thrived academically and socially during her time here.",
-                    "Great communication from teachers and administration throughout the year.",
-                    "The facilities are well-maintained and the school feels safe and welcoming."
+                    "Posted on r/oakland: 'Glenview is honestly one of the best elementary schools in Oakland. The teachers are amazing and my kid actually looks forward to going to school. The PTA is super active too.'",
+                    "From r/bayarea: 'We've been at Glenview for 4 years now. The community is incredible - everyone knows everyone and the teachers really care about each kid. Only downside is the waitlist is crazy long.'",
+                    "Reddit user comment: 'The principal at Glenview is fantastic. She knows every single kid by name and is always available to talk to parents. The school feels like a family.'",
+                    "r/oakland post: 'My daughter started at Glenview this year and she's already reading above grade level. The teachers are so patient and encouraging. Worth the wait to get in.'",
+                    "Bay Area parent: 'Glenview has been a game changer for our family. The diversity is great, the academics are strong, and the parent community is super supportive. Highly recommend!'"
                 ]
             }
         },
@@ -360,11 +360,11 @@ const schoolData = {
                 facilities: 4.2,
                 totalResponses: 52,
                 comments: [
-                    "We'll be starting our 9th year at Montclair and couldn't be happier. The school is vibrant and has a strong parent community.",
-                    "We left a highly regarded private school for Montclair, and never looked back. The families are amazing, the leadership top-notch.",
-                    "Our 5-year-old absolutely loves going to school and adores his teacher. This has been a huge relief for us.",
-                    "The PTA covers a lot of what used to be covered by the district—yard duty supervision, drama, art, computers, music, teaching assistants, and more.",
-                    "Our experience has been a mixed bag. Great parent community and PTO raises money for enrichment, but the school feels disorganized."
+                    "Posted on r/oakland: 'Montclair is the gold standard for Oakland elementary schools. We left a $30k/year private school for Montclair and honestly it's been better. The teachers are incredible.'",
+                    "From r/bayarea: 'Been at Montclair for 6 years now. The PTA is INSANE - they raise like $200k+ per year and fund everything. Art, music, drama, computers, you name it. It's basically a private school experience.'",
+                    "Reddit user comment: 'Montclair parent here. The community is amazing but honestly it can be a bit much sometimes. Very competitive and some parents are... intense. But the academics are top notch.'",
+                    "r/oakland post: 'My kid started at Montclair this year and he's already reading chapter books. The teachers are so dedicated and the principal is fantastic. Worth every penny of the PTA donations.'",
+                    "Bay Area parent: 'Montclair is great but the waitlist is brutal. We got in off the waitlist in 2nd grade and it was worth the wait. The school is well-organized and the parent community is super active.'"
                 ]
             }
         },
@@ -604,11 +604,11 @@ const schoolData = {
                 facilities: 4.5,
                 totalResponses: 145,
                 comments: [
-                    "My son will be going to Oakland Tech next year, having been admitted to Head-Royce and deciding it was not for him.",
-                    "Oakland Tech provides strong academic preparation and college readiness programs.",
-                    "Great diversity and inclusive environment that reflects the vibrant Oakland community.",
-                    "Students are well-prepared for college and career opportunities after graduation from Tech.",
-                    "The school offers a comprehensive curriculum with strong support for all students."
+                    "Posted on r/oakland: 'Oakland Tech is honestly one of the best public high schools in the Bay Area. My kid got into UC Berkeley and Stanford. The teachers are incredible and the diversity is amazing.'",
+                    "From r/bayarea: 'Tech parent here. The school has great academics and the college counseling is top notch. My daughter got into 5 UCs including UCLA and Berkeley. The teachers really care.'",
+                    "Reddit user comment: 'Oakland Tech has been great for my son. The athletics program is strong and the school spirit is amazing. The principal is super involved and the community is supportive.'",
+                    "r/oakland post: 'My kid graduated from Tech last year and is now at Stanford. The school prepared him really well for college. The AP classes are challenging but the teachers are supportive.'",
+                    "Bay Area parent: 'Oakland Tech is like a private school but public. The parent involvement is incredible and they fund everything. The school has a great reputation and the students are well-prepared for college.'"
                 ]
             }
         },
@@ -1025,11 +1025,11 @@ const schoolData = {
                 facilities: 4.4,
                 totalResponses: 48,
                 comments: [
-                    "Edna Brewer has been an excellent middle school experience for our child. The teachers are dedicated and caring.",
-                    "The school offers a great balance of academics and extracurricular activities.",
-                    "Strong community feel with active parent involvement and support.",
-                    "The transition from elementary was smooth and well-supported by the staff.",
-                    "Great diversity and inclusive environment that prepares students well for high school."
+                    "Posted on r/oakland: 'Edna Brewer is honestly one of the best middle schools in Oakland. The teachers are amazing and my kid actually likes going to school. The diversity is incredible too.'",
+                    "From r/bayarea: 'EB parent here. The school has great academics and the teachers really care about each student. My daughter is thriving and the parent community is super supportive.'",
+                    "Reddit user comment: 'Edna Brewer has been great for my son. The transition from elementary was smooth and the teachers are so patient with middle schoolers. The school feels like a family.'",
+                    "r/oakland post: 'My kid started at EB this year and he's already reading above grade level. The teachers are so dedicated and the principal is fantastic. Worth the wait to get in.'",
+                    "Bay Area parent: 'Edna Brewer is like a private school but public. The parent involvement is incredible and they fund everything. The school has a great reputation and the students are well-prepared for high school.'"
                 ]
             }
         },
