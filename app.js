@@ -132,7 +132,7 @@ class OUSDSchoolFinder {
             headerTitle.textContent = '🏫 Pleasant Hill School Finder';
             headerSubtitle.textContent = 'Find the best schools in Pleasant Hill for your family';
             headerStats.innerHTML = `
-                <div class="stat">7 Featured Schools</div>
+                <div class="stat">12 Featured Schools</div>
                 <div class="stat">32,000 Students</div>
                 <div class="stat">$450M Budget</div>
             `;

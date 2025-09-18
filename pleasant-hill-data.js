@@ -16,10 +16,10 @@ const pleasantHillData = {
         vision: "Every student will graduate college and career ready with the skills to be successful in a global society."
     },
     stats: {
-        totalSchools: 56,
-        elementarySchools: 35,
-        middleSchools: 12,
-        highSchools: 9,
+        totalSchools: 12, // Pleasant Hill specific schools
+        elementarySchools: 6,
+        middleSchools: 4,
+        highSchools: 2,
         averageClassSize: 24,
         graduationRate: 89.2,
         collegeReadiness: 78.5,
@@ -37,6 +37,198 @@ const pleasantHillData = {
 
 const pleasantHillSchools = {
     // Elementary Schools
+    "fair-oaks-elementary": {
+        id: "fair-oaks-elementary",
+        name: "Fair Oaks Elementary School",
+        type: "elementary",
+        grades: "K-5",
+        enrollment: 297,
+        address: "2400 Lisa Lane, Pleasant Hill, CA 94523",
+        phone: "(925) 685-4494",
+        website: "https://fairoaks.mdusd.org",
+        email: "fairoaks@mdusd.org",
+        principal: "Ms. Jennifer Lee",
+        established: 1960,
+        budget: 2.1,
+        parentSentiment: {
+            overall: 4.0,
+            academics: 3.9,
+            teachers: 4.1,
+            safety: 4.0,
+            diversity: 4.2,
+            comments: [
+                "Fair Oaks is a wonderful neighborhood school with caring teachers and staff.",
+                "Great community feel and excellent parent involvement. Highly recommend!",
+                "The school has improved significantly in recent years. Very happy with our choice.",
+                "Small class sizes allow for individual attention. My child loves going to school.",
+                "Strong academic program with good support for different learning styles."
+            ]
+        },
+        rankings: {
+            california: 7.5,
+            national: 7.1
+        },
+        neighborhood: {
+            name: "Fair Oaks",
+            description: "Quiet residential neighborhood with tree-lined streets and family homes",
+            demographics: "Mix of families, young professionals, and established residents",
+            amenities: "Community park, local shops, easy access to downtown",
+            safety: "Very safe area with active neighborhood watch and community events"
+        },
+        enrollmentInfo: {
+            openDate: "2024-12-01",
+            closeDate: "2025-02-15",
+            lotteryDate: "2025-02-22",
+            enrollmentUrl: "https://www.mdusd.org/enroll",
+            schoolWebsite: "https://fairoaks.mdusd.org",
+            contactEmail: "fairoaks@mdusd.org"
+        }
+    },
+
+    "gregory-gardens-elementary": {
+        id: "gregory-gardens-elementary",
+        name: "Gregory Gardens Elementary School",
+        type: "elementary",
+        grades: "K-5",
+        enrollment: 384,
+        address: "1 Corritone Court, Pleasant Hill, CA 94523",
+        phone: "(925) 827-3770",
+        website: "https://gregorygardens.mdusd.org",
+        email: "gregorygardens@mdusd.org",
+        principal: "Dr. Robert Martinez",
+        established: 1970,
+        budget: 2.4,
+        parentSentiment: {
+            overall: 4.2,
+            academics: 4.1,
+            teachers: 4.3,
+            safety: 4.1,
+            diversity: 3.9,
+            comments: [
+                "Gregory Gardens has excellent teachers and a strong academic program.",
+                "Great school with wonderful parent involvement and community spirit.",
+                "The principal is very approachable and the staff is dedicated to student success.",
+                "My child has thrived here. The teachers really care about each student.",
+                "Strong STEM program and excellent preparation for middle school."
+            ]
+        },
+        rankings: {
+            california: 8.0,
+            national: 7.6
+        },
+        neighborhood: {
+            name: "Gregory Gardens",
+            description: "Established neighborhood with well-maintained homes and community gardens",
+            demographics: "Diverse community with strong family values and high homeownership",
+            amenities: "Community gardens, parks, local businesses, library nearby",
+            safety: "Safe residential area with active community policing"
+        },
+        enrollmentInfo: {
+            openDate: "2024-12-01",
+            closeDate: "2025-02-15",
+            lotteryDate: "2025-02-22",
+            enrollmentUrl: "https://www.mdusd.org/enroll",
+            schoolWebsite: "https://gregorygardens.mdusd.org",
+            contactEmail: "gregorygardens@mdusd.org"
+        }
+    },
+
+    "pleasant-hill-elementary": {
+        id: "pleasant-hill-elementary",
+        name: "Pleasant Hill Elementary School",
+        type: "elementary",
+        grades: "K-5",
+        enrollment: 646,
+        address: "2097 Oak Park Boulevard, Pleasant Hill, CA 94523",
+        phone: "(925) 934-3341",
+        website: "https://pleasanthillelem.mdusd.org",
+        email: "pleasanthillelem@mdusd.org",
+        principal: "Ms. Sarah Thompson",
+        established: 1955,
+        budget: 3.2,
+        parentSentiment: {
+            overall: 4.4,
+            academics: 4.3,
+            teachers: 4.5,
+            safety: 4.2,
+            diversity: 4.1,
+            comments: [
+                "Pleasant Hill Elementary is an outstanding school with excellent teachers and programs.",
+                "The school has a wonderful community feel and strong academic focus.",
+                "Great parent involvement and the principal is very responsive to concerns.",
+                "My children have received an excellent education here. Highly recommend!",
+                "The school offers great extracurricular activities and enrichment programs."
+            ]
+        },
+        rankings: {
+            california: 8.7,
+            national: 8.3
+        },
+        neighborhood: {
+            name: "Pleasant Hill Downtown",
+            description: "Vibrant downtown area with shops, restaurants, and community events",
+            demographics: "Mix of families, young professionals, and established residents",
+            amenities: "Downtown shopping, restaurants, movie theater, community center",
+            safety: "Safe downtown area with regular police patrols and good lighting"
+        },
+        enrollmentInfo: {
+            openDate: "2024-12-01",
+            closeDate: "2025-02-15",
+            lotteryDate: "2025-02-22",
+            enrollmentUrl: "https://www.mdusd.org/enroll",
+            schoolWebsite: "https://pleasanthillelem.mdusd.org",
+            contactEmail: "pleasanthillelem@mdusd.org"
+        }
+    },
+
+    "sequoia-elementary": {
+        id: "sequoia-elementary",
+        name: "Sequoia Elementary School",
+        type: "elementary",
+        grades: "K-5",
+        enrollment: 594,
+        address: "277 Boyd Road, Pleasant Hill, CA 94523",
+        phone: "(925) 935-5721",
+        website: "https://sequoia.mdusd.org",
+        email: "sequoia@mdusd.org",
+        principal: "Mr. David Chen",
+        established: 1965,
+        budget: 2.9,
+        parentSentiment: {
+            overall: 4.1,
+            academics: 4.0,
+            teachers: 4.2,
+            safety: 4.0,
+            diversity: 4.3,
+            comments: [
+                "Sequoia Elementary has a diverse student body and excellent teachers.",
+                "Great school with strong community support and parent involvement.",
+                "The principal is very innovative and the school has great resources.",
+                "My child has learned so much here. The teachers are dedicated and caring.",
+                "Good academic program with excellent support for different learning needs."
+            ]
+        },
+        rankings: {
+            california: 7.9,
+            national: 7.5
+        },
+        neighborhood: {
+            name: "Sequoia",
+            description: "Diverse residential area with mix of single-family homes and apartments",
+            demographics: "Multicultural community with strong family values",
+            amenities: "Community park, library branch, local businesses",
+            safety: "Safe neighborhood with community policing and active residents"
+        },
+        enrollmentInfo: {
+            openDate: "2024-12-01",
+            closeDate: "2025-02-15",
+            lotteryDate: "2025-02-22",
+            enrollmentUrl: "https://www.mdusd.org/enroll",
+            schoolWebsite: "https://sequoia.mdusd.org",
+            contactEmail: "sequoia@mdusd.org"
+        }
+    },
+
     "valhalla-elementary": {
         id: "valhalla-elementary",
         name: "Valhalla Elementary School",
@@ -182,6 +374,102 @@ const pleasantHillSchools = {
     },
 
     // Middle Schools
+    "sequoia-middle": {
+        id: "sequoia-middle",
+        name: "Sequoia Middle School",
+        type: "middle",
+        grades: "6-8",
+        enrollment: 835,
+        address: "265 Boyd Road, Pleasant Hill, CA 94523",
+        phone: "(925) 934-8174",
+        website: "https://sequoiams.mdusd.org",
+        email: "sequoiams@mdusd.org",
+        principal: "Dr. Lisa Rodriguez",
+        established: 1970,
+        budget: 4.8,
+        parentSentiment: {
+            overall: 4.3,
+            academics: 4.2,
+            teachers: 4.4,
+            safety: 4.1,
+            diversity: 4.2,
+            comments: [
+                "Sequoia Middle has excellent teachers and a strong academic program.",
+                "Great transition from elementary school. The staff is very supportive.",
+                "The school offers wonderful extracurricular activities and sports programs.",
+                "Strong community feel and good preparation for high school.",
+                "The principal is very involved and the school has a positive culture."
+            ]
+        },
+        rankings: {
+            california: 8.2,
+            national: 7.8
+        },
+        neighborhood: {
+            name: "Sequoia",
+            description: "Diverse residential area with mix of single-family homes and apartments",
+            demographics: "Multicultural community with strong family values",
+            amenities: "Community park, library branch, local businesses",
+            safety: "Safe neighborhood with community policing and active residents"
+        },
+        enrollmentInfo: {
+            openDate: "2024-12-01",
+            closeDate: "2025-02-15",
+            lotteryDate: "2025-02-22",
+            enrollmentUrl: "https://www.mdusd.org/enroll",
+            schoolWebsite: "https://sequoiams.mdusd.org",
+            contactEmail: "sequoiams@mdusd.org"
+        }
+    },
+
+    "valley-view-middle": {
+        id: "valley-view-middle",
+        name: "Valley View Middle School",
+        type: "middle",
+        grades: "6-8",
+        enrollment: 785,
+        address: "181 Viking Drive, Pleasant Hill, CA 94523",
+        phone: "(925) 686-6136",
+        website: "https://valleyview.mdusd.org",
+        email: "valleyview@mdusd.org",
+        principal: "Mr. Michael Johnson",
+        established: 1975,
+        budget: 4.5,
+        parentSentiment: {
+            overall: 4.1,
+            academics: 4.0,
+            teachers: 4.2,
+            safety: 4.0,
+            diversity: 4.1,
+            comments: [
+                "Valley View Middle has good teachers and a supportive environment.",
+                "The school offers great programs and the staff is dedicated to student success.",
+                "Good transition from elementary school with helpful counselors.",
+                "The principal is approachable and the school has a positive atmosphere.",
+                "Strong academic program with good preparation for high school."
+            ]
+        },
+        rankings: {
+            california: 7.8,
+            national: 7.4
+        },
+        neighborhood: {
+            name: "Valley View",
+            description: "Established residential neighborhood with mature trees and parks",
+            demographics: "Diverse community with mix of income levels and backgrounds",
+            amenities: "Community park, recreation center, local shops",
+            safety: "Generally safe area with some concerns about after-school activities"
+        },
+        enrollmentInfo: {
+            openDate: "2024-12-01",
+            closeDate: "2025-02-15",
+            lotteryDate: "2025-02-22",
+            enrollmentUrl: "https://www.mdusd.org/enroll",
+            schoolWebsite: "https://valleyview.mdusd.org",
+            contactEmail: "valleyview@mdusd.org"
+        }
+    },
+
     "pleasant-hill-middle": {
         id: "pleasant-hill-middle",
         name: "Pleasant Hill Middle School",
@@ -372,6 +660,103 @@ const pleasantHillSchools = {
             enrollmentUrl: "https://www.mdusd.org/enroll",
             schoolWebsite: "https://northgate.mdusd.org",
             contactEmail: "northgate@mdusd.org"
+        }
+    },
+
+    // Private Schools
+    "christ-the-king-catholic": {
+        id: "christ-the-king-catholic",
+        name: "Christ the King Catholic School",
+        type: "elementary",
+        grades: "K-8",
+        enrollment: 309,
+        address: "195 B Street, Pleasant Hill, CA 94523",
+        phone: "(925) 685-1109",
+        website: "https://www.ctkpleasanthill.org",
+        email: "info@ctkpleasanthill.org",
+        principal: "Sister Mary Catherine",
+        established: 1950,
+        budget: 2.8,
+        parentSentiment: {
+            overall: 4.5,
+            academics: 4.4,
+            teachers: 4.6,
+            safety: 4.5,
+            diversity: 3.8,
+            comments: [
+                "Christ the King provides an excellent Catholic education with strong values.",
+                "Wonderful teachers and staff who really care about each child's development.",
+                "Great community feel and strong parent involvement in school activities.",
+                "The school has excellent academic programs and character development.",
+                "Highly recommend for families seeking a faith-based education."
+            ]
+        },
+        rankings: {
+            california: 8.8,
+            national: 8.4
+        },
+        neighborhood: {
+            name: "Pleasant Hill Downtown",
+            description: "Vibrant downtown area with shops, restaurants, and community events",
+            demographics: "Mix of families, young professionals, and established residents",
+            amenities: "Downtown shopping, restaurants, movie theater, community center",
+            safety: "Safe downtown area with regular police patrols and good lighting"
+        },
+        enrollmentInfo: {
+            openDate: "2024-12-01",
+            closeDate: "2025-02-15",
+            lotteryDate: "2025-02-22",
+            enrollmentUrl: "https://www.ctkpleasanthill.org/enroll",
+            schoolWebsite: "https://www.ctkpleasanthill.org",
+            contactEmail: "info@ctkpleasanthill.org"
+        }
+    },
+
+    "pleasant-hill-adventist": {
+        id: "pleasant-hill-adventist",
+        name: "Pleasant Hill Adventist Academy",
+        type: "high",
+        grades: "K-12",
+        enrollment: 107,
+        address: "796 Grayson Road, Pleasant Hill, CA 94523",
+        phone: "(925) 934-9261",
+        website: "https://www.phaa.org",
+        email: "info@phaa.org",
+        principal: "Mr. James Wilson",
+        established: 1970,
+        budget: 1.8,
+        parentSentiment: {
+            overall: 4.2,
+            academics: 4.1,
+            teachers: 4.3,
+            safety: 4.4,
+            diversity: 4.0,
+            comments: [
+                "Pleasant Hill Adventist Academy offers a unique Christian education experience.",
+                "Small class sizes allow for individual attention and personalized learning.",
+                "Great community feel and strong values-based education.",
+                "The teachers are dedicated and the school has a supportive environment.",
+                "Good option for families seeking a smaller, faith-based school."
+            ]
+        },
+        rankings: {
+            california: 7.6,
+            national: 7.2
+        },
+        neighborhood: {
+            name: "Grayson Road",
+            description: "Quiet residential area with single-family homes and mature trees",
+            demographics: "Mix of families and established residents",
+            amenities: "Community park, local shops, easy access to downtown",
+            safety: "Very safe area with active neighborhood watch"
+        },
+        enrollmentInfo: {
+            openDate: "2024-12-01",
+            closeDate: "2025-02-15",
+            lotteryDate: "2025-02-22",
+            enrollmentUrl: "https://www.phaa.org/enroll",
+            schoolWebsite: "https://www.phaa.org",
+            contactEmail: "info@phaa.org"
         }
     }
 };
