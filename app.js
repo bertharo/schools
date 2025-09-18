@@ -107,18 +107,43 @@ class OUSDSchoolFinder {
     }
 
     getCurrentData() {
-        if (this.currentCity === 'pleasant-hill') {
-            return {
-                district: pleasantHillData,
-                schools: pleasantHillSchools,
-                utils: pleasantHillDataUtils
-            };
-        } else {
-            return {
-                district: ousdData,
-                schools: schoolData,
-                utils: schoolData  // schoolData has the methods, not dataUtils
-            };
+        switch(this.currentCity) {
+            case 'pleasant-hill':
+                return {
+                    district: pleasantHillData,
+                    schools: pleasantHillSchools,
+                    utils: pleasantHillDataUtils
+                };
+            case 'berkeley':
+                return {
+                    district: berkeleyData,
+                    schools: berkeleySchools,
+                    utils: berkeleyDataUtils
+                };
+            case 'piedmont':
+                return {
+                    district: piedmontData,
+                    schools: piedmontSchools,
+                    utils: piedmontDataUtils
+                };
+            case 'lamorinda':
+                return {
+                    district: lamorindaData,
+                    schools: lamorindaSchools,
+                    utils: lamorindaDataUtils
+                };
+            case 'walnut-creek':
+                return {
+                    district: walnutCreekData,
+                    schools: walnutCreekSchools,
+                    utils: walnutCreekDataUtils
+                };
+            default: // oakland
+                return {
+                    district: ousdData,
+                    schools: schoolData,
+                    utils: schoolData
+                };
         }
     }
 
@@ -128,22 +153,60 @@ class OUSDSchoolFinder {
         const headerSubtitle = document.getElementById('header-subtitle');
         const headerStats = document.getElementById('header-stats');
         
-        if (this.currentCity === 'pleasant-hill') {
-            headerTitle.textContent = '🏫 Pleasant Hill School Finder';
-            headerSubtitle.textContent = 'Find the best schools in Pleasant Hill for your family';
-            headerStats.innerHTML = `
-                <div class="stat">12 Featured Schools</div>
-                <div class="stat">32,000 Students</div>
-                <div class="stat">$450M Budget</div>
-            `;
-        } else {
-            headerTitle.textContent = '🏫 OUSD School Finder';
-            headerSubtitle.textContent = 'Find the best schools in Oakland for your family';
-            headerStats.innerHTML = `
-                <div class="stat">22 Featured Schools</div>
-                <div class="stat">44,647 Students</div>
-                <div class="stat">$1.2B Budget</div>
-            `;
+        switch(this.currentCity) {
+            case 'pleasant-hill':
+                headerTitle.textContent = '🏫 Pleasant Hill School Finder';
+                headerSubtitle.textContent = 'Find the best schools in Pleasant Hill for your family';
+                headerStats.innerHTML = `
+                    <div class="stat">15 Featured Schools</div>
+                    <div class="stat">32,000 Students</div>
+                    <div class="stat">$450M Budget</div>
+                `;
+                break;
+            case 'berkeley':
+                headerTitle.textContent = '🏫 Berkeley School Finder';
+                headerSubtitle.textContent = 'Find the best schools in Berkeley for your family';
+                headerStats.innerHTML = `
+                    <div class="stat">5 Featured Schools</div>
+                    <div class="stat">9,500 Students</div>
+                    <div class="stat">$120M Budget</div>
+                `;
+                break;
+            case 'piedmont':
+                headerTitle.textContent = '🏫 Piedmont School Finder';
+                headerSubtitle.textContent = 'Find the best schools in Piedmont for your family';
+                headerStats.innerHTML = `
+                    <div class="stat">5 Featured Schools</div>
+                    <div class="stat">2,500 Students</div>
+                    <div class="stat">$35M Budget</div>
+                `;
+                break;
+            case 'lamorinda':
+                headerTitle.textContent = '🏫 Lamorinda School Finder';
+                headerSubtitle.textContent = 'Find the best schools in Lafayette, Moraga & Orinda for your family';
+                headerStats.innerHTML = `
+                    <div class="stat">6 Featured Schools</div>
+                    <div class="stat">8,500 Students</div>
+                    <div class="stat">$120M Budget</div>
+                `;
+                break;
+            case 'walnut-creek':
+                headerTitle.textContent = '🏫 Walnut Creek School Finder';
+                headerSubtitle.textContent = 'Find the best schools in Walnut Creek for your family';
+                headerStats.innerHTML = `
+                    <div class="stat">4 Featured Schools</div>
+                    <div class="stat">12,000 Students</div>
+                    <div class="stat">$180M Budget</div>
+                `;
+                break;
+            default: // oakland
+                headerTitle.textContent = '🏫 OUSD School Finder';
+                headerSubtitle.textContent = 'Find the best schools in Oakland for your family';
+                headerStats.innerHTML = `
+                    <div class="stat">22 Featured Schools</div>
+                    <div class="stat">44,647 Students</div>
+                    <div class="stat">$1.2B Budget</div>
+                `;
         }
     }
 
@@ -151,10 +214,24 @@ class OUSDSchoolFinder {
         const title = document.getElementById('how-to-apply-title');
         if (!title) return;
 
-        if (this.currentCity === 'pleasant-hill') {
-            title.textContent = 'How to Apply to MDUSD Schools';
-        } else {
-            title.textContent = 'How to Apply to OUSD Schools';
+        switch(this.currentCity) {
+            case 'pleasant-hill':
+                title.textContent = 'How to Apply to MDUSD Schools';
+                break;
+            case 'berkeley':
+                title.textContent = 'How to Apply to BUSD Schools';
+                break;
+            case 'piedmont':
+                title.textContent = 'How to Apply to PCUSD Schools';
+                break;
+            case 'lamorinda':
+                title.textContent = 'How to Apply to Lamorinda Schools';
+                break;
+            case 'walnut-creek':
+                title.textContent = 'How to Apply to WCSD Schools';
+                break;
+            default: // oakland
+                title.textContent = 'How to Apply to OUSD Schools';
         }
     }
 
