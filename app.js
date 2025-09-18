@@ -142,7 +142,7 @@ class OUSDSchoolFinder {
                 return {
                     district: ousdData,
                     schools: schoolData,
-                    utils: schoolData
+                    utils: dataUtils
                 };
         }
     }
