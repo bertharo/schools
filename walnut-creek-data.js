@@ -213,9 +213,9 @@ const walnutCreekSchools = {
             california: 9.1,
             national: 8.7,
             usNews: {
-                california: 45,
-                national: 950,
-                metro: 15
+                california: 85,
+                national: 1800,
+                metro: 20
             }
         },
         neighborhood: {

@@ -310,9 +310,9 @@ const lamorindaSchools = {
             california: 9.8,
             national: 9.4,
             usNews: {
-                california: 11,
-                national: 370,
-                metro: 11
+                california: 28,
+                national: 650,
+                metro: 15
             }
         },
         neighborhood: {

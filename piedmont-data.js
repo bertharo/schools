@@ -68,9 +68,9 @@ const piedmontSchools = {
             california: 9.8,
             national: 9.4,
             usNews: {
-                california: 4,
-                national: 205,
-                metro: 4
+                california: 15,
+                national: 450,
+                metro: 8
             }
         },
         neighborhood: {
@@ -267,9 +267,9 @@ const piedmontSchools = {
             california: 9.7,
             national: 9.3,
             usNews: {
-                california: 4,
-                national: 205,
-                metro: 4
+                california: 15,
+                national: 450,
+                metro: 8
             }
         },
         neighborhood: {

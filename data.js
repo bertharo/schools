@@ -568,9 +568,9 @@ const schoolData = {
                 california: 89,
                 national: 1234,
                 usNews: {
-                    california: 38,
-                    national: 1250,
-                    metro: 9
+                    california: 125,
+                    national: 2100,
+                    metro: 25
                 }
             },
             enrollmentInfo: {

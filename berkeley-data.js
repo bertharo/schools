@@ -68,9 +68,9 @@ const berkeleySchools = {
             california: 8.8,
             national: 8.4,
             usNews: {
-                california: 45,
-                national: 1250,
-                metro: 12
+                california: 120,
+                national: 2800,
+                metro: 18
             }
         },
         neighborhood: {
@@ -267,9 +267,9 @@ const berkeleySchools = {
             california: 9.2,
             national: 8.8,
             usNews: {
-                california: 25,
-                national: 850,
-                metro: 8
+                california: 45,
+                national: 1200,
+                metro: 12
             }
         },
         neighborhood: {
