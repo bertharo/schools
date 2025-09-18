@@ -142,7 +142,7 @@ class OUSDSchoolFinder {
                 return {
                     district: ousdData,
                     schools: schoolData,
-                    utils: dataUtils
+                    utils: schoolData
                 };
         }
     }
@@ -264,9 +264,11 @@ class OUSDSchoolFinder {
 
     getFilteredSchools() {
         const data = this.getCurrentData();
+        console.log('getCurrentData result:', data);
         if (typeof data.utils === 'undefined') return [];
         
         let schools = data.utils.getAllSchools();
+        console.log('getAllSchools result:', schools);
         
         // Filter by school type
         if (this.currentFilters.schoolType !== 'all') {
